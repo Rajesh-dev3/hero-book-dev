@@ -6,6 +6,7 @@ import GameDetail from "../pages/gameDetail/GameDetail.jsx";
 import AccountSatement from "../pages/accountStatement/AccountSatement.jsx";
 import { accountStatement, casino, currentBet, gameDetail, home } from "./PagesUrl.jsx";
 import CurrentBet from "../pages/currentBet/CurrentBet.jsx";
+import Login from "../pages/login/Login.jsx"
 
 export const router = createBrowserRouter([
     {
@@ -35,4 +36,8 @@ export const router = createBrowserRouter([
    
       ],
     },
+    {
+      path:"/login",
+      element:<Login/>
+    }
   ]);

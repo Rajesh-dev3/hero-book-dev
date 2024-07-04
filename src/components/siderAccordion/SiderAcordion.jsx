@@ -2,8 +2,9 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { CustomAccordion } from "./styled";
 import CollapsibleTable from "./MatchList";
-import { Accordion, AccordionDetails } from "@mui/material";
-import { useState } from "react";
+
+import {  useState } from "react";
+
 
 export default function AccordionUsage() {
   const [first, setfirst] = useState(true)
@@ -14,8 +15,11 @@ export default function AccordionUsage() {
     "Slot Game",
     "Fantasy Game",
   ];
+ 
+  
   return (
     <div>
+    
       <CustomAccordion onChange={()=>setfirst(!first)} expanded={first}>
         <AccordionSummary
         
