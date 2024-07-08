@@ -4,6 +4,9 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import { sportList } from './services/sport/sportList'
 import { matchList } from './services/sport/matchList'
 import { login } from './services/auth/Login'
+import { eventDetails } from './services/sport/eventDetail'
+import { eventSession } from './services/fancy/Fancy'
+import { accountStatement } from './services/accountStatement/accountStatement'
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +14,9 @@ export const store = configureStore({
     [sportList.reducerPath]: sportList.reducer,
     [matchList.reducerPath]: matchList.reducer,
     [login.reducerPath]: login.reducer,
+    [eventDetails.reducerPath]: eventDetails.reducer,
+    [eventSession.reducerPath]: eventSession.reducer,
+    [accountStatement.reducerPath]: accountStatement.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -19,6 +25,9 @@ export const store = configureStore({
   .concat(sportList.middleware)
   .concat(matchList.middleware)
   .concat(login.middleware)
+  .concat(eventDetails.middleware)
+  .concat(eventSession.middleware)
+  .concat(accountStatement.middleware)
   ,
 })
 

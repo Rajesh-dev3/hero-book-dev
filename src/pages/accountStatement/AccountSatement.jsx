@@ -1,10 +1,16 @@
 
 ///styles
+import { useEffect } from "react"
+import { useAccountStatementMutation } from "../../services/accountStatement/accountStatement"
 import Filter from "./Filter"
 import Table from "./Table"
 import "./styles.scss"
 
 const AccountSatement = () => {
+const [trigger,{data}]=useAccountStatementMutation()
+useEffect(() => {
+
+}, [])
 
   return (
     <div className='satement-container'>

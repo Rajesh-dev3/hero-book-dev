@@ -1,26 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {useGetSportListMutation} from "../../services/sport/sportList"
 import "./styles.scss";
 
-const HomeTab = () => {
-  const [activeTab, setActiveTab] = useState(0);
+const HomeTab = ({setActiveTab,activeTab}) => {
+
 
   const handleTabClick = (tabValue) => {
     setActiveTab(tabValue);
   };
+
+const matchNameId =[{
+  name:"Cricket"
+}]
+const [trigger,{data}]=useGetSportListMutation()
+
+useEffect(() => {
+  trigger({limit:50,pageno:1})
+}, [])
+
   return (
     <div className="home_tab w-full ">
       <ul className="tabs w-full overflow-x-scroll flex ">
         {
-           Array.from(Array(18)).map((item,index)=>{
+           data?.data?.map((item,index)=>{
             return(
 
         <li
         key={item}
-          onClick={() => handleTabClick(index)}
-          className={`${activeTab == index ? "active" : ""} flex`}
+          onClick={() => handleTabClick(item?.sport_id)}
+          className={`${activeTab == item?.sport_id ? "active" : ""} flex`}
         >
 
-          Game 
+          {item?.name} 
         </li>
             )
           })

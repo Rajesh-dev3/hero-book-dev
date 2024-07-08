@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Blink from "../../components/blink/Blink.jsx";
 import HomeTab from "../../components/hometab/HomeTab.jsx";
 
@@ -8,11 +8,11 @@ import OddsRowHeading from "../../components/odds/OddsRowHeading.jsx";
 import { useEventGameMutation } from "../../services/sport/matchList.js";
 const Home = () => {
   const [trigger,{data}]= useEventGameMutation()
-
+  const [activeTab, setActiveTab] = useState(4);
   useEffect(() => {
-    trigger({limit: 50, pageno: 1, sport_id: 4, series_id: 0, type: "home"})
-  }, [])
-  
+    trigger({limit: 50, pageno: 1, sport_id: activeTab, series_id: 0, type: "home"})
+  }, [activeTab])
+  const gameList = data?.data?.UpCommingMatches?.length? data?.data?.UpCommingMatches:data?.data?.InplayMatches
   return (
     <>
     <div className="w-full grid grid-cols-4 gap-1">
@@ -21,17 +21,15 @@ const Home = () => {
    <Blink/>
    <Blink/>
     </div>
-    <HomeTab/>
+    <HomeTab activeTab={activeTab} setActiveTab={setActiveTab}/>
   <OddsRowHeading/>
-  {data?.data?.UpCommingMatches.map((item)=>{
+  {gameList?.map((item)=>{
     return(
 
       <OddsRow item={item} key={item?.name}/>
     )
   })}
-    {/* <OddsRow/>
-    <OddsRow/>
-    <OddsRow/> */}
+   
     </>
   );
 };

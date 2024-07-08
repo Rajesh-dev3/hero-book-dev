@@ -11,6 +11,7 @@ const Filter = () => {
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+  
   return (
     <div className="statement-form">
       <div className="date-filter-row flex gap-4">

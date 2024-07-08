@@ -1,5 +1,5 @@
 const accountStatement = "account-statement"
-const gameDetail = "/game-detail"
+const gameDetail = "/game-detail/:sportId/:matchId"
 const casino = "/casino"
 const home = "/"
 const currentBet = "/current-bet"

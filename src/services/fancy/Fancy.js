@@ -1,15 +1,16 @@
+// 
 // Need to use the React-specific entry point to import createApi
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi } from '@reduxjs/toolkit/query/react'
 import { dynamicBaseQuery } from '../badRequestHandler/BadRequestHandler'
 
 // Define a service using a base URL and expected endpoints
-export const sportList = createApi({
-  reducerPath: 'sportList',
+export const eventSession = createApi({
+  reducerPath: 'EventSession',
   baseQuery: dynamicBaseQuery,
   endpoints: (builder) => ({
-    getSportList: builder.mutation({
+    getEventSession: builder.mutation({
       query: (body) => ({
-        url: "getSportOuterList",
+        url: "event-session",
         method: "POST",
         body
       }),
@@ -19,4 +20,4 @@ export const sportList = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetSportListMutation } = sportList
+export const { useGetEventSessionMutation } = eventSession
