@@ -1,4 +1,4 @@
-// Modal.js
+
 
 import './styles.scss'; // Import your CSS file for styling
 

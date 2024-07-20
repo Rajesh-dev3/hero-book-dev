@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useBetPlaceMutation } from "../../services/betPlace/BetPlace"
+import { toast } from 'react-toastify';
 ///styles
 import "./styles.scss"
-import { toast } from 'react-toastify';
 export function formatCompactNumber(number) {
   if (number < 1000) {
     return number;
