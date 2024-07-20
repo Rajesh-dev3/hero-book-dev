@@ -1,0 +1,31 @@
+.livecasino-filter-container{
+    width: 100%;
+    background-color: #2d689b;
+    ul{
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+        gap: 5px;
+        padding: 3px 5px;
+        &::-webkit-scrollbar {
+            display: none;
+          }
+        li{
+            list-style: none;
+            white-space: nowrap;
+            border-radius: 12px;
+            color: #fff;
+            display: block;
+            font-weight: 700;
+            padding: .375rem 1.25rem;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-size: 10px;
+        }
+        .active{
+            background-color: #08c;
+        }
+    }
+}

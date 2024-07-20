@@ -14,7 +14,7 @@ export const accountStatement = createApi({
   endpoints: (builder) => ({
     accountStatement: builder.mutation({
       query: (body) => ({
-    url:"statement",
+    url:"v5/statement",
     method:"POST",
     body
     }),

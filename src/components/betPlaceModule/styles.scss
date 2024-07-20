@@ -35,6 +35,10 @@
         justify-content: space-between;
         li{
             width: 25%;
+            &:nth-child(2){
+
+              text-align: right;
+            }
             &:nth-child(4){
 
               text-align: right;
@@ -63,6 +67,7 @@
                         display: flex;
                         flex-wrap: wrap;
                         align-items: flex-start;
+                        justify-content: center;
                         input{
                             width: 70%;
                             outline: none;

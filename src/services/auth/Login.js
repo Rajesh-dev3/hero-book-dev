@@ -2,7 +2,7 @@
 
 // Need to use the React-specific entry point to import createApi
 import { createApi } from '@reduxjs/toolkit/query/react'
-import {dynamicBaseQuery} from "../badRequestHandler/BadRequestHandler"
+import { dynamicBaseQuery } from "../badRequestHandler/BadRequestHandler"
 
 // Define a service using a base URL and expected endpoints
 export const login = createApi({
@@ -11,10 +11,10 @@ export const login = createApi({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (body) => ({
-    url:"login",
-    method:"POST",
-    body
-    }),
+        url: "v5/login",
+        method: "POST",
+        body
+      }),
     }),
   }),
 })

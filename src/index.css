@@ -19,7 +19,12 @@ body{
 .lay2 {
   background-color: #faa9ba7f !important;
 }
+.shadow-container{
 
+  box-shadow: 0 0 5px #a4a4a4;
+  border-radius: 5px
+  
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

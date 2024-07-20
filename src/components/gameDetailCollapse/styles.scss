@@ -1,3 +1,4 @@
+@import "../../styles/variables/mixins";
 .game-market{
     margin-top: 8px;
     .market-title{
@@ -23,6 +24,13 @@
         .odds-row-left-col{
             width: 55%;
             font-size: 13px;
+            @include media(phone){
+                width: 30%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+        
+            }
             p{
                 margin: 0%;
                 padding: 0%;
@@ -33,6 +41,38 @@
         }
         .odds-row-right-col{
             width: 45%;
+            @include media(phone){
+                width: 70%;
+            }
+        }
+    }
+    .fancy-row-container{
+        width: 100%;
+        background-color: #f2f2f2;
+        border-bottom: 1px solid #ccc;
+        .odds-row-left-col{
+            width: 50%;
+            font-size: 13px;
+            p{
+                margin: 0%;
+                padding: 0%;
+                font-size: 12px;
+                font-weight: bold;
+                color: #097c93;
+            }
+        }
+        .odds-row-right-col{
+            width: 50%;
+            .fancy-min-max{
+                display: flex;
+                flex-direction: column;
+
+font-size: 10px;
+font-weight: bold;
+justify-content: center;
+margin-left: 8%;   
+color: #097CAC;   
+      }
         }
     }
 }
@@ -64,4 +104,13 @@
 .suspend{
     background-color: #373636d6;
     text-transform: uppercase;
+}
+
+.market-4{
+    .odds-row-container{
+        @include media(phone){
+
+            flex-direction: row;
+        }
+    }
 }

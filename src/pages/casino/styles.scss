@@ -1,4 +1,37 @@
+@import "../../styles/variables/mixins";
 .casino-container{
+    display: grid;
+    // flex-wrap: wrap;
+    grid-template-columns: repeat(9,1fr);
+    gap: 8px;
+    @include media(phone){
+        grid-template-columns: repeat(4,1fr);
+        margin-top: 8px;
+    }
+}
+.casino-category{
     display: flex;
-    flex-wrap: wrap;
+    gap: 10px ;
+    background: rgb(44, 62, 80);
+    li{
+        padding: .7rem 0.5rem;
+        font-size: 14px;
+        color: white;
+        border-radius: 0;
+        border-right: 1px solid #384b5e;
+        cursor: pointer;
+        font-size: 1rem;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        @include media(phone){
+            font-weight: bold;
+            font-size: 10px;
+            
+        }
+    }
+    .active{
+        background: rgba(0, 136, 204, 0.9);
+
+    }
 }

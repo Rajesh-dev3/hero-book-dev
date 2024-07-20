@@ -9,21 +9,21 @@ export const matchList = createApi({
   endpoints: (builder) => ({
     getmatchList: builder.mutation({
       query: (body) => ({
-    url:"event-game-list",
+    url:"v5/event-game-list",
     method:"POST",
     body
     }),
     }),
     gameEventlist: builder.mutation({
       query: (body) => ({
-    url:"game-event-list",
+    url:"v5/game-event-list",
     method:"POST",
     body
     }),
     }),
     eventGame: builder.mutation({
       query: (body) => ({
-    url:"event-game",
+    url:"v5/event-game",
     method:"POST",
     body
     }),

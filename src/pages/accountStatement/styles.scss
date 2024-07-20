@@ -1,26 +1,5 @@
 
-.satement-container{
-
-box-shadow: 0 0 5px #a4a4a4;
-
-.satement-header{
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
-    background-color:#2C3E50;
-    color: #FFFFFF;
-    padding: .5rem 1rem;
-    margin-bottom: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-    .header-title{
-
-        font-size: 19px;
-    font-weight: 400;
-    margin-bottom: 0;
-    }
-}
-.statement-body{
-  
-}
-}
+@import "../../styles/variables/mixins";
 
 .select{
     width: 25%;
@@ -32,12 +11,24 @@ box-shadow: 0 0 5px #a4a4a4;
 .statement-form{
 
     .date-filter-row{
+        @include media(phone){
+            flex-direction: column;
+        }
         .date-picker{
             border: 1px solid #dbdbdb;
             height: 38px;
             width: 16.66666667%;
             border-radius: 2px;
             overflow: hidden;
+            @include media(phone){
+                width: 100%;
+            }
+            .react-datepicker-wrapper{
+                @include media(phone){
+                    width: 100%;
+                }
+
+            }
             .react-datepicker__calendar-icon{
                 font-size: 17px;
             }
@@ -56,17 +47,46 @@ box-shadow: 0 0 5px #a4a4a4;
             padding: 5px 2px 5px 2px;
             width: 12%;
             border: 1px solid #dbdbdb;
-         }
+            
+              
+            @include media(phone){
+                width: 50%;
+                padding:5px;
+              border: 0;
+              outline: 1px solid ;
+              border-right: 20px solid transparent;
+            }
+        }
+        }
+        .entries-right-col{
+            @include media(phone){
+                display: none;
+            }
+        }
+    }
+
+    .mt2{
+        .table-bordered{
+            @include media(phone){
+                width: 100%;
+                tr,th{
+                    padding: none !important;
+                }
+            }
         }
     }
 }
+
 .form-btn{
-    width: 14.66666667%;
+    width: 7.66666667%;
+    @include media(phone){
+        width: 40%;
+    }
     .btn{
         width: 100%;
-        background-color: #0088CC;
+        background-color: black;
         color:#FFFFFF;
-        border-color: #0088CC;
+        border-color: black;
         height: 38px;
         padding: .375rem .75rem;
         font-size: 1rem;
@@ -78,4 +98,22 @@ box-shadow: 0 0 5px #a4a4a4;
     position: absolute;
     right: 0%;
     top: 0%;
+}
+
+.statement-body{
+    .account-table{
+        overflow-x: scroll;
+        table{
+            tr{
+                th{
+                    white-space: nowrap;
+                    background-color: #384b5e;
+                    color: white;
+                }
+                td{
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
 }

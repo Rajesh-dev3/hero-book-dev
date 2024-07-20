@@ -10,7 +10,7 @@ export const eventSession = createApi({
   endpoints: (builder) => ({
     getEventSession: builder.mutation({
       query: (body) => ({
-        url: "event-session",
+        url: "v5/event-session",
         method: "POST",
         body
       }),

@@ -1,17 +1,9 @@
-import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-const Filter = () => {
-  const [startDate, setStartDate] = useState(new Date());
+const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit }) => {
 
-  const [age, setAge] = React.useState("");
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-  
+
   return (
     <div className="statement-form">
       <div className="date-filter-row flex gap-4">
@@ -26,14 +18,14 @@ const Filter = () => {
         </div>
         <div className="date-picker">
           <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            selected={endDate}
+            onChange={(date) => setEnddate(date)}
             showIcon
             calendarIconClassname="calnder"
             icon={<CalendarTodayIcon />}
           />
         </div>
-        <div className="select">
+        {/* <div className="select">
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -47,19 +39,19 @@ const Filter = () => {
             <MenuItem value={20}>Twenty</MenuItem>
             <MenuItem value={30}>Thirty</MenuItem>
           </Select>
-        </div>
+        </div> */}
         <div className="form-btn">
-          <button className="btn">Submit</button>
+          <button className="btn" onClick={fun}>Submit</button>
         </div>
       </div>
       <div className="entries-row w-full flex justify-between mt-3">
         <div className="entries-left-col w-[50%] flex items-center gap-2">
           <span>Show</span>
-          <select>
-            <option value="0">10</option>
-            <option value="1">20</option>
-            <option value="2">30</option>
-            <option value="3">40</option>
+          <select onChange={(e) => setLimit(e.target.value)}>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
           </select>
           <span>Entries</span>
         </div>

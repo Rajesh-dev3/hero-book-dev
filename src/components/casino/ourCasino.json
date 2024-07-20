@@ -1,0 +1,732 @@
+{
+    "ALL_CASINO":[
+    {
+        "id":"200237",
+        "name":"DC",
+        "url":"https://herobook.in/images/Ball_By_Ball.jpg"
+     
+    },
+    {
+        "id":"100046",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Instant_TeenPatti_3.0.jpg"
+     
+    },
+    {
+        "id":"100068",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/SICBO.jpg"
+     
+    },
+    {
+        "id":"100047",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Teen_Patti_2.0.jpg"
+     
+    },
+    {
+        "id":"100029",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Roulette_BL.jpg"
+     
+    },
+    {
+        "id":"100048",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Teenpatti_1_Day.jpg"
+     
+    },
+    {
+        "id":"200109",
+        "name":"DC",
+        "url":"https://herobook.in/images/Teenpatti%2020-20%202.jpg"
+     
+    },
+    {
+        "id":"100047",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Teenpatti%20Test.jpg"
+     
+    },
+    {
+        "id":"200109",
+        "name":"DC",
+        "url":"https://herobook.in/images/Teenpatti%20Open%202.jpg"
+     
+    },
+    {
+        "id":"200229",
+        "name":"DC",
+        "url":"https://herobook.in/images/Poker_1_day.jpg"
+     
+    },
+    {
+        "id":"100045",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Poker_20_20.jpg"
+     
+    },
+    {
+        "id":"200220",
+        "name":"DC",
+        "url":"https://herobook.in/images/6_player_Poker.jpg"
+     
+    },
+    {
+        "id":"100049",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/The_TRAP.jpg"
+     
+    },
+    {
+        "id":"100055",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/baccarat_2.jpg"
+     
+    },
+    {
+        "id":"200139",
+        "name":"DC",
+        "url":"https://herobook.in/images/Dragon%20Tiger%2020-20.jpg"
+     
+    },
+    {
+        "id":"100061",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Dragon_Tiger_1_Day.jpg"
+     
+    },
+    {
+        "id":"200206",
+        "name":"DC",
+        "url":"https://herobook.in/images/Casino_20_20_DTL.jpg"
+     
+    },
+    {
+        "id":"200239",
+        "name":"DC",
+        "url":"https://herobook.in/images/20_20_Dragon_Tiger_2.jpg"
+     
+    },
+    {
+        "id":"100067",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/32_Cards_A.jpg"
+     
+    },
+    {
+        "id":"100067",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/32_Cards_B.jpg"
+     
+    },
+    {
+        "id":"100063",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Amar_Akbar_3.jpg"
+     
+    },
+    {
+        "id":"100075",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Andar_Bahar_2.jpg"
+     
+    },
+    {
+        "id":"100066",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/7_A_Lucky.jpg"
+     
+    },
+    {
+        "id":"201158",
+        "name":"DC",
+        "url":"https://herobook.in/images/7_B_Lucky.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/3_Cards_Judgement.jpg"
+     
+    },
+    {
+        "id":"200205",
+        "name":"DC",
+        "url":"https://herobook.in/images/casinoWar.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Worli_Matka.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Instant%20Worli.jpg"
+     
+    },
+    {
+        "id":"900007",
+        "name":"RG",
+        "url":"https://herobook.in/images/Amar_Akbar_2.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Bollywood_Casino.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Lottery_2.jpg"
+     
+    },
+    {
+        "id":"100062",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/5_Cricket_Match.jpg"
+     
+    },
+    {
+        "id":"100050",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/20_20_Cricket_Match.jpg"
+     
+    },
+    {
+        "id":"200207",
+        "name":"DC",
+        "url":"https://herobook.in/images/Casino%20Meter.jpg"
+     
+    },
+    {
+        "id":"100047",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Teenpatti_2.0.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/QUEEN.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Race_20.jpg"
+     
+    },
+    {
+        "id":"100066",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Casino%20Lucky%207-C.jpg"
+     
+    },
+    {
+        "id":"100066",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/super_Over_RSA_ENG.jpg"
+     
+    },
+    {
+        "id":"100049",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/TRAP.jpg"
+     
+    },
+    {
+        "id":"100046",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/2_Cards_Teenpatti.jpg"
+     
+    },
+    {
+        "id":"100069",
+        "name":"EZUGI",
+        "url":"https://nd.sprintstaticdata.com/casino-icons/lc/teensin.jpg"
+     
+    },
+    {
+        "id":"100048",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Muflis_Teenpatti.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Race_to_17.jpg"
+     
+    },
+    {
+        "id":"200109",
+        "name":"DC",
+        "url":"https://herobook.in/images/20_20_teenpatti_B.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/TRIO.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Note_Number.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Kaun_Banega_Crorepati.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/1_card_20_20.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/One_Card_1_Day.jpg"
+     
+    },
+    {
+        "id":"100028",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Roulette.jpg"
+     
+    },
+    {
+        "id":"100064",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Andar_Bahar_50_Cards.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Amar_Akbar_2_0.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Race_to_2nd.jpg"
+     
+    },
+    {
+        "id":"200215",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Teenpatti%20Open.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/DUS_KA_DUM.jpg"
+     
+    },
+    {
+        "id":"800001",
+        "name":"DC",
+        "url":"https://herobook.in/images/1_Card_Meter.jpg"
+     
+    }
+],
+"ROULETTE":[
+    {
+        "id":"100029",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Roulette_BL.jpg"
+     
+},
+    {
+        "id":"100028",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Roulette.jpg"
+     
+},
+    {
+        "id":"100028",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Roulette.jpg"
+     
+}
+],
+"TEENPATTI":[ 
+    {
+    "id":"100046",
+    "name":"EZUGI",
+    "url":"https://herobook.in/images/Instant_TeenPatti_3.0.jpg"
+ 
+},
+    {
+    "id":"100047",
+    "name":"EZUGI",
+    "url":"https://herobook.in/images/Teen_Patti_2.0.jpg"
+ 
+},
+    {
+    "id":"100048",
+    "name":"EZUGI",
+    "url":"https://herobook.in/images/Teenpatti_1_Day.jpg"
+ 
+},
+    {
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/Teenpatti%2020-20%202.jpg"
+ 
+},
+    {
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/Teenpatti%20Test.jpg"
+ 
+},
+    {
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/Teenpatti%20Open%202.jpg"
+ 
+},
+    {
+    "id":"100047",
+    "name":"EZUGI",
+    "url":"https://herobook.in/images/Teenpatti_2.0.jpg"
+ 
+},
+    {
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/2_Cards_Teenpatti.jpg"
+ 
+},
+    {
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/Muflis_Teenpatti.jpg"
+ 
+},
+    {
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/20_20_teenpatti_B.jpg"
+ 
+},
+    {
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/Teenpatti%20Open.jpg"
+ 
+}
+],
+"POKER":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Poker_1_day.jpg"
+     
+},
+    {
+        "id":"100045",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Poker_20_20.jpg"
+     
+},
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/6_player_Poker.jpg"
+     
+}
+],
+"BACCARAT":[
+    {
+        "id":"100069",
+        "name":"EZUGI",
+        "url":"https://nd.sprintstaticdata.com/casino-icons/lc/teensin.jpg"
+     
+    },
+    {
+        "id":"100049",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/The_TRAP.jpg"
+     
+    },
+    {
+        "id":"100055",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/baccarat_2.jpg"
+     
+    }
+    
+],
+"DRAGON_TIGER":[
+
+{
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/Dragon%20Tiger%2020-20.jpg"
+ 
+},
+{
+    "id":"100061",
+    "name":"EZUGI",
+    "url":"https://herobook.in/images/Dragon_Tiger_1_Day.jpg"
+ 
+},
+{
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/Casino_20_20_DTL.jpg"
+ 
+},
+{
+    "id":"",
+    "name":"",
+    "url":"https://herobook.in/images/20_20_Dragon_Tiger_2.jpg"
+ 
+}
+
+],
+"32_CARD":[
+    {
+        "id":"100067",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/32_Cards_A.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/32_Cards_B.jpg"
+     
+    }
+],
+"ANDAR_BAHAR":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Andar_Bahar_50_Cards.jpg"
+     
+    },
+    {
+        "id":"100063",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Amar_Akbar_3.jpg"
+     
+    },
+    {
+        "id":"100075",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/Andar_Bahar_2.jpg"
+     
+    }
+],
+"Lucky_7":[
+    {
+        "id":"100066",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/7_A_Lucky.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/7_B_Lucky.jpg"
+     
+    },
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Casino%20Lucky%207-C.jpg"
+     
+    }
+],
+"3_CARD_JUDGEMENT":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/3_Cards_Judgement.jpg"
+     
+    } 
+],
+"CASINO_WAR":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/casinoWar.jpg"
+     
+    } 
+],
+"WORLI":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Worli_Matka.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Instant%20Worli.jpg"
+     
+    } 
+],
+"SPORTS":[
+    {
+        "id":"100062",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/5_Cricket_Match.jpg"
+     
+    } ,
+    {
+        "id":"800001",
+        "name":"DC",
+        "url":"https://herobook.in/images/1_Card_Meter.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/20_20_Cricket_Match.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Casino%20Meter.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/super_Over_RSA_ENG.jpg"
+     
+    } 
+],
+"BOLLYWOOD":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Amar_Akbar_2_0.jpg"
+     
+    } ,
+    {
+        "id":"900007",
+        "name":"RG",
+        "url":"https://herobook.in/images/Amar_Akbar_Anthony_slot.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Bollywood_Casino.jpg"
+     
+    } 
+],
+"LOTTERY":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Lottery_2.jpg"
+     
+    } 
+],
+"QUEEN":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/QUEEN.jpg"
+     
+    } 
+],
+"RACE":[
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Race_to_2nd.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Race_20.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Race_to_17.jpg"
+     
+    } 
+],
+"OTHERS":[
+    {
+        "id":"200237",
+        "name":"DC",
+        "url":"https://herobook.in/images/Ball_By_Ball.jpg"
+     
+    } ,
+    {
+        "id":"100068",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/SICBO.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/DUS_KA_DUM.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/One_Card_1_Day.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/1_card_20_20.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Kaun_Banega_Crorepati.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/Note_Number.jpg"
+     
+    } ,
+    {
+        "id":"",
+        "name":"",
+        "url":"https://herobook.in/images/TRIO.jpg"
+     
+    } ,
+    {
+        "id":"100049",
+        "name":"EZUGI",
+        "url":"https://herobook.in/images/The_TRAP.jpg"
+     
+    } 
+
+]
+}

@@ -1,4 +1,3 @@
-import React from "react";
 ////styles
 import "./styles.scss";
 import { Link } from "react-router-dom";
@@ -57,16 +56,16 @@ const Footer = () => {
           <div>
             <img src="https://wver.sprintstaticdata.com/v3/static/front/img/ssl.png" />
           </div>
-            <Link to="/">
+          <Link to="/">
             <img src={plus18} />
           </Link>
           <div className="ml-2">
             <b>100% SAFE</b>
-            <div>Protected connection and encrypted data.</div>
+            <div className="bottom-p">Protected connection and encrypted data.</div>
           </div>
         </div>
         <div className="d-inline-block">
-         
+
           <Link to="/" target="_blank">
             <img src="https://g1ver.sprintstaticdata.com/v22/static/front/img/gamecare.png" />
           </Link>

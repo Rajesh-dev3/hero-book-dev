@@ -1,0 +1,14 @@
+.satement-header{
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    background-color:#2C3E50;
+    color: #FFFFFF;
+    padding: .5rem 1rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    .header-title{
+
+        font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 0;
+    }
+}

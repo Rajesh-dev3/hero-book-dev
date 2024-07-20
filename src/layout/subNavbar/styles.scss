@@ -1,13 +1,28 @@
+@import "../../styles/variables/mixins";
 .subnavbar-container{
     width: calc(100% - 0px);
     background-color: #384b5e;
     padding: .3125rem .9375rem;
-    
+    @include media(phone){
+        background-color: black;
+overflow-x: scroll;
+padding:0 ;
+&::-webkit-scrollbar {
+    display: none;
+  }
+    }
     ul{
         display: flex;
         align-items: center;
         margin: 0%;
         padding: 0%;
+        @include media(phone){
+            height: 38px;
+        }
+        
+        a{
+            height: 100%;
+        }
         li{
             color: #fff;
             display: flex;
@@ -18,7 +33,16 @@
             cursor: pointer;
             position: relative;
              transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-&::before{
+             @include media(phone){
+                padding: 0rem .93rem; 
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;           
+                border-right: 1px solid white;
+                white-space: nowrap;
+                    }
+             &::before{
     content: "";
     position: absolute;
     left: 50%;
@@ -31,6 +55,9 @@
     transition-duration: 0.3s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    @include media(phone){
+        top: 0%;
+            }
 }
            &:hover{
             &::before{

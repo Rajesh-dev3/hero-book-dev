@@ -1,8 +1,7 @@
-import React from 'react'
 
-const OddsButton = ({lay,price}) => {
+const OddsButton = ({ lay, price }) => {
   return (
-    <div className={`${lay?"lay":"back"} odd-box `}><span className="bet-odd"><b>{price}</b></span></div>
+    <div className={`${lay ? "lay" : "back"} odd-box `}><span className="bet-odd"><b>{price}</b></span></div>
   )
 }
 

@@ -1,13 +1,12 @@
 import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 import { login } from "../../routes/PagesUrl";
-// import { message } from "antd";
-// import { toast } from "react-toastify";
-// import { loginRoute } from "../../../routes/PagesRoutes";
+import { toast } from "react-toastify";
+
 
 export const dynamicBaseQuery = async (args, WebApi, extraOptions) => {
   const rawBaseQuery = fetchBaseQuery({
     // baseUrl: "https://admin-api.giedu.in",
-    baseUrl: "https://bigbetexchange.com/api/v5/",
+    baseUrl: "https://bigbetexchange.com/api/",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
@@ -18,9 +17,9 @@ export const dynamicBaseQuery = async (args, WebApi, extraOptions) => {
     const status = result?.error?.status;
     if (status === 401) {
       localStorage.clear();
-      // window.location.replace(login);
+      window.location.replace(login);
     } else {
-      // toast.error(responseMessage);
+      toast.error(responseMessage);
     }
   }
   return result;

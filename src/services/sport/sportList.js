@@ -9,7 +9,7 @@ export const sportList = createApi({
   endpoints: (builder) => ({
     getSportList: builder.mutation({
       query: (body) => ({
-        url: "getSportOuterList",
+        url: "v5/getSportOuterList",
         method: "POST",
         body
       }),

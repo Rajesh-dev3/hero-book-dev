@@ -1,14 +1,21 @@
+@import "../../styles/variables/mixins";
 .footer {
     background-color: #0088CC;
     color: white;
     padding: 10px;
     position: relative;
     margin-top: 10px;
+    @include media(phone){
+        background-color: black;
+    }
     .footer-top {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        @include media(phone){
+            flex-direction: column;
+        }
         .footer-links {
             flex: 1;
         }
@@ -36,6 +43,9 @@
             justify-content: center;
             align-items: center;
             margin-right: 5px;
+            @include media(phone){
+                background-color: black;
+            }
             img {
                 height: 30px;
             }
@@ -53,12 +63,32 @@
     align-items: center;
     padding: 10px;
     background-color: #fff;
+    @include media(phone){
+        width: 90%;
+        margin: auto;
+    }
+    .bottom-p{
+        @include media(phone){
+          font-size: 11px;
+        }
+    }
     .secure-logo {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         line-height: normal;
+        @include media(phone){
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        a{
+            img{
+                @include media(phone){
+                    display: none;
+                }
+            }
+        }
         img {
             max-height: 50px;
             max-width: 100px;
@@ -67,6 +97,10 @@
     }
     .d-inline-block {
         display: flex;
+        @include media(phone){
+            width: 100%;
+            justify-content: center;
+        }
         img {
             max-height: 30px;
             max-width: 100px;

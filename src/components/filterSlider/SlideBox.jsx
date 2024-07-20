@@ -1,19 +1,21 @@
-import React, { Fragment, useState } from "react";
+import  { Fragment } from "react";
 import * as styled from "./FilterSlider.style";
-import { Array } from "./FilterCategorydata";
-const SlideBox = () => {
-  const [activeValue, setActiveValue] = useState(0);
+const SlideBox = ({data,activeValue,setActiveValue}) => {
 
   return (
     <Fragment>
-      {Array.map((res, index) => {
+      {data?.map((res, index) => {
         return (
           <styled.BoxCard
-            isSelected={activeValue === index}
+           key={res.casinoType}
+            isSelected={activeValue === res?.link}
             // className={activeValue === index ? "active" : "boxCard"}
-            onClick={() => setActiveValue(index)}
+            onClick={() =>{
+              setActiveValue(res?.link)
+            } 
+          }
           >
-            <p>{res}</p>
+            <p>{res?.casinoType}</p>
           </styled.BoxCard>
         );
       })}

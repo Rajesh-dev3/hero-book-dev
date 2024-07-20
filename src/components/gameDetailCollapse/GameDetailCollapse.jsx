@@ -2,9 +2,9 @@
 ////style
 import "./styles.scss"
 import DetailOdds from "./DetailOdds";
-const GameDetailCollapse = ({fun,odddata,collapseName}) => {
+const GameDetailCollapse = ({fun,odddata,collapseName,betPlaceHandler}) => {
   const oddsColor = ["back","back1","back2","lay","lay1","lay2"]
- 
+
   return (
     <div className="game-market market-4 ">
       <div className="market-title">
@@ -29,27 +29,27 @@ const GameDetailCollapse = ({fun,odddata,collapseName}) => {
         </div>
       </div>
       </div>
-      {odddata?.runner_json?.map((item,index)=>{
+      {odddata?.runner_json?.map((list,index)=>{
         return(
 
-          <div className="odds-row-container flex items-center" key={item}>
-          <div className="odds-row-left-col px-[5px]">{item?.selectionName}</div>
+          <div className="odds-row-container flex items-center" key={list?.selectionName}>
+          <div className="odds-row-left-col px-[5px]">{list?.selectionName}</div>
           <div className="odds-row-right-col grid grid-cols-6 relative">
-            {item?.ex?.availableToBack.map((item,index)=>
+            {list?.ex?.availableToBack.map((item,index)=>
             {
               return(
   
-                <DetailOdds index={index} item={oddsColor[index]} key={item} value={item?.price} price={item?.size} height={44} border={true} fun={fun}/>
+                <DetailOdds selectionId={list?.selectionId} marketId={odddata?.market_id} matchName={list?.selectionName} lay={1} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun}/>
               )
             }).reverse()}
-             {item?.ex?.availableToLay.map((item,index)=>
+             {list?.ex?.availableToLay.map((item,index)=>
             {
               return(
   
-                <DetailOdds index={index} item={oddsColor[index+3]} key={item}  value={item?.price} price={item?.size} height={44} border={true} fun={fun}/>
+                <DetailOdds selectionId={list?.selectionId} matchName= {list?.selectionName}lay={0} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index+3]} key={item?.selectionName}  value={item?.price} price={item?.size} height={44} border={true} fun={fun}/>
               )
             })}
-            {item?.GameStatus === "SUSPENDED" && 
+            {list?.GameStatus === "SUSPENDED" && 
            <div className="suspend absolute w-full h-full text-[red] font-bold flex items-center justify-center">
             Suspended
            </div>

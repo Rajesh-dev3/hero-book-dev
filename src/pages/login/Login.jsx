@@ -1,35 +1,49 @@
-import React, { useEffect, useState } from 'react'
-////styles
-import "./styles.scss"
+import { useEffect, useState } from 'react'
 import { faceboo, instagram, logo, telegram, whatsApp } from '../../assets'
 import PersonIcon from '@mui/icons-material/Person';
 import KeyIcon from '@mui/icons-material/Key';
 import LoginIcon from '@mui/icons-material/Login';
 import { useLoginMutation } from '../../services/auth/Login';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+////styles
+import "./styles.scss"
 const Login = () => {
-const [formData, setFormData] = useState({user_name:"demo007",password:"123456"})
-  const [trigger,{data}]=useLoginMutation()
-
-  const formHandler = (e)=>{
-    const {name,value} = e.target
-    setFormData((prev)=>{
-      return{
-        ...prev,[name]:value
+  const [formData, setFormData] = useState({ user_name: "", password: "" })
+  const [trigger, { data }] = useLoginMutation()
+  const nav = useNavigate()
+  const formHandler = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => {
+      return {
+        ...prev, [name]: value
       }
     })
   }
-  const submitForm = (e)=>{
+  const submitForm = (key, e) => {
     e.preventDefault()
-    trigger({user_name:"demo007",password:"123456"})
+    const requestResponse = key == 0 ? formData : { user_name: "demo007", password: "123456" }
+    trigger(requestResponse)
   }
-
+  const token = data?.data?.token
   useEffect(() => {
-   if(data){
-    localStorage.setItem("token",data?.data?.token)
-    console.log(data)
-   }
+    if (data?.data?.token) {
+      localStorage.setItem("token", token)
+      localStorage.setItem("user_name", data?.data?.user_name)
+      window.location.replace("/")
+      toast.success(data?.message)
+    } else {
+      toast.error(data?.message)
+    }
   }, [data])
-  
+  useEffect(() => {
+    const localStorageTOken = localStorage.getItem("token")
+    if (localStorageTOken) {
+      nav("/")
+
+    }
+  }, [])
+
   return (
     <div className='login-container'>
       <div className="login-center-col">
@@ -40,28 +54,28 @@ const [formData, setFormData] = useState({user_name:"demo007",password:"123456"}
           <div className="login-heading">Login </div>
           <div className="input-row">
             <div className="input">
-<input type="text" placeholder='Username' name= "user_name" onChange={formHandler}/>
+              <input type="text" placeholder='Username' name="user_name" onChange={formHandler} />
             </div>
             <div className="input-icon">
-              <PersonIcon/>
+              <PersonIcon />
             </div>
           </div>
           <div className="input-row">
             <div className="input">
-<input type="password" placeholder='Username' name= "password"/>
+              <input type="password" placeholder='Username' name="password" onChange={formHandler} />
             </div>
             <div className="input-icon">
-              <KeyIcon/>
+              <KeyIcon />
             </div>
           </div>
           <div className="login-btn-container">
-            <button>Login <LoginIcon/></button>
-            <button onClick={submitForm}>Login with demo ID <LoginIcon/></button>
+            <button onClick={(e) => submitForm(0, e)}>Login <LoginIcon /></button>
+            <button onClick={(e) => submitForm(1, e)}>Login with demo ID <LoginIcon /></button>
           </div>
           <div className="login-captcha">
-          This site is protected by reCAPTCHA and the Google
-          <span> Privacy Policy</span> and
-          <span> Terms of Service </span>Apply
+            This site is protected by reCAPTCHA and the Google
+            <span> Privacy Policy</span> and
+            <span> Terms of Service </span>Apply
           </div>
         </form>
       </div>

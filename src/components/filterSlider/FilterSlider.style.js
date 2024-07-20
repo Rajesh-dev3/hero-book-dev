@@ -5,7 +5,7 @@ export const SliderContainer = styled.div`
   display: flex;
 
   padding: 0px;
-  background:#0088cca5;
+  background:#2d689b;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -65,7 +65,8 @@ export const SliderContainer = styled.div`
     /* width: 90%; */
     overflow-x: scroll;
     display: flex;
-    gap: 10px;
+    // gap: 10px;
+    margin-block:2px;
     flex-grow: 1;
     ::-webkit-scrollbar {
       display: none;
@@ -79,17 +80,18 @@ export const BoxCard = styled.div`
   height: 32px;
   width: auto;
   display: flex;
+
   align-items: center;
   justify-content: center;
-  padding: 12px;
-  border-radius: 0px;
+     padding: .375rem 1.25rem;
+ border-radius: 12px;
   white-space: nowrap;
   transition: all 0.2s linear;
 
 
   cursor: pointer;
   p {
-    font-size: 1rem;
+    font-size: 12px;
     color: ${(props) => (props.isSelected ? `white` : `white`)};
   }
 

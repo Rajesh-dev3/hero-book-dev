@@ -7,6 +7,13 @@ import { login } from './services/auth/Login'
 import { eventDetails } from './services/sport/eventDetail'
 import { eventSession } from './services/fancy/Fancy'
 import { accountStatement } from './services/accountStatement/accountStatement'
+import { casino } from './services/casino/casino'
+import { myBet } from './services/myBet/myBet'
+import { changePassword } from './services/changePassword/ChangePassword'
+import { walletBalance } from './services/walletBalance/WalletBalance'
+import { betPlace } from './services/betPlace/BetPlace'
+import { stakeUpdate } from './services/stakeUpdate/stakeUpdate'
+import { betList } from './services/betList/BetList'
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +24,13 @@ export const store = configureStore({
     [eventDetails.reducerPath]: eventDetails.reducer,
     [eventSession.reducerPath]: eventSession.reducer,
     [accountStatement.reducerPath]: accountStatement.reducer,
+    [casino.reducerPath]: casino.reducer,
+    [myBet.reducerPath]: myBet.reducer,
+    [changePassword.reducerPath]: changePassword.reducer,
+    [walletBalance.reducerPath]: walletBalance.reducer,
+    [betPlace.reducerPath]: betPlace.reducer,
+    [stakeUpdate.reducerPath]: stakeUpdate.reducer,
+    [betList.reducerPath]: betList.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -28,6 +42,13 @@ export const store = configureStore({
   .concat(eventDetails.middleware)
   .concat(eventSession.middleware)
   .concat(accountStatement.middleware)
+  .concat(casino.middleware)
+  .concat(myBet.middleware)
+  .concat(changePassword.middleware)
+  .concat(walletBalance.middleware)
+  .concat(betPlace.middleware)
+  .concat(stakeUpdate.middleware)
+  .concat(betList.middleware)
   ,
 })
 

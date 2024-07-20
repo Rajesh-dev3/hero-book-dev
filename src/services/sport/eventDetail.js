@@ -12,7 +12,7 @@ export const eventDetails = createApi({
   endpoints: (builder) => ({
     getEventDetails: builder.mutation({
       query: (body) => ({
-    url:"event-detals",
+    url:"v5/event-detals",
     method:"POST" ,
     body
     }),

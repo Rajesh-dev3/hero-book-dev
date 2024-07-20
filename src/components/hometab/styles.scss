@@ -1,34 +1,60 @@
+@import "../../styles/variables/mixins";
+
 .home_tab {
-    background-color: #bbb;
-    flex-wrap: nowrap;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    
-  
- 
-  
-  .tabs{
-&::-webkit-scrollbar {
-  display: none;
-}
+  background-color: #bbb;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  @include media(phone) {
+    margin-top: 0px;
+    background-color: #384b5e;
+  }
+
+
+
+  .tabs {
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     li {
-     background-color: #cccc;
-     padding: 8px 12px;
-     border-right: 1px solid #000;
-     cursor: pointer;
-     font-weight: 400;
-     font-size: 16px;
-     text-align: center;
-     line-height: 1;
-    
-   }
+      background-color: #cccc;
+      padding: 8px 12px;
+      border-right: 1px solid #000;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 16px;
+      text-align: center;
+      white-space: nowrap;
+
+      line-height: 1;
+
+      @include media(phone) {
+        background-color: #384b5e;
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        gap: 4px;
+        font-size: 10px;
+      }
+
+      .sport-icon {
+        display: none;
+
+        @include media(phone) {
+          display: block;
+        }
+      }
+
+    }
   }
-  
+
   .tabs li.active {
     background-color: #384b5e;
     color: #fff;
   }
-  
+
 }
-  

@@ -1,17 +1,45 @@
-.odds-row-container{
+@import "../../styles/variables/mixins";
+
+.odds-row-container {
     background-color: #f7f7f7;
     border-bottom: 1px solid #ccc;
-    .odds-row-left-col{
-       
-        span{
+
+    @include media(phone) {
+        flex-direction: column;
+        gap: 0 !important;
+    }
+
+    .odds-row-left-col {
+        @include media(phone) {
+            width: calc(100% - 10px);
+            align-items: end;
+            padding-right: 5px;
+        }
+
+        span {
             color: #333;
             display: inline-block;
             max-width: calc(100% - 210px);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            display: flex;
+
+            @include media(phone) {
+                width: auto;
+                max-width: calc(100% - 0px);
+                white-space: initial;
+                font-weight: bold;
+                flex-direction: column;
+
+            }
+
+            p {
+                font-weight: 400;
+            }
         }
-        .icon-div{
+
+        .icon-div {
             .active-match {
                 background-color: #28a745;
                 height: 10px;
@@ -19,15 +47,28 @@
                 display: block;
                 border-radius: 100px;
             }
-            img{
+
+            img {
                 width: 20px;
             }
         }
     }
-    .odds-row-right-col{
+
+    .odds-row-right-col {
         width: 40%;
-        ul{
-        
+
+        .lock-odds {
+            svg {
+                color: white;
+            }
+        }
+
+        @include media(phone) {
+            width: 100%;
+        }
+
+        ul {
+
             margin: 0%;
             padding: 0%;
         }
@@ -38,6 +79,7 @@
     padding: 1px;
     width: 100%;
     text-align: center;
+
     .bet-odd {
         color: #273a47;
         font-size: 14px;
@@ -45,9 +87,18 @@
 }
 
 .back {
-    background-color: #72bbef ;
+    background-color: #72bbef;
 }
 
-.lay{
+.lay {
     background-color: #faa9ba;
+}
+
+.odd-row-header {
+    .odds-row-left-col {
+        @include media(phone) {
+
+            display: none;
+        }
+    }
 }

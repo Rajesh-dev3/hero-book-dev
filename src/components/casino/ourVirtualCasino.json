@@ -1,0 +1,125 @@
+{
+    "ALL_CASINO":[
+    {
+    "id":"901028",
+    "name":"RG",
+    "url":"https://herobook.in/images/7_A_Lucky.jpg"
+    }
+    ,
+    {
+        "id":"901036",
+        "name":"RG",
+        "url":"https://herobook.in/images/TRIO.jpg"
+}
+    ,
+    {
+        "id":"901015",
+        "name":"RG",
+        "url":"https://herobook.in/images/Muflis_Teenpatti.jpg"
+}
+    ,
+    {
+        "id":"901007",
+        "name":"RG",
+        "url":"https://herobook.in/images/Amar_Akbar_2.jpg"
+}
+    ,
+    {
+        "id":"901011",
+        "name":"RG",
+        "url":"https://herobook.in/images/Bollywood_Casino.jpg"
+}
+    ,
+    {
+        "id":"901016",
+        "name":"RG",
+        "url":"https://herobook.in/images/Dragon_Tiger_1_Day.jpg"
+}
+    ,
+    {
+        "id":"900039",
+        "name":"RG",
+        "url":"https://herobook.in/images/Teenpatti_1_Day.jpg"
+}
+    ,
+    {
+        "id":"901003",
+        "name":"RG",
+        "url":"https://herobook.in/images/Teenpatti%2020-20%202.jpg"
+}
+],
+"TEENPATTI":[
+    {
+    "id":"901015",
+      "name":"RG",
+    "url":"https://herobook.in/images/Muflis_Teenpatti.jpg"
+},
+    {
+    "id":"900039",
+      "name":"RG",
+    "url":"https://herobook.in/images/Teenpatti_1_Day.jpg"
+},
+    {
+    "id":"901003",
+      "name":"RG",
+    "url":"https://herobook.in/images/Teenpatti%2020-20%202.jpg"
+},
+    {
+    "id":"100046",
+      "name":"EZUGI",
+    "url":"https://herobook.in/images/Instant_TeenPatti_3.0.jpg"
+}
+],
+"DRAGON_TIGER":[
+    {
+        "id":"",
+          "name":"",
+        "url":"https://herobook.in/images/Dragon%20Tiger%2020-20.jpg"
+    },
+    {
+        "id":"901016",
+          "name":"RG",
+        "url":"https://herobook.in/images/Dragon_Tiger_1_Day.jpg"
+    },
+    {
+        "id":"",
+          "name":"",
+        "url":"https://herobook.in/images/Casino_20_20_DTL.jpg"
+    },
+    {
+        "id":"",
+          "name":"",
+        "url":"https://herobook.in/images/20_20_Dragon_Tiger_2.jpg"
+    }
+],
+"Lucky_7":[
+    {
+        "id":"100066",
+          "name":"EZUGI",
+        "url":"https://herobook.in/images/7_A_Lucky.jpg"
+    }
+  
+],
+"BOLLYWOOD":[
+    {
+        "id":"900007",
+          "name":"RG",
+        "url":"https://herobook.in/images/Amar_Akbar_Anthony_slot.jpg"
+    },
+    {
+        "id":"",
+          "name":"",
+        "url":"https://herobook.in/images/Bollywood_Casino.jpg"
+    }
+  
+],
+"OTHERS":[
+    {
+        "id":"901036",
+          "name":"RG",
+        "url":"https://herobook.in/images/TRIO.jpg"
+    }
+   
+  
+]
+}
