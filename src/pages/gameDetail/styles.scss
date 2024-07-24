@@ -53,24 +53,9 @@
     .game-detail-left-col{
         width: 68%;
         @include media(phone){
-            width: 100vw;
+            width: 100%;
         }
-        .game-header {
-            background-color: #2C3E50;
-            color: white;
-            padding: 5px 10px;
-            font-size: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: calc(100% - 0px);
-            @include media(phone){
-                font-size: 12px;
-            }
-         
-        }
+    
     }
     .game-detail-right-col{
         width: 32%;

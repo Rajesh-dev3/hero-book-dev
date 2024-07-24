@@ -8,7 +8,7 @@ const Table = ({data}) => {
             <th   className="w-[20%] px-[12px] py-[6px] text-left border-[1px]">
             DESCRIPTION
             </th>
-            <th   className="border-[1px] text-end w-[10%] px-[12px] py-[6px]">
+            <th   className="w-[20%] border-[1px] text-end px-[12px] py-[6px]">
             MARKET
             </th>
             <th
@@ -47,13 +47,13 @@ const Table = ({data}) => {
           return(
 
         <tr role="row" key={index}>
-          <td role="cell" className="border-[1px] px-[8px] py-[5px]">{item?.created_at}</td>
-        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end">{item?.marketName}</td>
-        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end"><span role="cell" className="">{item?.amount}</span></td>
-        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end"><span role="cell" className="">{item?.Odds}</span></td>
-        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end"><span role="cell" className="">{item?.Stack}</span></td>
+          <td role="cell" className="border-[1px] px-[8px] py-[5px]">{item?.seriesName + " "+ item?.marketName}</td>
+        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center">{`${item?.marketName} -- ${item?.seriesName}`}</td>
+        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center"><span role="cell" className="">{item?.Type}</span></td>
+        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center"><span role="cell" className="">{item?.Odds}</span></td>
+        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center"><span role="cell" className="">{item?.Stack}</span></td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.PotentialProfit}</td>
-        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.description}</td>
+        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.PotentialProfit > 0 ? "WON" : "LOSS"}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.ipAddress}</td>
         </tr>
           )

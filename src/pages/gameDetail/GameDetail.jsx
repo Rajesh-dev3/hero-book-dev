@@ -13,15 +13,15 @@ import MobileBetModule from "../../components/mobileBetModule/MobileBetModule"
 import { useMediaQuery } from "../../useMediaQuery";
 import EditStack from "../../components/EditStack/EditStack";
 import ModalComp from "../../components/modal/Modal";
+import ScoreBoardCom from "../../components/scoreBoardCom/ScoreBoardCom"
 ///styles
 import "./styles.scss";
+import { aviatorLobby } from "../../routes/PagesUrl";
 const GameDetail = () => {
   const [openBetPlaceModule, setOpenBetPlaceModule] = useState(false)
   const [odddata, setOdddata] = useState();
   const [fancyData, setFancyData] = useState()
   const [prevState, setPrevState] = useState();
-
-
 
   const openBetModuleHandler = (val) => {
     setOpenBetPlaceModule(val)
@@ -33,6 +33,8 @@ const GameDetail = () => {
   const { matchId, sportId, selectionId } = useParams()
   useEffect(() => {
 
+    trigger({ "match_id": matchId, "sport_id": sportId })
+    trigg({ match_id: matchId })
     const timer = setInterval(() => {
       trigger({ "match_id": matchId, "sport_id": sportId })
       trigg({ match_id: matchId })
@@ -146,10 +148,7 @@ const GameDetail = () => {
         {tabOpen == 0
           &&
           <div className="game-detail-left-col">
-            <div className="game-header">
-              <span>{odddata?.MatchDetails?.name}</span>
-              <span className="float-right">{date}</span>
-            </div>
+         <ScoreBoardCom odddata={odddata}date={date} matchId={matchId}/>
             {oddsDataSta?.MatchDetails ?
               <GameDetailCollapse collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
@@ -165,17 +164,14 @@ const GameDetail = () => {
             {ballbyball?.length ?
               <FancyDetailCollapse collapseName="ballbyball" odddata={ballbyball} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
             }
-            {/* {oddsDataSta?.OtherMarketList[0]
-          ?
-          <GameDetailCollapse collapseName="Completed Match" odddata={oddsDataSta?.OtherMarketList[0]} fun={ isMobile?openModal: openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
-          : ""} */}
-            {oddsDataSta?.OtherMarketList?.length &&
+         
+            {oddsDataSta?.OtherMarketList?.length ?
               oddsDataSta?.OtherMarketList?.map((item, i) => {
                 return (
 
                   <GameDetailCollapse key={item?.marketName + i} collapseName={item?.marketName} odddata={item} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
                 )
-              })
+              }):""
             }
 
           </div>
@@ -202,10 +198,11 @@ const GameDetail = () => {
           <div className="game-detail-right-col" >
             <Link
               className="bet-nation-game-name blink-message flex items-center p-[5px]"
-              to="/"
+              to={aviatorLobby}
             >
+
               <ErrorIcon />
-              <div>Bollywood Casino</div>
+              <div>Aviator</div>
             </Link>
             {openBetPlaceModule &&
               <BetPlaceModule openModal2={openModal2} isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} fun={isMobile ? openModal : openBetModuleHandler} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />

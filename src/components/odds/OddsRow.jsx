@@ -19,7 +19,7 @@ const OddsRow = ({ item }) => {
               {item && moment(Number(item?.start_date)).format("DD/MM/YYYY , hh:mm:ss")}
             </p>
           </span>
-          <div className="icon-div flex
+          <div className="icon-di flex
             items-center
             gap-[10px]">
             <div className="active-match"></div>

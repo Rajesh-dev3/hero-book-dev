@@ -63,7 +63,15 @@
 }
 
 tr {
-    td {
+    th{
+
         white-space: nowrap;
+        background-color: #384b5e;
+        color: white;
+        font-size: 12px;
+    }
+    td {
+        font-size: 12px;
+        text-align: center;
     }
 }

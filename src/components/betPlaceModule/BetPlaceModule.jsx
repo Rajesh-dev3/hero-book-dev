@@ -28,7 +28,6 @@ const BetPlaceModule = ({ isFancy, stakeAmount, fun, betPlaceData, openModal2, s
       toast?.success(data?.message)
     }
   }, [data])
-
   return (
     <div className={`betplace-module-container `} >
       <div className="bet-place-title">
@@ -36,7 +35,7 @@ const BetPlaceModule = ({ isFancy, stakeAmount, fun, betPlaceData, openModal2, s
           Place Bet
         </h4>
       </div>
-      <div className={`bet-place-box ${betPlaceData?.lay ? "lay" : "back"}`}>
+      <div className={`bet-place-box ${betPlaceData?.is_back ==0 ? "lay" : "back"}`}>
         <div className="bet-place-header">
           <ul>
             <li>(Bet for)</li>

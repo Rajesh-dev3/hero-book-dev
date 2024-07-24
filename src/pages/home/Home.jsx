@@ -34,7 +34,7 @@ const Home = () => {
     <>
 
       {!isMobile &&
-        <div className={`w-full grid grid-cols-${inplayMatches?.length} gap-1`}>
+        <div className={`w-full upcoming-event grid grid-cols-${inplayMatches?.length} gap-1`} style={{gridTemplateColumns:`repeat(${inplayMatches?.length}, 1fr)`}}>
           {inplayMatches?.map((item) => {
             return (
               <Blink key={item?.series_id} data={item} />

@@ -1,0 +1,116 @@
+@import "../../styles/variables/mixins";
+
+.score-board{
+    color: #fff;
+    width:calc(100% - 0px);
+    padding: 5px;
+    height: 90px;
+    background-image: url("../../assets/img/filed-grass.png");
+    // width: calc(100% - 40px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    @include media(phone){
+        flex-direction: column;
+        height: 160px;
+    }
+    &::before{
+        content: "";
+width: 100%;
+height: 100%;
+left: 0%;
+top: 0%;
+background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        
+        
+        
+    }
+    .score-col{
+        display: flex;
+        position: absolute;
+        z-index: 11;
+        bottom: 5%;
+        width: calc(100% - 30px);
+        left: 15px;
+        height: fit-content;
+        align-items: end;
+     
+        justify-content: space-between;
+
+        .score-col-left{
+            width: 50%;
+            @include media(phone){
+                width: 100%;
+            }
+            P{
+    
+                display: flex;
+                gap: 50px;
+                margin-top: 5px;
+                font-size: 13px;
+                font-weight: 600;
+                span{
+                    // width: 50px;
+                }
+            }
+        }
+        .score-col-right{
+            width: 50%;
+            text-align: end;
+            @include media(phone){
+                width: 100%;
+                text-align: left;
+            }
+            p{
+                span{
+                    font-size: 12px;
+                }
+            }
+            .ball{
+                display: flex;
+                gap: 5px;
+                justify-content: end;
+                @include media(phone){
+                    justify-content: start;
+                }
+                span{
+                    margin-top: 5px;
+                    width: 25px;
+                    height: 25px;
+                    text-align: center;
+                    border-radius: 50px;
+                    background: #08c;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 700;
+    
+                }
+            }
+        }
+    }
+    .game-header {
+        background-color: #2C3E50;
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px 10px;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: calc(100% - 0px);
+        z-index: 12;
+        @include media(phone){
+            font-size: 12px;
+        }
+     
+    }
+
+}

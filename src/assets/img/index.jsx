@@ -1,3 +1,3 @@
 import logo from "./logo.png";
-
-export {logo}
+import grass from "./filed-grass.png"
+export {logo , grass}
