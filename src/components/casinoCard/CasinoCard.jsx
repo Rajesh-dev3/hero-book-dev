@@ -1,5 +1,7 @@
 
 import { Link } from "react-router-dom";
+import { defaultImg } from "../../assets";
+
 ///styles
 import "./styles.scss"
 const CasinoCard = ({ item }) => {
@@ -11,7 +13,8 @@ const CasinoCard = ({ item }) => {
         <Link to={url}>
           <div
             className="casino-list-item-banner"
-            style={{ backgroundImage: `url(${item?.url})` }}
+        
+            style={{ backgroundImage: `url(${item?.url}), url(${defaultImg})` }}
           ></div>
         </Link>
       </div>
