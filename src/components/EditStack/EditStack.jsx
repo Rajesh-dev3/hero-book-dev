@@ -26,7 +26,6 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
         trigger(requestData)
     }, [])
 
-
     const updateMatchStack = (e) => {
         const { name, value } = e.target
         setMatchStackArray((prev) => {
@@ -49,7 +48,7 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
                 }
             })
         })
-    }, [data])
+    }, [])
 
     useEffect(() => {
         if (stakeUpdateResponse?.error == false) {
@@ -85,7 +84,7 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
 
                             <div className="edit-inputs" key={matchStackArray[elm] + index}>
                                 <input type="text" value={formatCompactNumber(matchStackArray[elm])} />
-                                <input type="text" name={elm} value={matchStackArray[elm]} onChange={updateMatchStack} />
+                                <input type="text" autoFocus name={elm} value={matchStackArray[elm]} onChange={updateMatchStack} />
                             </div>
                         )
                     })}

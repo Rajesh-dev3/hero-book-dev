@@ -35,11 +35,11 @@ const GameDetail = () => {
 
     trigger({ "match_id": matchId, "sport_id": sportId })
     trigg({ match_id: matchId })
-    const timer = setInterval(() => {
-      trigger({ "match_id": matchId, "sport_id": sportId })
-      trigg({ match_id: matchId })
-    }, 3000);
-    return () => clearInterval(timer);
+    // const timer = setInterval(() => {
+    //   trigger({ "match_id": matchId, "sport_id": sportId })
+    //   trigg({ match_id: matchId })
+    // }, 3000);
+    // return () => clearInterval(timer);
   }, [sportId, matchId])
 
   const oddsDataSta = prevState || odddata

@@ -15,7 +15,7 @@ const MobileBetModule = ({ isFancy, stakeAmount, fun, betPlaceData, setBetPlaceD
       toast?.success(data?.message)
     }
   }, [data])
-  const [oddsValue, setOddsValue] = useState(0)
+  const [oddsValue, setOddsValue] = useState()
 
 
   return (
@@ -28,13 +28,15 @@ const MobileBetModule = ({ isFancy, stakeAmount, fun, betPlaceData, setBetPlaceD
             <p>{betPlaceData?.matchName}</p>
           </div>
           <div className="md1-right">
-            <p onClick={() => setOddsValue(oddsValue - 1)}>-</p>
-            <input type="text" placeholder='0' value={oddsValue} />
-            <p onClick={() => setOddsValue(oddsValue + 1)}>+</p>
+            <p >-</p>
+            <input type="text" placeholder='0'  value={isFancy ? betPlaceData?.run : betPlaceData?.odds}/>
+            <p>+</p>
           </div>
         </div>
         <div className="md3">
-          <input type="text" value={isFancy ? betPlaceData?.run : betPlaceData?.odds} />
+          <input type="text" value={oddsValue} onChange={(e)=>{
+           setOddsValue(e.target.value)
+          }}/>
           <button onClick={() => {
             const { matchName, ...updatedData } = betPlaceData;
             trigger({ ...updatedData, isFancy: isFancy, stack: oddsValue })
@@ -46,7 +48,7 @@ const MobileBetModule = ({ isFancy, stakeAmount, fun, betPlaceData, setBetPlaceD
             return (
 
               <div className="md2-data" key={item} onClick={() => {
-                setOddsValue(oddsValue + Number(item))
+                setOddsValue(Number(item))
                 setBetPlaceData((prev) => {
                   return {
                     ...prev, stack: item
