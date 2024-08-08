@@ -17,6 +17,9 @@ export const SliderContainer = styled.div`
     justify-content: center;
     cursor: pointer;
     background-image: linear-gradient(to right, #0088cc82, #cccccc);
+ @media (max-width: 780px) {
+      display:none
+      }
     svg {
       color: white;
       font-size: 19px;
@@ -42,6 +45,9 @@ export const SliderContainer = styled.div`
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to right, #cccccc, #0088cc82);
+      @media (max-width: 780px) {
+      display:none
+      }
     svg {
       color: white;
       font-size: 19px;
@@ -61,6 +67,8 @@ export const SliderContainer = styled.div`
      
     }
   }
+    
+  
   .middle-slider-data {
     /* width: 90%; */
     overflow-x: scroll;
@@ -68,10 +76,15 @@ export const SliderContainer = styled.div`
     // gap: 10px;
     margin-block:2px;
     flex-grow: 1;
+     @media (min-width: 768px) {
+       margin-block:0px;
+   
+  }
     ::-webkit-scrollbar {
       display: none;
     }
   }
+     
 `;
 
 export const BoxCard = styled.div`
@@ -90,6 +103,10 @@ export const BoxCard = styled.div`
 
 
   cursor: pointer;
+  @media (min-width: 768px) {
+    
+    border-radius: 0px;
+  }
   p {
     font-size: 12px;
     color: ${(props) => (props.isSelected ? `white` : `white`)};
@@ -103,4 +120,5 @@ export const BoxCard = styled.div`
     background-color: white !important;
     color: white;
   } */
+
 `;

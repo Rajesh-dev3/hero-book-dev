@@ -1,8 +1,10 @@
 @import "../../styles/variables/mixins";
 .odd-container-m{
     @include media(phone){
-        height: 400px;
+        max-height: 250px;
+        padding: .625rem;
         overflow-y: scroll;
+        background-color: #f7f7f7;
         &::-webkit-scrollbar{
             display: none;
         }

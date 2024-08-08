@@ -2,14 +2,17 @@ import { useParams } from "react-router-dom"
 import {useScoreBoardQuery} from "../../services/scoreBoard/scoreBoard"
 ////styles
 import "./styles.scss"
-import { useEffect } from "react"
+import moment from "moment"
+import { useEffect, useState } from "react"
 const ScoreBoardCom = ({odddata,date,matchId}) => {
-
 
   const {data} = useScoreBoardQuery(matchId,{
     pollingInterval:1000
   })
- 
+  
+
+
+
   const calculateOvers = (balls) => {
     // Calculate the number of overs
     var overs = Math.floor(balls / 6) + ((balls % 6) / 10);

@@ -8,7 +8,11 @@ import { Link } from "react-router-dom";
 
 
 export default function AccordionUsage() {
-  const [first, setfirst] = useState(true)
+  const [first, setfirst] = useState({
+    first:true,
+    second:true,
+    third:true,
+  })
   const casinoList = [
     {
       name: "Our Casino",
@@ -38,11 +42,15 @@ export default function AccordionUsage() {
   ];
   // /livecasino
 
-
+console.log(first)
   return (
     <div>
 
-      <CustomAccordion onChange={() => setfirst(!first)} expanded={first}>
+      <CustomAccordion onChange={() => setfirst((prev)=>{
+        return{
+          ...prev,first:!first["first"]
+        }
+      })} expanded={first["first"]}>
         <AccordionSummary
 
           expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
@@ -55,7 +63,11 @@ export default function AccordionUsage() {
       </CustomAccordion>
 
 
-      <CustomAccordion expanded>
+      <CustomAccordion onChange={() => setfirst((prev)=>{
+        return{
+          ...prev,second:!first["second"]
+        }
+      })} expanded={first["second"]}>
         <AccordionSummary
           aria-controls="panel1-content"
           id="panel1-header"
@@ -83,7 +95,11 @@ export default function AccordionUsage() {
           })}
         </ul>
       </CustomAccordion>
-      <CustomAccordion expanded>
+      <CustomAccordion onChange={() => setfirst((prev)=>{
+        return{
+          ...prev,third:!first["third"]
+        }
+      })} expanded={first["third"]}>
         <AccordionSummary
           aria-controls="panel1-content"
           id="panel1-header"

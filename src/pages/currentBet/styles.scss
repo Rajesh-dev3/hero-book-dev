@@ -38,12 +38,13 @@
         }
 
         .form-btn {
+            @include media(phone) {
+                width: 22%;
+
+
+            }
             .btn {
-                @include media(phone) {
-                    width: 50%;
-
-
-                }
+                width: 100%;
             }
 
         }

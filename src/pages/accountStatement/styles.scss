@@ -54,7 +54,7 @@
                 padding:5px;
               border: 0;
               outline: 1px solid ;
-              border-right: 20px solid transparent;
+              border-right: 4px solid transparent;
             }
         }
         }
@@ -80,7 +80,7 @@
 .form-btn{
     width: 7.66666667%;
     @include media(phone){
-        width: 40%;
+        width: 22%;
     }
     .btn{
         width: 100%;

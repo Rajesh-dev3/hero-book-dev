@@ -36,17 +36,17 @@ const FilterSlider = ({data,activeValue,setActiveValue}) => {
     <div>
       <styled.SliderContainer className="slider-container">
       
-          {/* <div className="left-slider-btn" onClick={() => scrollFunction("left")}>
+          <div className="left-slider-btn" onClick={() => scrollFunction("left")}>
             <KeyboardArrowLeftIcon  />
-          </div> */}
+          </div>
         
         <div className="middle-slider-data" ref={ScroolState}>
           <SlideBox data={data} activeValue={activeValue} setActiveValue={setActiveValue}/>
         </div>
      
-          {/* <div className="right-slider-btn" onClick={() => scrollFunction("right")}>
+          <div className="right-slider-btn" onClick={() => scrollFunction("right")}>
             <KeyboardArrowRightIcon  />
-          </div> */}
+          </div>
        
       </styled.SliderContainer>
 

@@ -15,6 +15,7 @@ import { betPlace } from './services/betPlace/BetPlace'
 import { stakeUpdate } from './services/stakeUpdate/stakeUpdate'
 import { betList } from './services/betList/BetList'
 import { scoreBoard } from './services/scoreBoard/scoreBoard'
+import { inPlayEvent } from './services/sport/inPlayEvent'
 
 export const store = configureStore({
   reducer: {
@@ -33,6 +34,7 @@ export const store = configureStore({
     [stakeUpdate.reducerPath]: stakeUpdate.reducer,
     [betList.reducerPath]: betList.reducer,
     [scoreBoard.reducerPath]: scoreBoard.reducer,
+    [inPlayEvent.reducerPath]: inPlayEvent.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -52,6 +54,7 @@ export const store = configureStore({
   .concat(stakeUpdate.middleware)
   .concat(betList.middleware)
   .concat(scoreBoard.middleware)
+  .concat(inPlayEvent.middleware)
   ,
 })
 

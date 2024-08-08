@@ -19,7 +19,7 @@
         span {
             color: #333;
             display: inline-block;
-            max-width: calc(100% - 210px);
+            max-width: calc(100% - 100px);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -36,20 +36,35 @@
 
             p {
                 font-weight: 400;
+                @include media(phone) {
+                    font-size: 12px;
+    
+                }
             }
         }
 
-        .icon-div {
-            .active-match {
-                background-color: #28a745;
-                height: 10px;
-                width: 10px;
-                display: block;
-                border-radius: 100px;
+        .icon-di {
+            svg{
+                @include media(phone){
+
+                    font-size: 13px;
+                }
             }
+            // .active-match {
+            //     background-color: #28a745;
+            //     height: 10px;
+            //     width: 10px;
+            //     display: block;
+            //     border-radius: 100px;
+            // }
 
             img {
                 width: 20px;
+                @include media(phone){
+
+                    width: 15px;
+                    height: auto;
+                }
             }
         }
     }
@@ -71,6 +86,13 @@
 
             margin: 0%;
             padding: 0%;
+            // margin-top: 20px;
+            li{
+
+                @include media(phone){
+                    font-size: 13px;
+                }
+            }
         }
     }
 }
@@ -79,7 +101,13 @@
     padding: 1px;
     width: 100%;
     text-align: center;
-
+@include media(phone){
+    padding: 0px; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
     .bet-odd {
         color: #273a47;
         font-size: 14px;

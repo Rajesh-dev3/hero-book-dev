@@ -14,9 +14,16 @@ const OddsRow = ({ item }) => {
     <Link to={`/game-detail/${item?.sport_id}/${item?.match_id}/${item?.market_id}`}>
       <div className="odds-row-container w-full flex justify-between gap-4">
         <div className="odds-row-left-col w-[60%] flex justify-between pl-2 items-center">
-          <span className="text-[14px]">{item?.name}{isMobile ? <br /> : "/"}
+          <span className="text-[13px]">{item?.name}{isMobile ? <br /> : "/"}
             <p>
-              {item && moment(Number(item?.start_date)).format("DD/MM/YYYY , hh:mm:ss")}
+            {moment(
+              parseInt(
+                item && item.start_date ? item.start_date : null,
+              ) * 1000,
+            )
+              .utcOffset("+05:30")
+              .format("DD/MM/YYYY, HH:mm:ss ")}
+              {/* {item && moment(Number(item?.start_date)).format("DD/MM/YYYY , hh:mm:ss")} */}
             </p>
           </span>
           <div className="icon-di flex

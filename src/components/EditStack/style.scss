@@ -17,9 +17,9 @@
             display: flex;
             font-size: 12px;
             // gap: 5px;
-            button{
+            .btn{
                 width: 43%;
-                padding: 8px 0;
+                padding: 8px 0 !important;
                 font-weight: 600;
                 font-size: 13px;
                 text-transform: uppercase;
@@ -67,8 +67,8 @@
     .submit{
         padding: 0px 20px;
         margin-bottom: 10px;
-        button{
-            padding: 8px 0;
+        .btn{
+            padding: 8px 0 !important;
             width: 30%;
             background: black;
             color: white;

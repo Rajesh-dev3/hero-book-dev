@@ -68,11 +68,16 @@ const GameDetail = () => {
   const ballbyball = fancyData?.filter((item) => item?.fancy_category === "ballbyball")
 
 
-  const date = moment(Number(odddata?.MatchDetails?.start_date)).format('DD/MM/YYYY, h:mm:ss');
+  const date = moment(
+    parseInt(
+      odddata?.MatchDetails && odddata?.MatchDetails?.start_date ? odddata?.MatchDetails?.start_date : null,
+    ) * 1000,
+  )
+    .utcOffset("+05:30")
+    .format("DD/MM/YYYY, HH:mm:ss ")
 
   const [betPlaceData, setBetPlaceData] = useState({
     is_back: "0",
-
     match_id: Number(matchId),
     odds: "",
     selection_id: 0,
@@ -129,6 +134,7 @@ const GameDetail = () => {
   const openModal2 = () => {
     setModalOpen2(true)
   }
+  const [profitLoss, setProfitLoss] = useState([])
 
   return (
     <>
@@ -148,12 +154,12 @@ const GameDetail = () => {
         {tabOpen == 0
           &&
           <div className="game-detail-left-col">
-         <ScoreBoardCom odddata={odddata}date={date} matchId={matchId}/>
+         <ScoreBoardCom odddata={odddata} date={date} matchId={matchId}/>
             {oddsDataSta?.MatchDetails ?
-              <GameDetailCollapse collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+              <GameDetailCollapse fancy={false} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {oddsDataSta?.BookerMakerMarket ?
-              <GameDetailCollapse collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+              <GameDetailCollapse profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {normalFancy?.length ?
               <FancyDetailCollapse collapseName="Normal" odddata={normalFancy} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} />
@@ -169,7 +175,7 @@ const GameDetail = () => {
               oddsDataSta?.OtherMarketList?.map((item, i) => {
                 return (
 
-                  <GameDetailCollapse key={item?.marketName + i} collapseName={item?.marketName} odddata={item} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+                  <GameDetailCollapse fancy={true} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
                 )
               }):""
             }
@@ -190,7 +196,7 @@ const GameDetail = () => {
               }
             </Link>
             {openBetPlaceModule &&
-              <BetPlaceModule isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} fun={openBetModuleHandler} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
+              <BetPlaceModule profitLoss={profitLoss} setProfitLoss={setProfitLoss} isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} fun={openBetModuleHandler} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
             }
             <GameDetailBetHistory />
 
@@ -205,7 +211,7 @@ const GameDetail = () => {
               <div>Aviator</div>
             </Link>
             {openBetPlaceModule &&
-              <BetPlaceModule openModal2={openModal2} isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} fun={isMobile ? openModal : openBetModuleHandler} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
+              <BetPlaceModule profitLoss={profitLoss} openModal2={openModal2} isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} fun={isMobile ? openModal : openBetModuleHandler} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
             }
             <GameDetailBetHistory />
 

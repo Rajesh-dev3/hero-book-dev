@@ -12,7 +12,7 @@
     position: relative;
     @include media(phone){
         flex-direction: column;
-        height: 160px;
+        height: 120px;
     }
     &::before{
         content: "";
@@ -37,7 +37,9 @@ background-color: rgba(0,0,0,0.5);
         align-items: end;
      
         justify-content: space-between;
-
+@include media(phone){
+    flex-direction: column;
+}
         .score-col-left{
             width: 50%;
             @include media(phone){
@@ -50,6 +52,9 @@ background-color: rgba(0,0,0,0.5);
                 margin-top: 5px;
                 font-size: 13px;
                 font-weight: 600;
+                @include media(phone){
+                    font-size: 11px;
+                }
                 span{
                     // width: 50px;
                 }

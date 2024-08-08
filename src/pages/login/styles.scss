@@ -168,6 +168,7 @@
                     @include media(phone) {
                         margin: 0rem !important;
                         padding: 0rem !important;
+                       font-size:calc(1.275rem + .3vw);
                     }
                 }
 

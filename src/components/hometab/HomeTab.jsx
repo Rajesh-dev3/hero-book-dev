@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useGetSportListMutation } from "../../services/sport/sportList"
+import { useGetSportListMutation } from "../../services/sport/sportList.js"
 import Bat from "../../assets/svg/bat.jsx"
 import Tennis from "../../assets/svg/tennis.jsx"
 import Football from "../../assets/svg/football.jsx"

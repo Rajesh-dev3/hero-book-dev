@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { useGetSportListMutation } from '../../services/sport/sportList'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { useMediaQuery } from '../../useMediaQuery'
 // styles 
 import "./styles.scss"
@@ -75,29 +75,38 @@ const SubNavbar = () => {
   ]
   const isMobile = useMediaQuery("(max-width:780px)")
   const casino = isMobile ? mobileCasino : casinoArray
+  const [listActive, setListActive] = useState(0)
+const {pathname} = useLocation()
+  const urlList = ["/account-statement","/current-bet","/changepassword"]
+  const checkUrl = urlList.includes(pathname)
   return (
+    <>
+    {!checkUrl && 
     <div className="subnavbar-container">
       <ul>
         {!isMobile &&
-          <Link to={"/"}>
+          <Link to={"/"} >
             <li>Home</li>
           </Link>
         }
         {!isMobile ?
           data?.data?.map((item) => {
             return (
-              <Link to={item?.name == "Casino" ? "/casino/ourCasino" : `/sport/${item?.sport_id}`} key={item?.name}>
+              <Link to={item?.name == "Casino" ? "/casino/ourCasino" : `/sport/${item?.sport_id}`} key={item?.name} className='tabs-list'>
                 <li >{getTitle(item)}</li>
               </Link>
             )
           }) : ""
         }
 
-        {casino?.map((item) => <Link to={item?.link} key={item?.name}><li>{item?.name}</li></Link>)}
+        {casino?.map((item,index) => <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${listActive == index+1 && isMobile ?"subnav-list-active":"tabs-list"}`}><li >{item?.name}</li></Link>)}
 
 
       </ul>
     </div>
+    }
+
+    </>
   )
 }
 

@@ -1,6 +1,9 @@
 @import "../../styles/variables/mixins";
 .game-market{
     margin-top: 8px;
+    @include media(phone){
+        margin-top: 0px;
+    }
     .market-title{
         background-color: #2C3E50D9;
         color: white;
@@ -25,7 +28,7 @@
             width: 55%;
             font-size: 13px;
             @include media(phone){
-                width: 30%;
+                width: 28%;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -42,7 +45,7 @@
         .odds-row-right-col{
             width: 45%;
             @include media(phone){
-                width: 70%;
+                width: 72%;
             }
         }
     }
@@ -93,11 +96,17 @@ color: #097CAC;
     font-weight: bold;
     margin-bottom: 3px;
     line-height: 1;
+    @include media(phone){
+       font-size: 14px;;
+    }
     }
     .market-volume{
         font-size: 12px;
         font-weight: 100;
         line-height: 1;
+        @include media(phone){
+            font-size: 11px;
+        }
     }
 }
 

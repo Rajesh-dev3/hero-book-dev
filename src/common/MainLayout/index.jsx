@@ -32,7 +32,7 @@ const MainLayout = () => {
       <div className="layout-nav-col">
         <Navbar />
         {isMobile &&
-          <div className={`w-full grid grid-cols-${inplayMatches?.length} gap-1`}>
+          <div className={`w-full grid grid-cols-${inplayMatches?.length} gap-1`} style={{padding: "0 5px 5px"}}>
             {inplayMatches?.map((item) => {
               return (
 

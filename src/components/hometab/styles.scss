@@ -8,6 +8,7 @@
 
   @include media(phone) {
     margin-top: 0px;
+    margin-bottom: 0%;
     background-color: #384b5e;
   }
 
@@ -39,6 +40,9 @@
         text-transform: uppercase;
         gap: 4px;
         font-size: 10px;
+        border-right: 0px;
+        padding: .5rem 1rem;
+        font-weight: 800;
       }
 
       .sport-icon {
@@ -52,9 +56,15 @@
     }
   }
 
-  .tabs li.active {
-    background-color: #384b5e;
-    color: #fff;
-  }
+  .tabs{
+
+    .active {
+      background-color: #384b5e;
+      color: #fff;
+      @include media(phone){
+        background-color: rgba(0,136,204,.647);
+      }
+    }
+  } 
 
 }

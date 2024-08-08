@@ -7,6 +7,7 @@ import { useMediaQuery } from "../../useMediaQuery";
 import ourCasino from "../../components/casino/ourCasino.json"
 import ourVirtualCasino from "../../components/casino/ourVirtualCasino.json"
 import { casinoArray } from "../../components/filterSlider/FilterCategorydata"
+
 ///styles
 import "./styles.scss"
 const Casino = () => {
@@ -50,24 +51,22 @@ const Casino = () => {
   const data = casinoArray.filter((elm) => elm?.casinoName == path2)
   return (
     <div>
-      {isMobile && path == "casino" ?
-        <>
-          <ul className="casino-category">
-            {casinoTypeName?.map((elm) =>
-              <Link key={elm} to={`/casino/${elm?.link}`}>
-                <li className={`${elm?.name == activeCasino ? "active" : ""}`}
-                  onClick={() => setActiveCasino(elm?.name)}
-                >{elm?.name}</li>
-              </Link>
-            )
-            }
+      {pathname == "our-virtual" || !isMobile?"":
+      <ul className="casino-category">
+        {casinoTypeName?.map((elm) =>
+          <Link key={elm} to={`/casino/${elm?.link}`}>
+            <li className={`${elm?.name == activeCasino ? "active" : ""}`}
+              onClick={() => setActiveCasino(elm?.name)}
+              >{elm?.name}</li>
+          </Link>
+        )
+        }
 
 
-          </ul>
-          <FilterSlider data={data} activeValue={activeValue} setActiveValue={setActiveValue} />
-        </> : ""
+      </ul>
       }
-
+      <FilterSlider data={data} activeValue={activeValue} setActiveValue={setActiveValue} />
+  
       <div className="casino-container">
         {casinoData?.map((item, index) => {
           return (

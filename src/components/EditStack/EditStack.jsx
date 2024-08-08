@@ -48,7 +48,7 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
                 }
             })
         })
-    }, [])
+    }, [data])
 
     useEffect(() => {
         if (stakeUpdateResponse?.error == false) {
@@ -58,7 +58,7 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
             toast.error(stakeUpdateResponse?.message)
         }
     }, [stakeUpdateResponse])
-
+console.log(matchStackArray,"matchStackArray")
     return (
         <section className='edit-stack'>
             <div className="heading">
@@ -69,8 +69,8 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
             </div>
             <div className="detail-sec">
                 <div className="button-sec">
-                    <button>Game Button</button>
-                    <button>Casino Button</button>
+                    <button className='btn'>Game Button</button>
+                    <button className='btn'>Casino Button</button>
                 </div>
             </div>
             {isLoading ? "Loading..." :
@@ -94,7 +94,7 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
             }
 
             <div className="submit">
-                <button onClick={stakeUpdateHandler}>Update</button>
+                <button onClick={stakeUpdateHandler} className='btn'>Update</button>
             </div>
         </section>
     )

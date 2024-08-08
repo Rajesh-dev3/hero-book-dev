@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import DatePicker from "react-datepicker"
 import { useGetSportListMutation } from "../../services/sport/sportList"
@@ -11,8 +11,10 @@ const Filter = ({ startDate, endDate, formData, setFormData, setEndDate, setStar
   useEffect(() => {
     trigger({ "limit": 50, "pageno": 1 })
   }, [])
-
+const [radioActive, setRadioActive] = useState(0)
+  
   return (
+   
     <div className="current-bet-form">
       <div className="select-area w-full flex gap-4">
 
@@ -84,7 +86,8 @@ const Filter = ({ startDate, endDate, formData, setFormData, setEndDate, setStar
               type="radio"
               name="All"
               value="30"
-              checked
+              checked={radioActive == 0}
+              onChange={()=>setRadioActive(0)}
               className="w-[15px]  radio-input"
             />
 
@@ -95,6 +98,8 @@ const Filter = ({ startDate, endDate, formData, setFormData, setEndDate, setStar
               type="radio"
               name="Back"
               value="60"
+              checked={radioActive == 1}
+              onChange={()=>setRadioActive(1)}
               className="w-[15px] radio-input"
             />
 
@@ -105,6 +110,8 @@ const Filter = ({ startDate, endDate, formData, setFormData, setEndDate, setStar
               type="radio"
               name="Lay"
               value="100"
+              checked={radioActive == 2}
+              onChange={()=>setRadioActive(2)}
               className="w-[15px] radio-input"
             />
 

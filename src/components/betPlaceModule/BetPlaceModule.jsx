@@ -16,7 +16,7 @@ export function formatCompactNumber(number) {
     return (number / 1_000_000_000_000).toFixed(0) + "T";
   }
 }
-const BetPlaceModule = ({ isFancy, stakeAmount, fun, betPlaceData, openModal2, setBetPlaceData }) => {
+const BetPlaceModule = ({profitLoss,setProfitLoss, isFancy, stakeAmount, fun, betPlaceData, openModal2, setBetPlaceData }) => {
   const stakeArray = stakeAmount?.match_stack?.split(",")
   const [trigger, { data }] = useBetPlaceMutation()
 
@@ -27,6 +27,7 @@ const BetPlaceModule = ({ isFancy, stakeAmount, fun, betPlaceData, openModal2, s
       openModal2()
       toast?.success(data?.message)
     }
+    
   }, [data])
   return (
     <div className={`betplace-module-container `} >
@@ -53,9 +54,13 @@ const BetPlaceModule = ({ isFancy, stakeAmount, fun, betPlaceData, openModal2, s
               <input type="number" value={isFancy ? betPlaceData?.run : betPlaceData?.odds} />
             </li>
             <li>
-              <input type="number" value={isFancy ? betPlaceData?.stack : betPlaceData?.stack} />
+              <input type="number" value={isFancy ? betPlaceData?.stack : betPlaceData?.stack} onChange={(e)=>setBetPlaceData((prev) => {
+                return {
+                  ...prev, stack:e.target.value ==""? "": Number(e.target.value)
+                }
+              })}/>
             </li>
-            <li>0</li>
+            <li>{profitLoss?.length && profitLoss[0].winLoss && profitLoss[0].winLoss?.toFixed(2)}</li>
           </ul>
         </div>
         <div className="place-bet-buttons">

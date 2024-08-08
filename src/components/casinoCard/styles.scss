@@ -1,3 +1,4 @@
+@import "../../styles/variables/mixins";
 .casino-list-item{
     width: 100%;
     // margin-left: 5px;
@@ -10,9 +11,15 @@
 .casino-list-item-banner{
     // padding-top: 80%;
     height: 100px;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center center;
     // height: 100px;
     // width: 100px;
+    @include media(phone){
+        height: 0%;
+        background-position: 50%;
+        background-size: cover;
+        padding-top: 100%;
+    }
 }
 }
