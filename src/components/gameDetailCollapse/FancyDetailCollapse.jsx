@@ -2,7 +2,7 @@
 ////style
 import "./styles.scss"
 import DetailOdds from "./DetailOdds";
-const FancyDetailCollapse = ({fun,odddata,collapseName,betPlaceHandler}) => {
+const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCheckFancy,fun,odddata,collapseName,betPlaceHandler}) => {
   const oddsColor = ["back","back1","back2","lay","lay1","lay2"]
   return (
     <div className="game-market market-4 ">
@@ -41,7 +41,7 @@ const FancyDetailCollapse = ({fun,odddata,collapseName,betPlaceHandler}) => {
         <div className="odds-row-right-col grid grid-cols-3">
           <DetailOdds height={28} display={"none"}/>
           <DetailOdds height={28} display={"none"}/>
-          <DetailOdds height={28} value={"No"} item={oddsColor[3]}/>
+          <DetailOdds height={28} value={"No"} item={oddsColor[3]} />
           <DetailOdds height={28} value={"Yes"}  item={oddsColor[0]}/>
           <DetailOdds height={28} display={"none"}/>
           <DetailOdds height={28}display={"none"}/>
@@ -51,11 +51,23 @@ const FancyDetailCollapse = ({fun,odddata,collapseName,betPlaceHandler}) => {
       </div>
 
       {odddata?.map((item,index)=>{
+         const findSelectionId =  profitLoss?.map((elm) => {
+          if (elm?.marketId == collapseName) {
+            if (elm?.selectionId == item?.SelectionId) {
+              return elm?.winLoss
+            }
+          }
+        }) 
         return(
 
           <div className="fancy-row-container flex items-center" key={item?.RunnerName}>
-          <div className="odds-row-left-col px-[5px]">{item?.RunnerName}</div>
-          <div className="odds-row-right-col grid grid-cols-3 relative">
+          <div className="odds-row-left-col px-[5px]">{item?.RunnerName}
+          <span style={{ color: findSelectionId > 0 ? "green" : "red" }}>{findSelectionId}</span>
+          </div>
+          <div className="odds-row-right-col grid grid-cols-3 relative" onClick={()=>{
+            setCheckFancy("fancy")
+            fancyProfitLoss(fancyBetPlaceData?.stack, fancyBetPlaceData?.run, fancyBetPlaceData?.is_back,collapseName, item?.SelectionId)
+          }}>
            
                 <DetailOdds display={"none"}/>
                 <DetailOdds display={"none"}/>
