@@ -1,17 +1,4 @@
 
-// @font-face{
-//     font-family: "YourFontName";
-//     src: url("../../assets/font/b9a86a749f6403ffcbf023ac838674c6.eot");
-//     src: url("../../assets/font/b9a86a749f6403ffcbf023ac838674c6.eot?#iefix")format("embedded-opentype"),
-//         url("../../assets/font/b9a86a749f6403ffcbf023ac838674c6.woff")format("woff"),
-//         url("../../assets/font/b9a86a749f6403ffcbf023ac838674c6.woff2")format("woff2"),
-//         url("../../assets/font/b9a86a749f6403ffcbf023ac838674c6.ttf")format("truetype"),
-//         url("../../assets/font/b9a86a749f6403ffcbf023ac838674c6.svg#Madera W01 Bold")format("svg");
-//     font-weight:normal;
-//     font-style:normal;
-//     font-display:swap;
-//   }
-
   
  @mixin media($breakpoint){
     @if $breakpoint == phone{

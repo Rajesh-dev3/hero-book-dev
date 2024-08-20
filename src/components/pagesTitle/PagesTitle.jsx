@@ -2,7 +2,7 @@
 import "./styles.scss"
 const PagesTitle = ({ title }) => {
   return (
-    <div className="satement-header"><h4 className="header-title">{title}</h4></div>
+    <div className="statement-header"><h4 className="header-title">{title}</h4></div>
   )
 }
 

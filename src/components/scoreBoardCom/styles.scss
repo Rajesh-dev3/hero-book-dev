@@ -1,8 +1,9 @@
 @import "../../styles/variables/mixins";
+@import "../../styles/variables/colors";
 
-.score-board{
-    color: #fff;
-    width:calc(100% - 0px);
+.score-board {
+    color: $white;
+    width: calc(100% - 0px);
     padding: 5px;
     height: 90px;
     background-image: url("../../assets/img/filed-grass.png");
@@ -10,23 +11,26 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    @include media(phone){
+
+    @include media(phone) {
         flex-direction: column;
         height: 120px;
     }
-    &::before{
+
+    &::before {
         content: "";
-width: 100%;
-height: 100%;
-left: 0%;
-top: 0%;
-background-color: rgba(0,0,0,0.5);
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+        background-color: rgba(0, 0, 0, 0.5);
         position: absolute;
-        
-        
-        
+
+
+
     }
-    .score-col{
+
+    .score-col {
         display: flex;
         position: absolute;
         z-index: 11;
@@ -35,51 +39,60 @@ background-color: rgba(0,0,0,0.5);
         left: 15px;
         height: fit-content;
         align-items: end;
-     
+
         justify-content: space-between;
-@include media(phone){
-    flex-direction: column;
-}
-        .score-col-left{
+
+        @include media(phone) {
+            flex-direction: column;
+        }
+
+        .score-col-left {
             width: 50%;
-            @include media(phone){
+
+            @include media(phone) {
                 width: 100%;
             }
-            P{
-    
+
+            P {
+
                 display: flex;
                 gap: 50px;
                 margin-top: 5px;
                 font-size: 13px;
                 font-weight: 600;
-                @include media(phone){
+
+                @include media(phone) {
                     font-size: 11px;
                 }
-                span{
-                    // width: 50px;
-                }
+
             }
         }
-        .score-col-right{
+
+        .score-col-right {
             width: 50%;
             text-align: end;
-            @include media(phone){
+
+            @include media(phone) {
                 width: 100%;
                 text-align: left;
             }
-            p{
-                span{
+
+            p {
+                span {
                     font-size: 12px;
                 }
             }
-            .ball{
+
+            .ball {
                 display: flex;
                 gap: 5px;
                 justify-content: end;
-                @include media(phone){
+
+                @include media(phone) {
                     justify-content: start;
                 }
-                span{
+
+                span {
                     margin-top: 5px;
                     width: 25px;
                     height: 25px;
@@ -90,16 +103,17 @@ background-color: rgba(0,0,0,0.5);
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    color: white;
+                    color: $white;
                     font-weight: 700;
-    
+
                 }
             }
         }
     }
+
     .game-header {
         background-color: #2C3E50;
-        color: white;
+        color: $white;
         position: absolute;
         top: 0;
         left: 0;
@@ -112,10 +126,11 @@ background-color: rgba(0,0,0,0.5);
         justify-content: space-between;
         width: calc(100% - 0px);
         z-index: 12;
-        @include media(phone){
+
+        @include media(phone) {
             font-size: 12px;
         }
-     
+
     }
 
 }

@@ -1,40 +1,56 @@
 @import "../../styles/variables/mixins";
-.game-market{
+@import "../../styles/variables/colors";
+
+.game-market {
     margin-top: 8px;
-    @include media(phone){
+
+    @include media(phone) {
         margin-top: 0px;
     }
-    .market-title{
+
+    .market-title {
         background-color: #2C3E50D9;
-        color: white;
+        color: $white;
         padding: 5px 10px;
         font-size: 15px;
         font-weight: bold;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        span{
+
+        span {
             display: inline-block;
-            // max-width: calc(100% - 30px);
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
     }
-    .odds-row-container{
+
+    .odds-row-container {
         width: 100%;
         background-color: #f2f2f2;
-        .odds-row-left-col{
+
+        .odds-row-left-col {
             width: 55%;
             font-size: 13px;
-            @include media(phone){
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span {
+                font-size: 17px;
+            }
+
+            @include media(phone) {
                 width: 28%;
+                text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis;
-        
+                display: inline-block;
+
             }
-            p{
+
+            p {
                 margin: 0%;
                 padding: 0%;
                 font-size: 12px;
@@ -42,21 +58,26 @@
                 color: #097c93;
             }
         }
-        .odds-row-right-col{
+
+        .odds-row-right-col {
             width: 45%;
-            @include media(phone){
+
+            @include media(phone) {
                 width: 72%;
             }
         }
     }
-    .fancy-row-container{
+
+    .fancy-row-container {
         width: 100%;
         background-color: #f2f2f2;
         border-bottom: 1px solid #ccc;
-        .odds-row-left-col{
-            width: 50%;
+
+        .odds-row-left-col {
+            width: 60%;
             font-size: 13px;
-            p{
+
+            p {
                 margin: 0%;
                 padding: 0%;
                 font-size: 12px;
@@ -64,19 +85,31 @@
                 color: #097c93;
             }
         }
-        .odds-row-right-col{
-            width: 50%;
-            .fancy-min-max{
+
+        .odds-row-right-col {
+            width: 40%;
+
+            .fancy-min-max {
                 display: flex;
                 flex-direction: column;
 
-font-size: 10px;
-font-weight: bold;
-justify-content: center;
-margin-left: 8%;   
-color: #097CAC;   
-      }
+                font-size: 10px;
+                font-weight: bold;
+                justify-content: center;
+                margin-left: 8%;
+                color: #097CAC;
+
+                @include media(phone) {
+                    display: none;
+                }
+            }
         }
+    }
+}
+
+.second-odd-header {
+    @include media(phone) {
+        display: none;
     }
 }
 
@@ -88,36 +121,40 @@ color: #097CAC;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
     cursor: pointer;
-   
-    .market-odd{
+
+    .market-odd {
         font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 3px;
-    line-height: 1;
-    @include media(phone){
-       font-size: 14px;;
+        font-weight: bold;
+        margin-bottom: 3px;
+        line-height: 1;
+
+        @include media(phone) {
+            font-size: 14px;
+            ;
+        }
     }
-    }
-    .market-volume{
+
+    .market-volume {
         font-size: 12px;
         font-weight: 100;
         line-height: 1;
-        @include media(phone){
+
+        @include media(phone) {
             font-size: 11px;
         }
     }
 }
 
-.suspend{
+.suspend {
     background-color: #373636d6;
     text-transform: uppercase;
 }
 
-.market-4{
-    .odds-row-container{
-        @include media(phone){
+.market-4 {
+    .odds-row-container {
+        @include media(phone) {
 
             flex-direction: row;
         }

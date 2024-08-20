@@ -48,7 +48,7 @@ const HomeTab = ({ setActiveTab, setName, name }) => {
     let result = "";
     result = tabKey && tabKey.sport_id && tabKey.sport_id === 1 ? "Football" : tabKey.name;
     return result;
-
+ 
   };
 
   const sportListArray = [
@@ -94,28 +94,32 @@ const HomeTab = ({ setActiveTab, setName, name }) => {
       <ul className="tabs w-full overflow-x-scroll flex ">
         {
           data?.data?.map((item) => {
-            return (
+            if(item?.name != "Casino"){
 
-              <li
+              return (
+                
+                <li
                 key={item}
                 onClick={() => handleTabClick(item?.sport_id, item?.name)}
                 className={`${name == item?.name ? "active" : ""} flex`}
-              >
+                >
                 <div className="sport-icon"> {iconObj[item?.sport_id]}</div>
                 {getTitle(item)}
               </li>
             )
+          }
           })
         }
         {
           sportListArray?.map((item) => {
-            return (
 
-              <li
+              return (
+                
+                <li
                 key={item}
                 onClick={() => handleTabClick(item?.sport_id, item?.name)}
                 className={`${name == item?.name ? "active" : ""} flex`}
-              >
+                >
                 <div className="sport-icon">{iconObj[item?.sport_id]}</div>
                 {getTitle(item)}
               </li>

@@ -42,7 +42,6 @@ export default function AccordionUsage() {
   ];
   // /livecasino
 
-console.log(first)
   return (
     <div>
 

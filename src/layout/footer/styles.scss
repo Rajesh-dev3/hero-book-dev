@@ -1,41 +1,51 @@
 @import "../../styles/variables/mixins";
+@import "../../styles/variables/colors";
+
 .footer {
     background-color: #0088CC;
-    color: white;
+    color: $white;
     padding: 10px;
     position: relative;
     margin-top: 10px;
-    @include media(phone){
-        background-color: black;
+
+    @include media(phone) {
+        background-color: $black;
     }
+
     .footer-top {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        @include media(phone){
+
+        @include media(phone) {
             flex-direction: column;
         }
+
         .footer-links {
             flex: 1;
         }
+
         .support-detail {
             flex: 1;
-            h2{
+
+            h2 {
                 font-size: 24px;
                 font-weight: 700;
                 margin-bottom: 0;
-            
+
             }
         }
+
         .social-icons-box {
             display: flex;
             flex-wrap: wrap;
             flex: 1;
             justify-content: flex-end;
         }
+
         .social-icon {
-            background-color: white;
+            background-color: $white;
             height: 40px;
             width: 40px;
             border-radius: 15px;
@@ -43,9 +53,11 @@
             justify-content: center;
             align-items: center;
             margin-right: 5px;
-            @include media(phone){
-                background-color: black;
+
+            @include media(phone) {
+                background-color: $black;
             }
+
             img {
                 height: 30px;
             }
@@ -62,45 +74,54 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #fff;
-    @include media(phone){
+    background-color: $white;
+
+    @include media(phone) {
         width: 90%;
         margin: auto;
     }
-    .bottom-p{
-        @include media(phone){
-          font-size: 11px;
+
+    .bottom-p {
+        @include media(phone) {
+            font-size: 11px;
         }
     }
+
     .secure-logo {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         line-height: normal;
-        @include media(phone){
+
+        @include media(phone) {
             display: flex;
             flex-wrap: nowrap;
         }
-        a{
-            img{
-                @include media(phone){
+
+        a {
+            img {
+                @include media(phone) {
                     display: none;
                 }
             }
         }
+
         img {
             max-height: 50px;
             max-width: 100px;
-    margin-right: 10px;
+            margin-right: 10px;
         }
     }
+
     .d-inline-block {
         display: flex;
-        @include media(phone){
+
+        @include media(phone) {
             width: 100%;
             justify-content: center;
         }
+
         img {
             max-height: 30px;
             max-width: 100px;

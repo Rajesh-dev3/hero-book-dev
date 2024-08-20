@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 
 export const dynamicBaseQuery = async (args, WebApi, extraOptions) => {
   const rawBaseQuery = fetchBaseQuery({
-    // baseUrl: "https://admin-api.giedu.in",
     baseUrl: "https://bigbetexchange.com/api/",
+    // baseUrl: "https://exchthanos.com/api/",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
@@ -22,10 +22,10 @@ export const dynamicBaseQuery = async (args, WebApi, extraOptions) => {
       toast.error(responseMessage);
     }
   }
-  return result;
   // if (result?.data.status === 200 || result?.data.status) {
-  //   message.success(result?.data?.message);
+  //   toast.success(result?.data?.message);
   // } else if (result?.data.status === false) {
-  //   message.error(result?.data?.message);
+  //   toast.error(result?.data?.message);
   // }
+  return result;
 };

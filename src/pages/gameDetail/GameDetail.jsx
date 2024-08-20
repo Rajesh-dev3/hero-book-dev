@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import ErrorIcon from "@mui/icons-material/Error";
 import GameDetailCollapse from "../../components/gameDetailCollapse/GameDetailCollapse";
 import FancyDetailCollapse from "../../components/gameDetailCollapse/FancyDetailCollapse";
-import OtherMarket from "../../components/gameDetailCollapse/OtherMarket";
 import { Link, useParams } from "react-router-dom";
 import GameDetailBetHistory from "../../components/gameDetailBetHistory/GameDetailBetHistory";
 import BetPlaceModule from "../../components/betPlaceModule/BetPlaceModule"
@@ -127,6 +126,16 @@ const GameDetail = () => {
   };
 
   const closeModal = () => {
+    setBetPlaceData((prev) => {
+      return {
+        ...prev, stack: ""
+      }
+    })
+    setFancyBetPlaceData((prev) => {
+      return {
+        ...prev, stack: ""
+      }
+    })
     setModalOpen(false);
   };
   const closeModa2 = () => {
@@ -137,134 +146,28 @@ const GameDetail = () => {
   }
   const [checkFancy, setCheckFancy] = useState(false)
   const [profitLoss, setProfitLoss] = useState([])
-//   const [profitLoss2, setProfitLoss2] = useState([])
-//   useEffect(() => {
-//     if(checkFancy ==1){
-//       setProfitLoss([])
-//     }else if(checkFancy == 2){
-//       setProfitLoss2([])
-//     }
-    
-//   }, [checkFancy])
-
-
-//   const [selectionId2, setSelectionId2] = useState("")
-//   const profithandler = (stack, odds, is_back, eventId) => {
-//     if (!eventId || !eventId.runner_json || !eventId.market_id) {
-//         console.error("Invalid event data:", eventId);
-//         return;
-//     }
-
-
-//     // Calculate stackWin, handling the case where odds is 0
-//     const stackWin = odds === 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
-
-//     const findIndex = (index) => {
-//         return eventId?.runner_json?.length > index ? eventId.runner_json[index].selectionId : null;
-//     };
-
-//     const obj = [
-//         {
-//             selectionId: findIndex(0),
-//             marketId: eventId?.market_id,
-//             winLoss: stack
-//             ? (odds == 0 
-//                 ? -Number(stack) 
-//                 : (is_back == 0 
-//                     ? -Number(stackWin) 
-//                     : Number(stackWin))
-//               )
-//             : ""
-//         },
-//         {
-//             selectionId: findIndex(1),
-//             marketId: eventId?.market_id,
-//             winLoss: stack
-//             ? (odds == 0 
-//                 ? -Number(stack) 
-//                 : (is_back == 1 
-//                     ? -Number(stack) 
-//                     : Number(stack))
-//               )
-//             : ""
-//         },
-//         {
-//             selectionId: findIndex(2),
-//             marketId: eventId?.market_id,
-//             winLoss: stack ? (is_back == 1 ? Number(-stack) : Number(stack)) : ""
-//         }
-//     ];
-
-//     setProfitLoss2(obj);
-// };
-
-// useEffect(() => {
-
-//   if (betPlaceData?.stack && betPlaceData?.odds && selectionId2 && checkFancy ==1) {
-//       profithandler(betPlaceData.stack, betPlaceData.odds, betPlaceData.is_back, selectionId2);
-//   }
-// }, [betPlaceData, selectionId]);
-// console.log(ballbyball,"normalFancy")
-
-
-// const [selectionId, setSelectionId] = useState("")
-
-// const profithandler = (stack, odds, is_back, eventId) => {
-//   const stackWin = (Number(odds) - 1) * Number(stack)
-//   const findIndex = ((index) => {
-   
-//       return eventId?.length ? eventId[index]?.selectionId : null
-//   })
-
-//   const obj = [
-//     {
-//       selectionId: findIndex(0),
-//       winLoss: stack ? (is_back == 0 ? Number(-stackWin) : Number(stackWin)) : ""
-//     },
-//     {
-//       selectionId: findIndex(1),
-      
-//       winLoss: stack ? (is_back == 1 ? Number(-stack) : Number(stack)) : ""
-//     },
-//     {
-//       selectionId: findIndex(2),
-      
-//       winLoss: stack ? (is_back == 1 ? Number(-stack) : Number(stack)) : ""
-//     }
-//   ];
-
-//   setProfitLoss(obj)
-
-
-// }
-// useEffect(() => {
-
-//     if (betPlaceData?.stack != null && Array.isArray(selectionId)) {
-//       profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, selectionId)
-//     }
- 
-// }, [betPlaceData, selectionId])
-
-
 
 
 
 const [selectionId2, setSelectionId] = useState("")
 
 const profithandler = (stack, odds, is_back, eventId) => {
-  const stackWin = odds === 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
+
+  const stackWin = odds == 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
   const findIndex = ((index) => {
-    if (checkFancy) {
+    if (checkFancy == true) {
       return eventId?.runner_json?.length ? eventId?.runner_json[index]?.selectionId : null
-    } else if (!checkFancy) {
-      return eventId?.length ? eventId[index]?.selectionId : null
+    } else if (checkFancy == false) {
+      return eventId?.runner_json?.length ? eventId?.runner_json[index]?.selectionId : null
+      // return eventId?.length ? eventId[index]?.selectionId : null
     }
   })
 
   const obj = [
     {
       selectionId: findIndex(0),
-      marketId: checkFancy ? eventId?.market_id : null,
+      marketName:eventId?.runner_json?.[0]?.selectionName,
+      marketId:checkFancy?  eventId?.market_id:eventId?.runner_json?.[0]?.selectionName,
       winLoss: stack
             ? (odds == 0 
                       ? -Number(stack) 
@@ -276,7 +179,8 @@ const profithandler = (stack, odds, is_back, eventId) => {
     },
     {
       selectionId: findIndex(1),
-      marketId: checkFancy ? eventId?.market_id : null,
+      marketName:eventId?.runner_json?.[1]?.selectionName,
+      marketId:  checkFancy?  eventId?.market_id:eventId?.runner_json?.[1]?.selectionName ,
       winLoss: stack
             ? (odds == 0 
                 ? -Number(stack) 
@@ -288,7 +192,8 @@ const profithandler = (stack, odds, is_back, eventId) => {
     },
     {
       selectionId: findIndex(2),
-      marketId: checkFancy ? eventId?.market_id : null,
+      marketName:eventId?.runner_json?.[2]?.selectionName,
+      marketId:checkFancy?  eventId?.market_id:eventId?.runner_json?.[2]?.selectionName,
       winLoss: stack
                   ? (odds == 0 
                       ? -Number(stack) 
@@ -299,16 +204,18 @@ const profithandler = (stack, odds, is_back, eventId) => {
                   : ""
     }
   ];
-
+  
   setProfitLoss(obj)
-
-
+  
+  
 }
 
-const fancyProfitLoss= (stack,odds,is_back,eventId,eventName)=>{
+const fancyProfitLoss= (stack,odds,is_back,eventId,eventName,minStack,maxStack)=>{
   const obj = [   {
     selectionId: eventId,
     marketId: eventName,
+    minStack:minStack,
+    maxStack:maxStack,
     winLoss: stack
           ? (odds == 0 
               ? -Number(stack) 
@@ -320,10 +227,9 @@ const fancyProfitLoss= (stack,odds,is_back,eventId,eventName)=>{
   },];
   setProfitLoss(obj)
 }
-
 useEffect(() => {
   if (checkFancy == false ) {
-    if (betPlaceData?.stack != null && Array.isArray(selectionId2)) {
+    if (betPlaceData?.stack != null) {
       profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, selectionId2)
     }
   } else if (checkFancy == true) {
@@ -338,13 +244,14 @@ useEffect(() => {
 useEffect(() => {
    if(checkFancy == "fancy"){
     if (fancyBetPlaceData?.stack != null ) {
-      fancyProfitLoss(fancyBetPlaceData?.stack, fancyBetPlaceData?.odds, fancyBetPlaceData?.is_back,profitLoss[0]?.marketId, profitLoss[0]?.selectionId)
+      fancyProfitLoss(fancyBetPlaceData?.stack, fancyBetPlaceData?.odds, fancyBetPlaceData?.is_back,profitLoss[0]?.selectionId , profitLoss[0]?.marketId,profitLoss[0]?.minStack,profitLoss[0]?.maxStack)
     }
   }
 }, [fancyBetPlaceData])
+
   return (
     <>
-      <ModalComp isOpen={modalOpen} onClose={closeModal} content={<MobileBetModule openModal2={openModal2} fun={openModal} isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />} />
+      <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={<MobileBetModule checkFancy={checkFancy} profitLoss={profitLoss}  setProfitLoss={setProfitLoss} isFancy={isFancy} openModal2={openModal2} fun={openModal}  stakeAmount={odddata?.UserSportSettings[0]} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />} />
       <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack closeModa2={closeModa2} />} />
 
       {isMobile &&
@@ -362,25 +269,25 @@ useEffect(() => {
           <div className="game-detail-left-col">
          <ScoreBoardCom odddata={odddata} date={date} matchId={matchId}/>
             {oddsDataSta?.MatchDetails?.runner_json ?
-              <GameDetailCollapse checkFancy={checkFancy} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+              <GameDetailCollapse  checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {oddsDataSta?.BookerMakerMarket?.runner_json ?
-              <GameDetailCollapse checkFancy={checkFancy} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+              <GameDetailCollapse checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {normalFancy?.length ?
-              <FancyDetailCollapse profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="Normal" odddata={normalFancy} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} />
+              <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="Normal" odddata={normalFancy} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} />
               : ""}
             {overbyover?.length ?
-              <FancyDetailCollapse profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="overbyover" odddata={overbyover} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
+              <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="overbyover" odddata={overbyover} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
             }
             {ballbyball?.length ?
-              <FancyDetailCollapse profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="ballbyball" odddata={ballbyball} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
+              <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="ballbyball" odddata={ballbyball} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
             }
          
             {oddsDataSta?.OtherMarketList?.length ?
               oddsDataSta?.OtherMarketList?.map((item, i) => {
                 return (
-                  <GameDetailCollapse checkFancy={checkFancy} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+                  <GameDetailCollapse checkFancy={true} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
                 )
               }):""
             }

@@ -8,6 +8,7 @@ import { dynamicBaseQuery } from "../badRequestHandler/BadRequestHandler"
 export const login = createApi({
   reducerPath: 'login',
   baseQuery: dynamicBaseQuery,
+  // baseQuery: fetchBaseQuery({ baseUrl: 'http://52.66.201.64:8786/api/' }),
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (body) => ({

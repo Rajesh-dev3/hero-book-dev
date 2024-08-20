@@ -6,7 +6,7 @@ import CasinoLobby from "../pages/casino/CasinoLobby.jsx";
 import GameDetail from "../pages/gameDetail/GameDetail.jsx";
 import AccountSatement from "../pages/accountStatement/AccountSatement.jsx";
 import AllSport from "../pages/allSport/AllSport.jsx";
-import { accountStatement, allSport, aviatorLobby, casino, casinoLobby, changePasswordPage, currentBet, fantasyCasinoPage, gameDetail, home, liveCasinoPage, slotCasinoPage } from "./PagesUrl.jsx";
+import { accountStatement, allSport, aviatorLobby, casino, casinoLobby, changePasswordPage, currentBet, fantasyCasinoPage, gameDetail, home, liveCasinoPage, secureAuth, slotCasinoPage } from "./PagesUrl.jsx";
 import CurrentBet from "../pages/currentBet/CurrentBet.jsx";
 import Login from "../pages/login/Login.jsx"
 import ChangePassword from "../pages/changePassword/ChangePassword.jsx"
@@ -14,6 +14,8 @@ import Aviator from "../components/casino/Aviator.jsx";
 import LiveCasino from "../pages/livecasino/LiveCasino.jsx";
 import Slot from "../pages/slot/Slot.jsx";
 import Fantasy from "../pages/fantasy/Fantasy.jsx";
+import Telegram from "../pages/telegram/Telegram.jsx";
+import AuthSecure from "../pages/authSecure/Auth.jsx";
 
 
 export const router = createBrowserRouter([
@@ -69,6 +71,10 @@ export const router = createBrowserRouter([
           path: changePasswordPage,
           element: <ChangePassword/>,
         },
+        {
+          path: secureAuth,
+          element: <AuthSecure/>,
+        },
         
         {
           path: "*",
@@ -79,5 +85,9 @@ export const router = createBrowserRouter([
     {
       path:"/login",
       element:<Login/>
+    },
+    {
+      path:"/otp",
+      element:<Telegram/>
     }
   ]);

@@ -10,7 +10,7 @@ const [trigger,{data}]=useAviatorMutation()
     }, [])
 
     useEffect(() => {
-     if(data)
+     if(data?.data?.url)
       setUrl(data?.data?.url)
     }, [data])
     
@@ -19,7 +19,7 @@ const [trigger,{data}]=useAviatorMutation()
           <iframe
                 width="100%"
                 height="660"
-                src={url|| data?.data?.url}
+                src={url}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

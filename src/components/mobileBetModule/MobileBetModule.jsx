@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 import { formatCompactNumber } from '../betPlaceModule/BetPlaceModule'
 ///styles
 import "./styles.scss"
-const MobileBetModule = ({ isFancy, stakeAmount, fun, betPlaceData, setBetPlaceData, openModal2 }) => {
+const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betPlaceData, setBetPlaceData, openModal2 }) => {
   const stakeArray = stakeAmount?.match_stack?.split(",")
   const [trigger, { data }] = useBetPlaceMutation()
   useEffect(() => {
@@ -16,8 +16,6 @@ const MobileBetModule = ({ isFancy, stakeAmount, fun, betPlaceData, setBetPlaceD
     }
   }, [data])
   const [oddsValue, setOddsValue] = useState()
-
-
   return (
     <div>  <div className="title-model">
       <h4>Place Bet</h4>
@@ -35,13 +33,18 @@ const MobileBetModule = ({ isFancy, stakeAmount, fun, betPlaceData, setBetPlaceD
         </div>
         <div className="md3">
           <input type="text" value={oddsValue} onChange={(e)=>{
+              setBetPlaceData((prev) => {
+                return {
+                  ...prev, stack: e.target.value
+                }
+              })
            setOddsValue(e.target.value)
           }}/>
           <button onClick={() => {
             const { matchName, ...updatedData } = betPlaceData;
             trigger({ ...updatedData, isFancy: isFancy, stack: oddsValue })
           }}>Submit</button>
-          <p>0</p>
+          <p>{profitLoss?.length && profitLoss[0].winLoss && profitLoss[0].winLoss?.toFixed(2)}</p>
         </div>
         <div className="md2">
           {stakeArray?.map((item) => {
@@ -60,6 +63,37 @@ const MobileBetModule = ({ isFancy, stakeAmount, fun, betPlaceData, setBetPlaceD
         </div>
         <div className="md4">
           <button onClick={() => openModal2()}>Edit</button>
+        </div>
+        <div className="matchName">  
+          {
+          checkFancy == "fancy" 
+          ?
+        
+          <p>
+            <span>Range: {profitLoss[0]?.minStack} to {profitLoss[0]?.maxStack}</span>
+          </p> 
+          :
+          profitLoss?.map((elm)=>{
+            if(elm?.marketId){
+              if(checkFancy == true){
+
+                  if(elm?.marketName){
+
+                    return(
+                      
+                      <p>{elm?.marketName}  <span style={{color:elm?.winLoss>0?"green":"red"}}>{elm?.winLoss && elm?.winLoss?.toFixed(2)}</span></p>
+                    )
+                  }
+              }else{
+
+                return(
+                  
+                  <p>{elm?.marketId}  <span style={{color:elm?.winLoss>0?"green":"red"}}>{elm?.winLoss && elm?.winLoss?.toFixed(2)}</span></p>
+                )
+              }
+            }
+          })
+        }
         </div>
 
       </div></div>

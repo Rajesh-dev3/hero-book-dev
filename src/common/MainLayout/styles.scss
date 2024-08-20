@@ -14,7 +14,7 @@
             margin-right: 0%;  
         }
         .main-layout-sider{
-            width: 17%;
+            width: 240px;
             @include media(phone){
                 display: none;   
                      
@@ -23,9 +23,9 @@
                 
         }
         .main-layout-content{
-            width: 83%;
+            width: calc(100% - 240px);
             @include media(phone){
-                width: 100%;
+                width: calc(100% - 0px);
          
               
                     }

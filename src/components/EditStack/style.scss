@@ -1,77 +1,87 @@
 @import "../../styles/variables/mixins";
-.edit-stack{
-    // padding: 10px;
+@import "../../styles/variables/colors";
+
+.edit-stack {
     font-family: Roboto Condensed, sans-serif;
 
-    .heading{
+    .heading {
         font-weight: 500;
         font-size: 20px;
         padding: 10px;
-    background: black;
-    color: white;
+        background: $black;
+        color: $white;
     }
-    .detail-sec{
+
+    .detail-sec {
         padding: 20px 20px 10px 20px;
-        background: white;
-        .button-sec{
+        background: $white;
+
+        .button-sec {
             display: flex;
             font-size: 12px;
-            // gap: 5px;
-            .btn{
+
+            .btn {
                 width: 43%;
                 padding: 8px 0 !important;
                 font-weight: 600;
                 font-size: 13px;
                 text-transform: uppercase;
                 background-color: rgba(0, 136, 204, .647);
-                color: #fff;
-                @include media(phone){
+                color: $white;
+
+                @include media(phone) {
                     width: 30%;
                 }
-        &:last-child{
-            background: black;
-        }
+
+                &:last-child {
+                    background: $black;
+                }
             }
         }
     }
-    .price-sec{
-        // background: blue;
+
+    .price-sec {
         padding: 15px 20px 0px 20px;
-        .list-name{
+
+        .list-name {
             display: flex;
             gap: 4%;
             justify-content: space-between;
             margin-bottom: 5px;
-            
-            P{
+
+            P {
                 width: 49%;
-                color: #000;
+                color: $black;
             }
         }
-        .edit-inputs{
+
+        .edit-inputs {
             display: flex;
             gap: 4%;
             margin-bottom: 8px;
-            input{
+
+            input {
                 width: 48%;
-                background-color: #fff;
+                background-color: $white;
                 border-radius: 5px;
-    border:2px solid #dbdbdb;
-    color: #000;
-    
-    padding: 5px;
+                border: 2px solid #dbdbdb;
+                color: $black;
+
+                padding: 5px;
             }
         }
-        
+
     }
-    .submit{
+
+    .submit {
         padding: 0px 20px;
         margin-bottom: 10px;
-        .btn{
+
+        .btn {
             padding: 8px 0 !important;
             width: 30%;
-            background: black;
-            color: white;
+            background: $black;
+            color: $white;
             border-radius: 8px;
         }
     }

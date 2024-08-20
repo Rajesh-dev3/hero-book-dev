@@ -1,21 +1,22 @@
 @import "../../styles/variables/mixins";
-@keyframes blinktext {
+@import "../../styles/variables/colors";
+@keyframes blinkText {
     0% {
         opacity: 1;
-        color: red;
+        color: $red;
     }
     50% {
         opacity: 1;
-        color: yellow;
+        color: $yellow;
     }
     100% {
         opacity: 1;
-        color: red;
+        color: $red;
     }
 }
 
 .mobile-odds-tab{
-    background-color: black;
+    background-color: $black;
     width: 100vw;
     ul{
         margin: 0%;
@@ -24,7 +25,7 @@
         width: 100%;
         grid-template-columns: repeat(3,1fr);
         li{
-            color: white;
+            color: $white;
             list-style: none;
             text-align: center;
             margin: .625rem 0;
@@ -33,7 +34,7 @@
             align-items: center;
             justify-content: center;
             text-transform: uppercase;
-            border-right: 1px solid #fff;
+            border-right: 1px solid $white;
             font-weight: bold;
             svg{
 
@@ -69,7 +70,7 @@
         .bet-nation-game-name{
             div{
                 font-size: 18px;
-                animation: blinktext normal 1s infinite ease-in-out;
+                animation: blinkText normal 1s infinite ease-in-out;
                 text-decoration: underline;
                 line-height: 1.5;
             }

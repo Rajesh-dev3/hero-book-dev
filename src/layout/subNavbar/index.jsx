@@ -99,7 +99,7 @@ const {pathname} = useLocation()
           }) : ""
         }
 
-        {casino?.map((item,index) => <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${listActive == index+1 && isMobile ?"subnav-list-active":"tabs-list"}`}><li >{item?.name}</li></Link>)}
+        {casino?.map((item,index) => <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${listActive == index+1 && isMobile ?"subNav-list-active":"tabs-list"}`}><li >{item?.name}</li></Link>)}
 
 
       </ul>

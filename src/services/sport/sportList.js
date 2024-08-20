@@ -3,9 +3,27 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { dynamicBaseQuery } from '../badRequestHandler/BadRequestHandler'
 
 // Define a service using a base URL and expected endpoints
+const baseQuery = async (args, api, extraOptions) => {
+  const token = localStorage.getItem("token");
+const result = await fetchBaseQuery({
+  baseUrl: 'https://exchthanos.com/api/',
+  prepareHeaders: (headers) => {
+    if (token) {
+      headers.set('Authorization', `Bearer ${token}`);
+    }
+    return headers;
+  },
+})(args, api, extraOptions);
+
+
+
+return result;
+};
+
 export const sportList = createApi({
   reducerPath: 'sportList',
-  baseQuery: dynamicBaseQuery,
+  
+  baseQuery: baseQuery,
   endpoints: (builder) => ({
     getSportList: builder.mutation({
       query: (body) => ({

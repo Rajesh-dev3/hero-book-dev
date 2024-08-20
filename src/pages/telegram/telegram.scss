@@ -1,0 +1,91 @@
+@import "../../styles/variables/colors";
+.main-telegram {
+  display: flex;
+  background: #111416;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  
+}
+.telegram {
+  text-align: center;
+
+  img {
+    width: 35%;
+  }
+  h3{
+    font-size: 1.421875rem;
+    margin-bottom: .5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+  h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #504b4b;
+    padding: 0;
+  }
+
+  p {
+    font-size: 14px;
+    color:$white;
+
+    span {
+      color: #00f;
+      cursor: pointer;
+    }
+  }
+}
+
+  .code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .code-input {
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #333333;
+    color: $white;
+  }
+/* Media Query for screens wider than 768px */
+@media only screen and (min-width: 768px) {
+  .main-telegram .telegram img {
+    width: 25%; 
+  }
+
+  // .main-telegram .talegram .code-input {
+  //   width: 12%; 
+  // }
+}
+
+/* Media Query for screens narrower than 768px */
+@media only screen and (max-width: 767px) {
+  .main-telegram .telegram img {
+    width: 70%; 
+  }
+
+  .main-telegram .telegram h4 {
+    font-size: 20px;
+  }
+
+  .main-telegram .telegram p {
+    font-size: 12px;
+  }
+
+  // .main-telegram .talegram .code-input {
+  //   width: 13%;
+  //   height: 50px;
+
+  //   font-size: 20px; 
+  // }
+}

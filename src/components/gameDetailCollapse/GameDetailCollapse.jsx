@@ -2,12 +2,9 @@
 ////style
 import "./styles.scss"
 import DetailOdds from "./DetailOdds";
-import { useEffect, useState } from "react";
-const GameDetailCollapse = ({ checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
-  const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"]
- 
 
- 
+const GameDetailCollapse = ({setCheckFancy, checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
+  const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"]
   return (
     <div className="game-market market-4 ">
       <div className="market-title">
@@ -18,16 +15,16 @@ const GameDetailCollapse = ({ checkFancy,profithandler, setSelectionId, profitLo
         <div className="odds-row-container flex items-center" >
           <div className="odds-row-left-col px-[5px]">
             <p>
-              Max:1
+              Max:{odddata?.marketMaxStack}
             </p>
           </div>
           <div className="odds-row-right-col grid grid-cols-6">
-            <DetailOdds height={28} />
-            <DetailOdds height={28} />
-            <DetailOdds height={28} value={"Back"} item={oddsColor[0]} />
-            <DetailOdds height={28} value={"Lay"} item={oddsColor[3]} />
-            <DetailOdds height={28} />
-            <DetailOdds height={28} />
+            <DetailOdds height={28} visible={true}/>
+            <DetailOdds height={28} visible={true}/>
+            <DetailOdds height={28} value={"Back"} item={oddsColor[0]} visiblePrice={true}/>
+            <DetailOdds height={28} value={"Lay"} item={oddsColor[3]} visiblePrice={true}/>
+            <DetailOdds height={28} visible={true}/>
+            <DetailOdds height={28} visible={true}/>
 
           </div>
         </div>
@@ -44,20 +41,20 @@ const GameDetailCollapse = ({ checkFancy,profithandler, setSelectionId, profitLo
         return (
           <div className="odds-row-container flex items-center" key={list?.selectionName} >
             <div className="odds-row-left-col px-[5px]">{list?.selectionName}
-              <span style={{ color: findSelectionId > 0 ? "green" : "red" }}>{checkFancy ? findFancySelection : findSelectionId && findSelectionId}</span>
+              <span style={{ color: findSelectionId > 0 ? "green" : "red" }}>{checkFancy ? findFancySelection : findSelectionId && findSelectionId?.toFixed(2)}</span>
 
             </div>
 
             <div className="odds-row-right-col grid grid-cols-6 relative" onClick={() => {
               if (checkFancy) {
-
+                setCheckFancy(checkFancy)
                 setSelectionId(odddata)
                 profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, odddata)
 
               } else if (!checkFancy) {
-
-                setSelectionId(odddata?.runner_json)
-                profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, odddata?.runner_json)
+                setCheckFancy(checkFancy)
+                setSelectionId(odddata)
+                profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, odddata)
               }
             }
             }

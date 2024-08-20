@@ -36,7 +36,7 @@ const Casino = () => {
 
       }
     } catch (err) {
-      console.log(err)
+      return err
     }
 
   }, [pathname, casinoType, activeCasino, activeValue]);

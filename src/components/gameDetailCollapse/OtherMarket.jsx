@@ -2,7 +2,7 @@
 ////style
 import "./styles.scss"
 import DetailOdds from "./DetailOdds";
-import { useEffect, useState } from "react";
+
 const OtherMarket = ({setCheckFancy,profithandler,setSelectionId2, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
   const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"]
   

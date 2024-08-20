@@ -18,7 +18,7 @@ const LiveCasino = () => {
   }, [data])
   return (
     <>
-      <div className='livecasino-filter-container'>
+      <div className='liveCasino-filter-container'>
         <ul>
           {liveCasino?.map((item) => <li key={item?.name + item?.id} className={`${item?.id == activeCasino ? "active" : ""}`} onClick={() => setActiveCasino(item?.id)}>{item?.name}</li>)}
 

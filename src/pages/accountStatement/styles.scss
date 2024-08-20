@@ -1,75 +1,84 @@
-
 @import "../../styles/variables/mixins";
+@import "../../styles/variables/colors";
 
-.select{
+.select {
     width: 25%;
- 
+
 }
 
 
 
-.statement-form{
+.statement-form {
 
-    .date-filter-row{
-        @include media(phone){
+    .date-filter-row {
+        @include media(phone) {
             flex-direction: column;
         }
-        .date-picker{
+
+        .date-picker {
             border: 1px solid #dbdbdb;
             height: 38px;
             width: 16.66666667%;
             border-radius: 2px;
             overflow: hidden;
-            @include media(phone){
+
+            @include media(phone) {
                 width: 100%;
             }
-            .react-datepicker-wrapper{
-                @include media(phone){
+
+            .react-datepicker-wrapper {
+                @include media(phone) {
                     width: 100%;
                 }
 
             }
-            .react-datepicker__calendar-icon{
+
+            .react-datepicker__calendar-icon {
                 font-size: 17px;
             }
-            .react-datepicker__view-calendar-icon input{
-        
+
+            .react-datepicker__view-calendar-icon input {
+
                 padding: 6px 10px 5px 7px;
                 width: 100%;
                 outline: none;
-                
+
             }
         }
     }
-    .entries-row{
-        .entries-left-col{
-         select{
-            padding: 5px 2px 5px 2px;
-            width: 12%;
-            border: 1px solid #dbdbdb;
-            
-              
-            @include media(phone){
-                width: 50%;
-                padding:5px;
-              border: 0;
-              outline: 1px solid ;
-              border-right: 4px solid transparent;
+
+    .entries-row {
+        .entries-left-col {
+            select {
+                padding: 5px 2px 5px 2px;
+                width: 12%;
+                border: 1px solid #dbdbdb;
+
+
+                @include media(phone) {
+                    width: 50%;
+                    padding: 5px;
+                    border: 0;
+                    outline: 1px solid;
+                    border-right: 4px solid transparent;
+                }
             }
         }
-        }
-        .entries-right-col{
-            @include media(phone){
+
+        .entries-right-col {
+            @include media(phone) {
                 display: none;
             }
         }
     }
 
-    .mt2{
-        .table-bordered{
-            @include media(phone){
+    .mt2 {
+        .table-bordered {
+            @include media(phone) {
                 width: 100%;
-                tr,th{
+
+                tr,
+                th {
                     padding: none !important;
                 }
             }
@@ -77,40 +86,44 @@
     }
 }
 
-.form-btn{
+.form-btn {
     width: 7.66666667%;
-    @include media(phone){
+
+    @include media(phone) {
         width: 22%;
     }
-    .btn{
+
+    .btn {
         width: 100%;
-        background-color: black;
-        color:#FFFFFF;
-        border-color: black;
+        background-color: $black;
+        color: #FFFFFF;
+        border-color: $black;
         height: 38px;
         padding: .375rem .75rem;
         font-size: 1rem;
         border-radius: .25rem;
-       }
+    }
 }
 
-.calnder{
+.calnder {
     position: absolute;
     right: 0%;
     top: 0%;
 }
 
-.statement-body{
-    .account-table{
+.statement-body {
+    .account-table {
         overflow-x: scroll;
-        table{
-            tr{
-                th{
+
+        table {
+            tr {
+                th {
                     white-space: nowrap;
                     background-color: #384b5e;
-                    color: white;
+                    color: $white;
                 }
-                td{
+
+                td {
                     white-space: nowrap;
                 }
             }

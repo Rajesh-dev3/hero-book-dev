@@ -1,8 +1,10 @@
+@import "../../styles/variables/colors";
+
 .sidebar-box {
     margin-bottom: 5px;
     .sidebar-title {
         background-color: #2C3E50;
-        color: white;
+        color: $white;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;

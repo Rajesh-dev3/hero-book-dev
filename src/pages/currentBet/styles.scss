@@ -1,8 +1,9 @@
 @import "../../styles/variables/mixins";
+@import "../../styles/variables/colors";
 
 .radio-input {
     &:checked {
-        background-color: black;
+        background-color: $black;
     }
 }
 
@@ -68,7 +69,7 @@ tr {
 
         white-space: nowrap;
         background-color: #384b5e;
-        color: white;
+        color: $white;
         font-size: 12px;
     }
     td {

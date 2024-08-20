@@ -16,7 +16,7 @@ export function formatCompactNumber(number) {
     return (number / 1_000_000_000_000).toFixed(0) + "T";
   }
 }
-const BetPlaceModule = ({profitLoss,setProfitLoss, isFancy, stakeAmount, fun, betPlaceData, openModal2, setBetPlaceData }) => {
+const BetPlaceModule = ({ profitLoss, isFancy, stakeAmount, fun, betPlaceData, openModal2, setBetPlaceData }) => {
   const stakeArray = stakeAmount?.match_stack?.split(",")
   const [trigger, { data }] = useBetPlaceMutation()
 
@@ -27,16 +27,16 @@ const BetPlaceModule = ({profitLoss,setProfitLoss, isFancy, stakeAmount, fun, be
       openModal2()
       toast?.success(data?.message)
     }
-    
+
   }, [data])
   return (
-    <div className={`betplace-module-container `} >
+    <div className={`betPlace-module-container `} >
       <div className="bet-place-title">
         <h4>
           Place Bet
         </h4>
       </div>
-      <div className={`bet-place-box ${betPlaceData?.is_back ==0 ? "lay" : "back"}`}>
+      <div className={`bet-place-box ${betPlaceData?.is_back == 0 ? "lay" : "back"}`}>
         <div className="bet-place-header">
           <ul>
             <li>(Bet for)</li>
@@ -54,11 +54,11 @@ const BetPlaceModule = ({profitLoss,setProfitLoss, isFancy, stakeAmount, fun, be
               <input type="number" value={isFancy ? betPlaceData?.run : betPlaceData?.odds} />
             </li>
             <li>
-              <input type="number" value={isFancy ? betPlaceData?.stack : betPlaceData?.stack} onChange={(e)=>setBetPlaceData((prev) => {
+              <input type="number" value={isFancy ? betPlaceData?.stack : betPlaceData?.stack} onChange={(e) => setBetPlaceData((prev) => {
                 return {
-                  ...prev, stack:e.target.value ==""? "": Number(e.target.value)
+                  ...prev, stack: e.target.value == "" ? "" : Number(e.target.value)
                 }
-              })}/>
+              })} />
             </li>
             <li>{profitLoss?.length && profitLoss[0].winLoss && profitLoss[0].winLoss?.toFixed(2)}</li>
           </ul>
@@ -79,7 +79,14 @@ const BetPlaceModule = ({profitLoss,setProfitLoss, isFancy, stakeAmount, fun, be
         <div className="place-bet-action-buttons"><div>
           <button className="btn btn-info" onClick={openModal2}>Edit</button></div>
           <div>
-            <button className="btn btn-danger me-1" onClick={() => fun(false)}>Reset</button>
+            <button className="btn btn-danger me-1" onClick={() => {
+              fun(false)
+              setBetPlaceData((prev) => {
+                return {
+                  ...prev, stack: ""
+                }
+              })
+            }}>Reset</button>
             <button className="btn btn-success" disabled="" onClick={() => trigger({ ...betPlaceData, isFancy: isFancy })}>Submit</button></div></div>
       </div>
     </div>

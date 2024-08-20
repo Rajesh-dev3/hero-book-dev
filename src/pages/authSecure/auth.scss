@@ -1,0 +1,170 @@
+@import "../../styles/variables/colors";
+
+.main-auth-container {
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    .auth-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        h2 {
+            padding-left: 16px;
+            color: $black;
+            font-size: 18px;
+            font-weight: 700;
+
+        }
+
+        p {
+            padding-right: 16px;
+            color: $black;
+            font-size: 14px;
+        }
+    }
+
+    .secur-auth {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            color: $black;
+            font-size: 16px;
+            padding: 0;
+            margin: 0;
+
+            button {
+
+                color: $white;
+                background-color: #34c38f;
+                border: none;
+                outline: none;
+                padding: 5px 10px;
+                border-radius: 4px;
+
+            }
+
+        }
+
+        p {
+            color: $black;
+            font-size: 16px;
+            padding: 0;
+            // margin: 0;
+        }
+    }
+
+    .btn-group {
+        border-bottom: 1px solid gray;
+        padding: 0px 0px 10px 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .btn-telegram {
+            background: #e6d8d8;
+            outline: none;
+            border: none;
+        }
+
+        .btn-mobile {
+            outline: none;
+            border: none;
+            background: none;
+        }
+    }
+
+    .login-password {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .input-m {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            input {
+                padding: 10px 15px;
+
+            }
+
+            button {
+                padding: 10px 15px;
+                background-color: $black;
+                color: white;
+                outline: none;
+                border: none;
+
+
+            }
+
+        }
+
+    }
+
+    .folow-details {
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: 1px solid gray;
+        padding: 0px 0px 10px 0px;
+        line-height: 30px;
+
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+            margin-top: 4px;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 0;
+
+            &:nth-child(2) {
+
+
+                a {
+                    color: blue !important;
+
+                }
+            }
+
+            span {
+                background-color: $black;
+                color: $white;
+                padding: 0 5px 5px 5px;
+                border-radius: 4px;
+            }
+        }
+
+    }
+}
+
+.connect-div {
+    margin-block: 10px !important;
+}
+
+.last-div {
+    margin-bottom: 20px !important;
+}

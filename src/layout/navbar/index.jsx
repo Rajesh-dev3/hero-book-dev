@@ -1,11 +1,9 @@
 import  { useEffect, useState } from "react";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ClearIcon from "@mui/icons-material/Clear"; // Import the clear icon
-import MenuItem from '@mui/material/MenuItem';
 
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
-import Select from '@mui/material/Select';
 import { useMediaQuery } from "../../useMediaQuery";
 
 
@@ -41,7 +39,7 @@ const isMobile = useMediaQuery("(max-width:780px)")
     </Link>
   </div>
   <div className="balance-nav">
-    <div className="blance-user">Balance<span>{data?.data?.balance}</span></div>
+    <div className="balance-user">Balance<span>{data?.data?.balance}</span></div>
    <div className="user-info">
     <div className="exp">
       Exp: <span>{data?.data?.liability}</span>

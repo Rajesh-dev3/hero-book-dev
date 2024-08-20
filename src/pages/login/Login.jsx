@@ -5,7 +5,6 @@ import KeyIcon from '@mui/icons-material/Key';
 import LoginIcon from '@mui/icons-material/Login';
 import { useLoginMutation } from '../../services/auth/Login';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 ////styles
 import "./styles.scss"
 const Login = () => {
@@ -27,14 +26,34 @@ const Login = () => {
   }
   const token = data?.data?.token
   useEffect(() => {
-    if (data?.data?.token) {
-      localStorage.setItem("token", token)
-      localStorage.setItem("user_name", data?.data?.user_name)
-      window.location.replace("/")
-      toast.success(data?.message)
-    } else {
-      toast.error(data?.message)
-    }
+    // if (data?.data?.token) {
+    //   localStorage.setItem("token", token)
+    //   localStorage.setItem("user_name", data?.data?.user_name)
+    //   window.location.replace("/")
+    //   toast.success(data?.message)
+    // } else {
+    //   toast.error(data?.message)
+    // }
+    if (data?.data) {
+      const checkTelegramId = data?.data?.telegramConnected
+
+      if(checkTelegramId == "1"){
+
+        localStorage.setItem("telegramToken", token)
+          localStorage.setItem("user_name", data?.data?.user_name)
+          localStorage.setItem("telegramConnected", checkTelegramId)
+        nav("/otp")
+          
+      }else{
+        localStorage.setItem("token", token)
+        localStorage.setItem("user_name", data?.data?.user_name)
+        localStorage.setItem("telegramConnected", checkTelegramId)
+        nav("/")
+      }
+
+      // window.sessionStorage.setItem('user', JSON.stringify(user.data));
+      // localStorage.setItem("loggedIn", "1");
+  }
   }, [data])
   useEffect(() => {
     const localStorageTOken = localStorage.getItem("token")

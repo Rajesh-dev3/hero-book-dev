@@ -2,76 +2,88 @@
     50% {
         opacity: 0;
     }
-    }
-    .blink_me {
-        animation: blink 1s linear infinite;
-        display: flex;
-        align-items: center;
-    }
-.panel1-header{
+}
+
+.blink_me {
+    animation: blink 1s linear infinite;
+    display: flex;
+    align-items: center;
+}
+
+.panel1-header {
     min-height: 30px !important;
 }
 
-.list2{
+.list2 {
     height: 0px;
     overflow: hidden;
 }
-.list3{
+
+.list3 {
 
     height: auto;
     overflow: hidden;
 }
-.matchListOpen{
+
+.matchListOpen {
     height: auto;
     overflow: hidden;
     border-top: 1px solid #999;
-   
+
 }
-.matchListClose{
+
+.matchListClose {
     height: 0;
     overflow: hidden;
-  
+
 }
-.match-list-accordion{
+
+.match-list-accordion {
     background-color: #bbbb;
-    svg{
+
+    svg {
         width: 16px;
         height: 16px;
     }
-    .st-list{
+
+    .st-list {
         border-bottom: 1px solid #999;
     }
-    span{
+
+    span {
         padding-left: 10px;
-        display:flex ;
+        display: flex;
         font-size: 14px;
         align-items: center;
     }
-   
-    p{
+
+    p {
         margin: 0%;
         padding: 0%;
         padding-left: 10px;
     }
-    .nd-list{
-padding-left: 20px;
+
+    .nd-list {
+        padding-left: 20px;
     }
-    .nested-list{
+
+    .nested-list {
         padding-left: 30px;
         font-size: .875rem;
     }
 }
 
 
-.casino-sider-list{
+.casino-sider-list {
     margin: 0%;
     padding: 0%;
     background-color: #bbbb;
-    li{
+
+    li {
         border-bottom: 1px solid #999;
         font-size: 14px;
         padding: 2px 15px;
         font-weight: 500;
-        
+
     }
 }

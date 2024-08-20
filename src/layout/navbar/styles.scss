@@ -1,22 +1,26 @@
 @import "../../styles/variables/mixins";
+@import "../../styles/variables/colors";
+
 .navbar-container {
   width: calc(100% - 0px);
   display: flex;
   justify-content: space-between;
-  background: black;
+  background: $black;
   padding: 15px;
   position: relative;
-.news{
-  position: absolute;
-  bottom: -10px;
-  right: 0;
-  width: 50%;
-  font-size: 14px;
-  font-style: italic;
-  z-index: 1;
-  color: white;
-  padding: 10px;
-}
+
+  .news {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 50%;
+    font-size: 14px;
+    font-style: italic;
+    z-index: 1;
+    color: $white;
+    padding: 10px;
+  }
+
   .navbar-left-col {
     width: 30%;
 
@@ -30,31 +34,37 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    .list{
+
+    .list {
       display: flex;
-      color: white;
+      color: $white;
       align-items: center;
       line-height: 19px;
 
-      li{
+      li {
         margin-left: 1rem;
-        @include media(phone){
+
+        @include media(phone) {
           margin-left: 0rem;
         }
-        .bold-b{
+
+        .bold-b {
 
           font-weight: bold;
         }
-        &:nth-child(1){
+
+        &:nth-child(1) {
           flex-direction: column;
           display: flex;
           font-weight: bold;
-@include media(phone){
-  display: none;
-}
+
+          @include media(phone) {
+            display: none;
+          }
 
         }
-        &:nth-child(2){
+
+        &:nth-child(2) {
           flex-direction: column;
           display: flex;
 
@@ -62,41 +72,45 @@
       }
     }
 
-    
+
   }
 }
 
 .search-bar {
   position: relative;
-  color: white;
+  color: $white;
   transition: width 1.4s linear;
   -webkit-transition: width 1.4s linear;
   display: flex;
   align-items: center;
-  @include media(phone){
-    background-color: #000;
+
+  @include media(phone) {
+    background-color: $black;
   }
+
   .open-search {
     border-radius: 5px;
     width: 270px;
     box-shadow: 0 0 5px #6f6f6f;
     outline: none;
-    color: #000;
+    color: $black;
     position: relative;
     transition: width 1s;
     height: 35px;
     padding-left: 10px;
-    @include media(phone){
-    box-shadow: none;
+
+    @include media(phone) {
+      box-shadow: none;
     }
   }
+
   .close-search {
     border-radius: 5px;
     height: 35px;
     width: 0px;
     padding: 0;
     outline: none;
-    color: #000;
+    color: $black;
     position: relative;
     transition: width 1s;
     box-shadow: 0 0 5px #6f6f6f;
@@ -104,24 +118,28 @@
 
 
   }
-  .cross-icon{
+
+  .cross-icon {
     position: absolute;
     right: 12%;
     top: 45%;
     transform: translateY(-50%);
-    svg{
+
+    svg {
       color: #0d6efd;
       font-size: 18px;
       font-weight: bolder;
     }
   }
-  .search-icon{
-    svg{
+
+  .search-icon {
+    svg {
 
       font-size: 30px;
     }
   }
 }
+
 // .nav-dropdown{
 //   button{
 //     @include media(phone){
@@ -131,90 +149,107 @@
 //   }
 // }
 
-.mobile-navbar{
-  background-color: #000;
-  .news{
+.mobile-navbar {
+  background-color: $black;
+
+  .news {
     width: 100%;
     font-size: 14px;
     font-style: italic;
     z-index: 1;
-    color: white;
+    color: $white;
     padding: 10px;
-    @include media(phone){
-      padding-top:8px ; 
+
+    @include media(phone) {
+      padding-top: 8px;
       font-size: 12px;
-      padding-bottom:10px ;
+      padding-bottom: 10px;
     }
-   
+
   }
-  .navbar{
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  @include media(phone){
-    padding-top: 2%;
-    padding-bottom: 7px;
-  }
-    .logo-nav{
+
+  .navbar {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+
+    @include media(phone) {
+      padding-top: 2%;
+      padding-bottom: 7px;
+    }
+
+    .logo-nav {
 
       display: flex;
-      align-items: center;text-align: center;
-      a{
+      align-items: center;
+      text-align: center;
+
+      a {
 
         display: flex;
-        align-items: center;text-align: center;
-      
-  span{
-    svg{
-      color: white;
-      margin-right: 10px;
-    }
-    span{
-      display: flex;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-  
-  .mobile-nav-logo{
-      width: 100px;
-      padding-top: 10px;
-      // background: #000;
-      
-    }
-  }
-  }
-  .balance-nav{
-    color:white;
-  .blance-user{
-    text-align: right;
-    @include media(phone){
-      font-size: 12px;
+        align-items: center;
+        text-align: center;
 
-    }
-  }
-    .user-info{
-      display: flex;
-      align-items: center; 
-      .exp{
-        @include media(phone){
-          font-size: 12px;
+        span {
+          svg {
+            color: $white;
+            margin-right: 10px;
+          }
+
+          span {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+          }
         }
 
-      }
-    .user-detail{
-      .nav-dropdown{
-        button{
-          padding-right: 0px;
-          @include media(phone){
-            font-size: 10px;
-            padding: 0% 0px 0px 4px;
+        .mobile-nav-logo {
+          width: 100px;
+          padding-top: 10px;
+          // background: $black;
 
+        }
+      }
+    }
+
+    .balance-nav {
+      color: $white;
+
+      .balance-user {
+        text-align: right;
+
+        @include media(phone) {
+          font-size: 12px;
+
+        }
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+
+        .exp {
+          @include media(phone) {
+            font-size: 12px;
+          }
+
+        }
+
+        .user-detail {
+          .nav-dropdown {
+            button {
+              padding-right: 0px;
+
+              @include media(phone) {
+                font-size: 10px;
+                padding: 0% 0px 0px 4px;
+
+              }
+            }
           }
         }
       }
-    } }
-  }
-  
+    }
+
   }
 }
