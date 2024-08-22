@@ -1,0 +1,80 @@
+@import "../../styles/variables/mixins";
+@import "../../styles/variables/colors";
+
+.radio-input {
+    &:checked {
+        background-color: $black;
+    }
+}
+
+.current-bet-form {
+
+    .select-area {
+        width: 100%;
+
+        @include media(phone) {
+            flex-direction: column;
+        }
+
+        .select-menu {
+            @include media(phone) {
+                width: 100%;
+
+            }
+
+            .react-datepicker-wrapper {
+                width: 100%;
+                @include media(phone) {
+                    width: 100%;
+
+                }
+
+            }
+
+            input {
+                width: 100%;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 6px 10px 5px 15px;
+            }
+        }
+
+        .form-btn {
+            @include media(phone) {
+                width: 22%;
+
+
+            }
+            .btn {
+                width: 100%;
+            }
+
+        }
+
+    }
+
+}
+
+.mt-2 {
+    @include media(phone) {
+        overflow: hidden;
+        overflow-x: scroll;
+
+
+    }
+
+}
+
+tr {
+    th{
+
+        white-space: nowrap;
+        background-color: #384b5e;
+        color: $white;
+        font-size: 12px;
+    }
+    td {
+        font-size: 12px;
+        text-align: center;
+    }
+}

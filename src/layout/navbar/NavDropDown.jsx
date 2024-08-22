@@ -4,7 +4,11 @@ import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { StyledMenuItem } from './styled';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { accountStatement, currentBet, changePasswordPage ,secureAuth, activityLog} from '../../routes/PagesUrl';
+=======
+import { accountStatement, currentBet, changePasswordPage ,secureAuth, casinoResultsPage, liveCasinoBet} from '../../routes/PagesUrl';
+>>>>>>> e3fd57daffbac8566df416bd29ab0e2ee98abc4f
 import { Modal } from '@mui/material';
 import { Box } from '@mui/system';
 import EditStack from '../../components/EditStack/EditStack';
@@ -127,6 +131,14 @@ const NavDropDown = () => {
         <Link to={activityLog}>
 
           <StyledMenuItem onClick={handleClose}>Activity Log</StyledMenuItem>
+          </Link>
+        <Link to={casinoResultsPage}>
+
+          <StyledMenuItem onClick={handleClose}>Casino Results</StyledMenuItem>
+        </Link>
+        <Link to={liveCasinoBet}>
+
+          <StyledMenuItem onClick={handleClose}>Live Casino Bet</StyledMenuItem>
         </Link>
         <Link to={secureAuth}>
 
