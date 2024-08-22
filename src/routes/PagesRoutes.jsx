@@ -6,11 +6,7 @@ import CasinoLobby from "../pages/casino/CasinoLobby.jsx";
 import GameDetail from "../pages/gameDetail/GameDetail.jsx";
 import AccountSatement from "../pages/accountStatement/AccountSatement.jsx";
 import AllSport from "../pages/allSport/AllSport.jsx";
-<<<<<<< HEAD
-import { accountStatement, activityLog, allSport, aviatorLobby, casino, casinoLobby, changePasswordPage, currentBet, fantasyCasinoPage, gameDetail, home, liveCasinoPage, secureAuth, slotCasinoPage } from "./PagesUrl.jsx";
-=======
-import { accountStatement, allSport, aviatorLobby, casino, casinoLobby, casinoResultsPage, changePasswordPage, currentBet, fantasyCasinoPage, gameDetail, home, liveCasinoBet, liveCasinoPage, secureAuth, slotCasinoPage } from "./PagesUrl.jsx";
->>>>>>> e3fd57daffbac8566df416bd29ab0e2ee98abc4f
+import { accountStatement,activityLog, allSport, aviatorLobby, casino, casinoLobby, casinoResultsPage, changePasswordPage, currentBet, fantasyCasinoPage, gameDetail, home, liveCasinoBet, liveCasinoPage, secureAuth, slotCasinoPage } from "./PagesUrl.jsx";
 import CurrentBet from "../pages/currentBet/CurrentBet.jsx";
 import Login from "../pages/login/Login.jsx"
 import ChangePassword from "../pages/changePassword/ChangePassword.jsx"
