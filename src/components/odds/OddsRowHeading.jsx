@@ -4,7 +4,7 @@ const OddsRowHeading = () => {
   return (
     <div className="odds-row-container odd-row-header w-full flex justify-between gap-4">
       <div className="odds-row-left-col w-[60%] flex justify-between pl-2 items-center">
-        <span className="text-[14px]">Game</span>
+        <span className="text-[14px] font-bold ">Game</span>
         <div className="icon-div flex
           items-center
           gap-[10px]">

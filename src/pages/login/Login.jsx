@@ -81,7 +81,7 @@ const Login = () => {
           </div>
           <div className="input-row">
             <div className="input">
-              <input type="password" placeholder='Username' name="password" onChange={formHandler} />
+              <input type="password" placeholder='Password' name="password" onChange={formHandler} />
             </div>
             <div className="input-icon">
               <KeyIcon />

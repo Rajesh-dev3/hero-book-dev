@@ -6,7 +6,7 @@ import CasinoLobby from "../pages/casino/CasinoLobby.jsx";
 import GameDetail from "../pages/gameDetail/GameDetail.jsx";
 import AccountSatement from "../pages/accountStatement/AccountSatement.jsx";
 import AllSport from "../pages/allSport/AllSport.jsx";
-import { accountStatement, allSport, aviatorLobby, casino, casinoLobby, changePasswordPage, currentBet, fantasyCasinoPage, gameDetail, home, liveCasinoPage, secureAuth, slotCasinoPage } from "./PagesUrl.jsx";
+import { accountStatement, activityLog, allSport, aviatorLobby, casino, casinoLobby, changePasswordPage, currentBet, fantasyCasinoPage, gameDetail, home, liveCasinoPage, secureAuth, slotCasinoPage } from "./PagesUrl.jsx";
 import CurrentBet from "../pages/currentBet/CurrentBet.jsx";
 import Login from "../pages/login/Login.jsx"
 import ChangePassword from "../pages/changePassword/ChangePassword.jsx"
@@ -16,6 +16,7 @@ import Slot from "../pages/slot/Slot.jsx";
 import Fantasy from "../pages/fantasy/Fantasy.jsx";
 import Telegram from "../pages/telegram/Telegram.jsx";
 import AuthSecure from "../pages/authSecure/Auth.jsx";
+import ActivityLog from "../pages/Activity_log/ActivityLog.jsx";
 
 
 export const router = createBrowserRouter([
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
         {
           path: currentBet,
           element: <CurrentBet/>,
+        },
+        {
+          path: activityLog,
+          element: <ActivityLog/>,
         },
         {
           path: liveCasinoPage,

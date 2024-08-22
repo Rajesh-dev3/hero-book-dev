@@ -78,6 +78,8 @@ const SubNavbar = () => {
   const [listActive, setListActive] = useState(0)
 const {pathname} = useLocation()
   const urlList = ["/account-statement","/current-bet","/changepassword"]
+  const checkActiveUrl  = ["/","/sport/4","/sport/2"]
+
   const checkUrl = urlList.includes(pathname)
   return (
     <>
@@ -85,14 +87,14 @@ const {pathname} = useLocation()
     <div className="subnavbar-container">
       <ul>
         {!isMobile &&
-          <Link to={"/"} >
+          <Link to={"/"} className={pathname == "/"?'tab-list-active':"tab-list"}>
             <li>Home</li>
           </Link>
         }
         {!isMobile ?
           data?.data?.map((item) => {
             return (
-              <Link to={item?.name == "Casino" ? "/casino/ourCasino" : `/sport/${item?.sport_id}`} key={item?.name} className='tabs-list'>
+              <Link to={item?.name == "Casino" ? "/casino/ourCasino" : `/sport/${item?.sport_id}`} key={item?.name} className={"tab-list"}>
                 <li >{getTitle(item)}</li>
               </Link>
             )

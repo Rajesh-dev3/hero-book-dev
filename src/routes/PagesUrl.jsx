@@ -3,6 +3,7 @@ const gameDetail = "/game-detail/:sportId/:matchId/:selectionId"
 const casino = "/casino/:casinoType"
 const home = "/"
 const currentBet = "/current-bet"
+const activityLog = "/activity_log"
 const login = "/login"
 const secureAuth = "/secure-auth"
 const aviatorLobby = "/aviator-lobby"
@@ -12,4 +13,4 @@ const changePasswordPage = "/changepassword"
 const liveCasinoPage = "/livecasino"
 const slotCasinoPage = "/slot"
 const fantasyCasinoPage = "/fantasy"
-export {fantasyCasinoPage,secureAuth,slotCasinoPage,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}
+export {fantasyCasinoPage,secureAuth,slotCasinoPage,activityLog,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}

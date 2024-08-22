@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { StyledMenuItem } from './styled';
 import { Link } from 'react-router-dom';
-import { accountStatement, currentBet, changePasswordPage ,secureAuth} from '../../routes/PagesUrl';
+import { accountStatement, currentBet, changePasswordPage ,secureAuth, activityLog} from '../../routes/PagesUrl';
 import { Modal } from '@mui/material';
 import { Box } from '@mui/system';
 import EditStack from '../../components/EditStack/EditStack';
@@ -123,6 +123,10 @@ const NavDropDown = () => {
         <Link to={currentBet}>
 
           <StyledMenuItem onClick={handleClose}>Current Bet</StyledMenuItem>
+        </Link>
+        <Link to={activityLog}>
+
+          <StyledMenuItem onClick={handleClose}>Activity Log</StyledMenuItem>
         </Link>
         <Link to={secureAuth}>
 
