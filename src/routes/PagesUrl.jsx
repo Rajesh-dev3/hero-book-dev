@@ -12,4 +12,6 @@ const changePasswordPage = "/changepassword"
 const liveCasinoPage = "/livecasino"
 const slotCasinoPage = "/slot"
 const fantasyCasinoPage = "/fantasy"
-export {fantasyCasinoPage,secureAuth,slotCasinoPage,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}
+const casinoResultsPage = "/casino-results"
+const liveCasinoBet = "/live-casino-bet"
+export {liveCasinoBet,casinoResultsPage,fantasyCasinoPage,secureAuth,slotCasinoPage,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}
