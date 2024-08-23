@@ -23,6 +23,9 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            @include media(phone){
+                font-size: 12px;
+            }
         }
     }
 

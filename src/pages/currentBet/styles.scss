@@ -8,7 +8,9 @@
 }
 
 .current-bet-form {
-
+    @include media(phone) {
+    font-size: 12px;
+    }
     .select-area {
         width: 100%;
 
@@ -48,15 +50,21 @@
 
     }
     .entries-container{
+        .soda-amount{
+            margin-top: 10px;
+        }
 .search{
     @include media(phone) {
         justify-content: flex-start;
     }
-
     .searchField {
         width: 100px;       
         border: 1px solid #ccc;
         padding: 6px 10px 5px 15px;
+        @include media(phone) {
+            width: 130px;
+            border-radius: 0px;
+        }
     }
 }
     }

@@ -8,7 +8,8 @@
 
 
 
-.statement-form {
+.activity-log-form {
+
 
     .date-filter-row {
         @include media(phone) {
@@ -60,6 +61,7 @@
     .entries-row {
         @include media(phone) {
             display: flex;
+            font-size: 12px;
             
         }
         .entries-left-col {
@@ -82,8 +84,8 @@
         }
 
         .entries-right-col {
+            display: flex;
             @include media(phone) {
-                display: block !important;
                 padding-left: 5%;
                 
             }

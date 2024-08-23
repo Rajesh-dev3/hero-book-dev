@@ -2,7 +2,15 @@
 ////style
 import "./styles.scss"
 import DetailOdds from "./DetailOdds";
-
+function convertToKOrLakh(number) {
+  if (number >= 100000) {
+      return (number / 100000).toFixed(0) + "L";
+  } else if (number >= 1000) {
+      return (number / 1000).toFixed(0) + "k";
+  } else {
+      return number.toString();
+  }
+}
 const GameDetailCollapse = ({setCheckFancy, checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
   const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"]
   return (
@@ -15,7 +23,7 @@ const GameDetailCollapse = ({setCheckFancy, checkFancy,profithandler, setSelecti
         <div className="odds-row-container flex items-center" >
           <div className="odds-row-left-col px-[5px]">
             <p>
-              Max:{odddata?.marketMaxStack}
+              Max:{convertToKOrLakh(odddata?.marketMaxStack)}
             </p>
           </div>
           <div className="odds-row-right-col grid grid-cols-6">

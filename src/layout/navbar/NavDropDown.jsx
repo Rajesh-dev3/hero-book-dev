@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { StyledMenuItem } from './styled';
 import { Link } from 'react-router-dom';
-import {activityLog, accountStatement, currentBet, changePasswordPage ,secureAuth, casinoResultsPage, liveCasinoBet} from '../../routes/PagesUrl';
+import {activityLog, accountStatement, currentBet, changePasswordPage ,secureAuth, casinoResultsPage} from '../../routes/PagesUrl';
 import { Modal } from '@mui/material';
 import { Box } from '@mui/system';
 import EditStack from '../../components/EditStack/EditStack';
@@ -82,7 +82,7 @@ const NavDropDown = () => {
   return (
     <div className='nav-dropdown'>
       <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack />} />
-      <Modal
+      {/* <Modal
         open={open2}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -96,7 +96,7 @@ const NavDropDown = () => {
           <div><button onClick={handleClose}>Cancel</button> <button onClick={SignOut}>Continue</button></div>
         </Box>
 
-      </Modal>
+      </Modal> */}
 
       <Button
         id="basic-button"
@@ -130,12 +130,12 @@ const NavDropDown = () => {
           </Link>
         <Link to={casinoResultsPage}>
 
-          <StyledMenuItem onClick={handleClose}>Casino Results</StyledMenuItem>
+          <StyledMenuItem onClick={handleClose}>Casino Statement</StyledMenuItem>
         </Link>
-        <Link to={liveCasinoBet}>
+        {/* <Link to={liveCasinoBet}>
 
           <StyledMenuItem onClick={handleClose}>Live Casino Bet</StyledMenuItem>
-        </Link>
+        </Link> */}
         <Link to={secureAuth}>
 
           <StyledMenuItem onClick={handleClose}>Secure Auth</StyledMenuItem>
@@ -147,8 +147,8 @@ const NavDropDown = () => {
           handleClose()
           setModalOpen2(true)
         }}>Set Button Value</StyledMenuItem>
-        <hr style={{ height: "1px", borderTop: "1px solid rgba(0, 0, 0, .15)" }} />
-        <StyledMenuItem onClick={handleOpen}>SignOut</StyledMenuItem>
+        <hr style={{ height: "1px",marginTop:"10px", borderTop: "1px solid rgba(0, 0, 0, .15)" }} />
+        <StyledMenuItem  onClick={SignOut}>SignOut</StyledMenuItem>
       </Menu>
     </div>
   )

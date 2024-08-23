@@ -94,7 +94,7 @@ const [radioActive, setRadioActive] = useState(0)
       <div className="entries-container flex grid grid-cols-1 md:grid-cols-4 sm:grid-cols-1 mt-3 md:mt-10">
         <div className="entries flex items-center  gap-2">
           <span>Show</span>
-          <select className="border-[1px] border-[#dbdbdb] w-[18%] h-[38px]"
+          {/* <select className="border-[1px] border-[#dbdbdb] w-[18%] h-[38px]"
             onChange={(e) => setFormData((prev) => {
               return {
                 ...prev, limit: e.target.value
@@ -104,10 +104,30 @@ const [radioActive, setRadioActive] = useState(0)
             <option value="20">20</option>
             <option value="30">30</option>
             <option value="40">40</option>
-          </select>
+          </select> */}
+           <Select
+             
+             labelId="demo-simple-select-label"
+             id="demo-simple-select"
+             value={formData.limit} // Ensure formData.limit is set initially
+             onChange={(e) => setFormData((prev) => ({
+               ...prev, limit: e.target.value
+             }))}
+             displayEmpty
+             inputProps={{ 'aria-label': 'Limit' }}
+           
+             IconComponent={KeyboardArrowDownIcon} 
+             sx={{ height: "38px", outline: "none", borderRadius:"0" }}
+           >
+             <MenuItem value={10}>10</MenuItem>
+             <MenuItem value={20}>20</MenuItem>
+             <MenuItem value={30}>30</MenuItem>
+             <MenuItem value={40}>40</MenuItem>
+            
+           </Select>
           <span>Entries</span>
         </div>
-        <div className="all-back-lay mt-[20px] md:mt-[0px] sm:mt-[10px]  flex items-center gap-4 justify-center md:justify-left">
+        <div className="all-back-lay mt-[5px] md:mt-[0px] sm:mt-[5px]  flex items-center gap-4 justify-center md:justify-left">
           <div className="flex gap-1">
             <input
               type="radio"

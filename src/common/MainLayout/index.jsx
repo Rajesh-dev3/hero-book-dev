@@ -65,15 +65,17 @@ const MainLayout = () => {
   }, [inactiveTime]);
   const {pathname} = useLocation()
 
-  const urlList = ["/","/account-statement","/current-bet","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
+  const urlList = ["/account-statement","/current-bet","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
   const checkActiveUrl  = ["/","/sport/4","/sport/2"]
 
   const checkUrl = isMobile && urlList.includes(pathname)
+  const checkBlink =  urlList.includes(pathname)
+  console.log(pathname.split("/")[1],"pathName")
   return (
     <div className='main-layout'>
       <div className="layout-nav-col">
         <Navbar />
-        {checkUrl && !isMobile &&
+        {!checkBlink && pathname.split("/")[1] != "game-detail" &&
           <div className={`w-full grid grid-cols-${inplayMatches?.length} gap-1`} style={{padding: "0 5px 5px"}}>
             {inplayMatches?.map((item) => {
               return (
@@ -84,7 +86,10 @@ const MainLayout = () => {
 
           </div>
         }
+        {
+          pathname.split("/")[1] != "game-detail" &&
         <SubNavbar />
+        }
  
       </div>
       <div className="main-layout-col mt-[.3125rem] mr-[.3125rem]">

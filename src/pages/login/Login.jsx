@@ -70,7 +70,7 @@ const Login = () => {
           <img src={logo} alt="" />
         </div>
         <form autoComplete={false}>
-          <div className="login-heading">Login </div>
+          <div className="login-heading">Login <i className="fas fa-hand-point-down"></i></div>
           <div className="input-row">
             <div className="input">
               <input type="text" placeholder='Username' name="user_name" onChange={formHandler} />
@@ -84,12 +84,12 @@ const Login = () => {
               <input type="password" placeholder='Password' name="password" onChange={formHandler} />
             </div>
             <div className="input-icon">
-              <KeyIcon />
+            <i className="fas fa-key"></i>
             </div>
           </div>
           <div className="login-btn-container">
-            <button onClick={(e) => submitForm(0, e)}>Login <LoginIcon /></button>
-            <button onClick={(e) => submitForm(1, e)}>Login with demo ID <LoginIcon /></button>
+            <button onClick={(e) => submitForm(0, e)}>Login <i className="fas fa-sign-in-alt float-end mt-1"></i></button>
+            <button onClick={(e) => submitForm(1, e)}>Login with demo ID <i className="fas fa-sign-in-alt float-end mt-1"></i></button>
           </div>
           <div className="login-captcha">
             This site is protected by reCAPTCHA and the Google
@@ -100,8 +100,9 @@ const Login = () => {
       </div>
       <div className="login-footer">
         <ul>
-          <li>+91 7299444466 / +91 7299444488</li>
-          <li>24X7 Support</li>
+          {/* <li>+91 7299444466 / +91 7299444488</li>
+          */}
+          <li>24X7 Support</li> 
           <li>
             <img src={faceboo} alt="" />
             <img src={instagram} alt="" />

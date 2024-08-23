@@ -14,5 +14,5 @@ const liveCasinoPage = "/livecasino"
 const slotCasinoPage = "/slot"
 const fantasyCasinoPage = "/fantasy"
 const casinoResultsPage = "/casino-results"
-const liveCasinoBet = "/live-casino-bet"
-export {liveCasinoBet,casinoResultsPage,activityLog,fantasyCasinoPage,secureAuth,slotCasinoPage,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}
+// const liveCasinoBet = "/live-casino-bet"
+export {casinoResultsPage,activityLog,fantasyCasinoPage,secureAuth,slotCasinoPage,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}

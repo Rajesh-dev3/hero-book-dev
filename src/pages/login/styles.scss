@@ -37,7 +37,7 @@
             box-shadow: 0 0 5px $white;
             margin-top: calc(1.275rem + .3vw);
             padding: 1.25rem;
-
+padding-top: 5px;
             .login-heading {
                 color: $black;
                 font-size: 1.375rem;
@@ -90,7 +90,6 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    border-radius: 5px;
                     padding-inline: 0.75rem;
                     padding-block: 0.6rem;
                     font-size: 1rem;
@@ -103,7 +102,7 @@
                     color: $white;
                     position: relative;
 
-                    svg {
+                    i {
                         width: 1em;
                         position: absolute;
                         right: 12px;
@@ -163,13 +162,13 @@
                     width: 100%;
                 }
 
-                &:nth-child(2) {
+                &:nth-child(1) {
                     font-size: 1.5rem;
-
                     @include media(phone) {
                         margin: 0rem !important;
                         padding: 0rem !important;
-                       font-size:calc(1.275rem + .3vw);
+                        margin-top: 10px !important;
+                       font-size:calc(1rem + .3vw);
                     }
                 }
 
@@ -181,4 +180,27 @@
             }
         }
     }
+}
+
+.fa-hand-point-down{
+position: relative;
+    &::before {
+        content: "\f0a7";
+        font-family: "Font Awesome 5 Free";
+    }
+}
+.fa-key {
+
+    &::before {
+        content: "\f084";
+    }
+}
+.fa-sign-in-alt{
+
+    &::before {
+        content: "\f2f6";
+    }
+}
+.fas {
+    font-family: "Font Awesome 5 Free" !important;
 }

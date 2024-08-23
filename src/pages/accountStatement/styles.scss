@@ -1,13 +1,13 @@
 @import "../../styles/variables/mixins";
 @import "../../styles/variables/colors";
 
-.select {
-    width: 25%;
-    @include media(phone) {
-        width: 100%;
-    }
+// .select {
+//     width: 25%;
+//     @include media(phone) {
+//         width: 100%;
+//     }
 
-}
+// }
 
 
 
@@ -48,10 +48,26 @@
 
             }
         }
+        .select {
+    width: 25%;
+    @include media(phone) {
+        width: 100%;
+    }
+
+}
 
     }
 
     .entries-row {
+        @include media(phone) {
+        } 
+        span{
+            @include media(phone) {
+                font-size: 12px;
+                font-weight: 400;
+            } 
+
+        }
         .entries-left-col {
             select {
                 padding: 5px 2px 5px 2px;
@@ -69,13 +85,16 @@
         }
 
         .entries-right-col {
-
             @include media(phone) {
-                display: none;
-            }
+                font-size: 12px;
+                font-weight: 400;
+                display: flex;
+            } 
+           
             input{
                 // width: 19.5%;
                 width: 100px;
+                border-radius: 0px;
                 margin-left: 5px;
             }
         }
@@ -122,6 +141,7 @@
 
 .statement-body {
     .account-table {
+        min-height: calc(100vh - 350px);
         overflow-x: scroll;
 
         table {

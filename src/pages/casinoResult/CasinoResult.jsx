@@ -33,7 +33,10 @@ const CasinoResult = () => {
     <PagesTitle title="Casino Result" />
     <div className="statement-body p-[10px]">
       <Filter submitHandler={submitHandler} formData={formData} setFormData={setFormData} startDate={startDate} endDate={endDate} setEndDate={setEndDate} setStartDate={setStartDate} />
+      <div className="account-table">
+
       <Table data={[]} />
+      </div>
     </div>
   </div>
   )

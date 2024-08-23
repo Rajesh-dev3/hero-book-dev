@@ -2,8 +2,10 @@
 ////style
 import "./styles.scss"
 import DetailOdds from "./DetailOdds";
+import { useMediaQuery } from "../../useMediaQuery";
 const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCheckFancy,fun,odddata,collapseName,betPlaceHandler}) => {
   const oddsColor = ["back","back1","back2","lay","lay1","lay2"]
+  const isMobile = useMediaQuery("(max-width:780px)")
   return (
     <div className="game-market market-4 ">
       <div className="market-title">
@@ -15,9 +17,9 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
       
       <div className="fancy-row-container flex items-center" >
         <div className="odds-row-left-col px-[5px]">
-         <p>
+         {/* <p>
            Max:1
-          </p>
+          </p> */}
            </div>
         <div className="odds-row-right-col grid grid-cols-2 md:grid-cols-3">
           <DetailOdds height={28} display={"none"}/>
@@ -34,9 +36,12 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
       
       <div className="fancy-row-container flex items-center" >
         <div className="odds-row-left-col px-[5px]">
+          {/* {!isMobile
+          &&
          <p>
            Max:1
           </p>
+        } */}
            </div>
         <div className="odds-row-right-col grid grid-cols-3">
           <DetailOdds height={28} display={"none"}/>

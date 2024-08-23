@@ -9,7 +9,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
 
 
   return (
-    <div className="statement-form">
+    <div className="activity-log-form">
       <div className="date-filter-row flex gap-4">
         <div className="date-picker">
           <DatePicker

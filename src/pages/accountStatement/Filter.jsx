@@ -8,7 +8,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
 
   return (
     <div className="statement-form">
-      <div className="date-filter-row flex gap-4">
+      <div className="date-filter-row flex md:gap-4 gap-[8px]">
         <div className="date-picker">
           <DatePicker
             selected={startDate}
@@ -47,7 +47,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
           <button className="btn" onClick={fun}>Submit</button>
         </div>
       </div>
-      <div className="entries-row w-full flex justify-between mt-3">
+      <div className="entries-row w-full flex justify-between mt-[6px] md:mt-3">
         <div className="entries-left-col w-[50%] flex items-center gap-2">
           <span>Show</span>
           {/* <select onChange={(e) => setLimit(e.target.value)}>

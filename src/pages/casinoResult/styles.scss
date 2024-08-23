@@ -53,6 +53,7 @@
             select {
                 padding: 5px 2px 5px 2px;
                 width: 12%;
+                border-radius: 0px;
                 border: 1px solid #dbdbdb;
 
 
@@ -68,7 +69,7 @@
 
         .entries-right-col {
             @include media(phone) {
-                display: none;
+                display: flex;
             }
         }
     }

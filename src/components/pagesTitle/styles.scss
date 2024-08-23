@@ -1,3 +1,4 @@
+@import "../../styles/variables/mixins";
 .statement-header{
     border-bottom-left-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
     border-bottom-right-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
@@ -6,10 +7,16 @@
     padding: .5rem 1rem;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
+    @include media(phone){
+        padding: .3rem 0.4rem;
+    }
     .header-title{
 
         font-size: 19px;
     font-weight: 400;
     margin-bottom: 0;
+    @include media(phone){
+        font-size: 15px;
+    }
     }
 }
