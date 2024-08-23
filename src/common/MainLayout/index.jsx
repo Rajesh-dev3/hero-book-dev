@@ -70,12 +70,11 @@ const MainLayout = () => {
 
   const checkUrl = isMobile && urlList.includes(pathname)
   const checkBlink =  urlList.includes(pathname)
-  console.log(pathname.split("/")[1],"pathName")
   return (
     <div className='main-layout'>
       <div className="layout-nav-col">
         <Navbar />
-        {!checkBlink && pathname.split("/")[1] != "game-detail" &&
+        {!checkBlink && isMobile && pathname.split("/")[1] != "game-detail" &&
           <div className={`w-full grid grid-cols-${inplayMatches?.length} gap-1`} style={{padding: "0 5px 5px"}}>
             {inplayMatches?.map((item) => {
               return (
