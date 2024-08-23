@@ -52,7 +52,7 @@ const isMobile = useMediaQuery("(max-width:780px)")
   </div>
   
 </div>
-<div className="search-news">
+{!isMobile &&
 <div className="search-bar">
           <input
           className={openSearch?"open-search":"close-search"}
@@ -72,10 +72,37 @@ const isMobile = useMediaQuery("(max-width:780px)")
           <ZoomInIcon />
           </div>
         </div>
-        <div className="news"><Marquee speed={50}>
-        {data?.data?.site_message}</Marquee></div>
-        </div>
+}
 
+<div className="ss flex">
+  {isMobile
+  &&
+<div className="search-bar">
+          <input
+          className={openSearch?"open-search":"close-search"}
+            type="text"
+            placeholder="Search here"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+          {searchValue &&
+          <div className="cross-icon">
+
+            <ClearIcon onClick={clearSearch} />
+          </div> 
+          }
+          <div className="search-icon" onClick={()=>setOpenSearch(!openSearch)}>
+
+          <ZoomInIcon />
+          </div>
+        </div>
+  }
+
+<div className="news">
+          <Marquee speed={50}>
+        {data?.data?.site_message}</Marquee></div>
+</div>
+        
     </div>
     :
     <div className="navbar-container">

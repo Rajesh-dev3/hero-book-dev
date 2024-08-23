@@ -75,16 +75,14 @@
 
   }
 }
-.search-news{
-  @include media(phone) {
-    display: flex;
-  }
+
 .search-bar {
   position: relative;
   color: $white;
   transition: width 1.4s linear;
   -webkit-transition: width 1.4s linear;
   display: flex;
+  overflow: hidden;
   align-items: center;
 
   @include media(phone) {
@@ -101,16 +99,15 @@
     transition: width 1s;
     height: 35px;
     padding-left: 10px;
-    margin-left: 5px;
 
     @include media(phone) {
       box-shadow: none;
       width: 180px;
+      margin-left: 5px;
     }
   }
 
   .close-search {
-    border-radius: 5px;
     height: 35px;
     width: 0px;
     padding: 0;
@@ -120,15 +117,19 @@
     transition: width 1s;
     box-shadow: 0 0 5px #6f6f6f;
     padding-left: 0px;
-
+    @include media(phone) {
+      box-shadow: none;
+   
+      margin-left: 5px;
+    }
 
   }
 
   .cross-icon {
-    position: absolute;
-    right: 12%;
-    top: 45%;
-    transform: translateY(-50%);
+      position: absolute;
+      right: 39px;
+      top: 45%;
+      transform: translateY(-50%);
 
     svg {
       color: #0d6efd;
@@ -143,7 +144,7 @@
       font-size: 30px;
     }
   }
-}}
+}
 
 // .nav-dropdown{
 //   button{
@@ -169,6 +170,7 @@
       padding-top: 8px;
       font-size: 12px;
       padding-bottom: 10px;
+      width: auto;
     }
 
   }
