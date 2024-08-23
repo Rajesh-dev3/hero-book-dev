@@ -30,17 +30,13 @@
 
             }
 
-            input {
-                width: 100%;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 6px 10px 5px 15px;
-            }
+        
+        
         }
 
         .form-btn {
             @include media(phone) {
-                width: 22%;
+                width: 100%;
 
 
             }
@@ -50,6 +46,19 @@
 
         }
 
+    }
+    .entries-container{
+.search{
+    @include media(phone) {
+        justify-content: flex-start;
+    }
+
+    .searchField {
+        width: 100px;       
+        border: 1px solid #ccc;
+        padding: 6px 10px 5px 15px;
+    }
+}
     }
 
 }
@@ -61,6 +70,7 @@
 
 
     }
+
 
 }
 

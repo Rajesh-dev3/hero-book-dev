@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Sider from '../../layout/sider';
@@ -15,12 +15,11 @@ const MainLayout = () => {
   const isMobile = useMediaQuery("(max-width:780px)")
   const [trigger, { data }] = useEventGameMutation()
   const inplayMatches = data?.data?.InplayMatches || [];
-  const { pathname } = useLocation()
+
   useEffect(() => {
     trigger({ limit: 50, pageno: 1, sport_id: String(4), series_id: 0, type: "home" })
   }, [])
-  const subNavbarCheck = isMobile && pathname.split("/")[1] == "game-detail"
-  const checkUrl = window.location.pathname
+  
   const nav = useNavigate()
   useEffect(() => {
     const localStorageTOken = localStorage.getItem("token")
@@ -35,40 +34,46 @@ const MainLayout = () => {
   let timer; // variable to hold the timeout function
 
   useEffect(() => {
-      const resetTimer = () => {
-          clearTimeout(timer);
-          timer = setTimeout(callInactiveFunction, inactiveTime);
-      };
+    const resetTimer = () => {
+      clearTimeout(timer);
+      timer = setTimeout(callInactiveFunction, inactiveTime);
+    };
 
-      const callInactiveFunction = () => {
-          // This function will be called after 'inactiveTime' milliseconds of user inactivity
-          console.log("User is inactive");
-          localStorage.clear()
-          window.location.replace(login)
-          // Call your function here that you want to execute when the user is inactive
-      };
+    const callInactiveFunction = () => {
+      // This function will be called after 'inactiveTime' milliseconds of user inactivity
+      console.log("User is inactive");
+      localStorage.clear()
+      window.location.replace(login)
+      // Call your function here that you want to execute when the user is inactive
+    };
 
-      const setupListeners = () => {
-          // Add event listeners to detect user activity
-          document.addEventListener('mousemove', resetTimer);
-          document.addEventListener('keydown', resetTimer);
-          document.addEventListener('visibilitychange', resetTimer); // For handling tab visibility changes
-      };
+    const setupListeners = () => {
+      // Add event listeners to detect user activity
+      document.addEventListener('mousemove', resetTimer);
+      document.addEventListener('keydown', resetTimer);
+      document.addEventListener('visibilitychange', resetTimer); // For handling tab visibility changes
+    };
 
-      setupListeners(); // Initialize the listeners
+    setupListeners(); // Initialize the listeners
 
-      return () => {
-          // Clean up the event listeners when the component unmounts
-          document.removeEventListener('mousemove', resetTimer);
-          document.removeEventListener('keydown', resetTimer);
-          document.removeEventListener('visibilitychange', resetTimer);
-      };
+    return () => {
+      // Clean up the event listeners when the component unmounts
+      document.removeEventListener('mousemove', resetTimer);
+      document.removeEventListener('keydown', resetTimer);
+      document.removeEventListener('visibilitychange', resetTimer);
+    };
   }, [inactiveTime]);
+  const {pathname} = useLocation()
+
+  const urlList = ["/","/account-statement","/current-bet","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
+  const checkActiveUrl  = ["/","/sport/4","/sport/2"]
+
+  const checkUrl = isMobile && urlList.includes(pathname)
   return (
     <div className='main-layout'>
       <div className="layout-nav-col">
         <Navbar />
-        {isMobile &&
+        {checkUrl && !isMobile &&
           <div className={`w-full grid grid-cols-${inplayMatches?.length} gap-1`} style={{padding: "0 5px 5px"}}>
             {inplayMatches?.map((item) => {
               return (
@@ -79,9 +84,8 @@ const MainLayout = () => {
 
           </div>
         }
-        {subNavbarCheck || checkUrl.split("/")[1] == "casino-lobby" || checkUrl.split("/")[1] == "aviator-lobby" ?
-          null : <SubNavbar />
-        }
+        <SubNavbar />
+ 
       </div>
       <div className="main-layout-col mt-[.3125rem] mr-[.3125rem]">
 
@@ -93,7 +97,7 @@ const MainLayout = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </div >
   )
 }
 

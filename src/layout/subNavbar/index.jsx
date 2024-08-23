@@ -77,10 +77,10 @@ const SubNavbar = () => {
   const casino = isMobile ? mobileCasino : casinoArray
   const [listActive, setListActive] = useState(0)
 const {pathname} = useLocation()
-  const urlList = ["/account-statement","/current-bet","/changepassword"]
+const urlList = ["/account-statement","/current-bet","/activity_log","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
   const checkActiveUrl  = ["/","/sport/4","/sport/2"]
 
-  const checkUrl = urlList.includes(pathname)
+  const checkUrl = isMobile && urlList.includes(pathname)
   return (
     <>
     {!checkUrl && 

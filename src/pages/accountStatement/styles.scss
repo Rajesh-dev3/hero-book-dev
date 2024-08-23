@@ -3,6 +3,9 @@
 
 .select {
     width: 25%;
+    @include media(phone) {
+        width: 100%;
+    }
 
 }
 
@@ -19,7 +22,7 @@
             border: 1px solid #dbdbdb;
             height: 38px;
             width: 16.66666667%;
-            border-radius: 2px;
+            // border-radius: 2px;
             overflow: hidden;
 
             @include media(phone) {
@@ -45,6 +48,7 @@
 
             }
         }
+
     }
 
     .entries-row {
@@ -56,18 +60,23 @@
 
 
                 @include media(phone) {
-                    width: 50%;
+                    width: 100%;
                     padding: 5px;
                     border: 0;
-                    outline: 1px solid;
                     border-right: 4px solid transparent;
                 }
             }
         }
 
         .entries-right-col {
+
             @include media(phone) {
                 display: none;
+            }
+            input{
+                // width: 19.5%;
+                width: 100px;
+                margin-left: 5px;
             }
         }
     }
@@ -87,10 +96,10 @@
 }
 
 .form-btn {
-    width: 7.66666667%;
+    width: 16.66666667% ;
 
     @include media(phone) {
-        width: 22%;
+        width: 100%;
     }
 
     .btn {
@@ -101,7 +110,7 @@
         height: 38px;
         padding: .375rem .75rem;
         font-size: 1rem;
-        border-radius: .25rem;
+        // border-radius: .25rem;
     }
 }
 

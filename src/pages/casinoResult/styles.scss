@@ -19,7 +19,7 @@
             border: 1px solid #dbdbdb;
             height: 38px;
             width: 16.66666667%;
-            border-radius: 2px;
+            // border-radius: 2px;
             overflow: hidden;
 
             @include media(phone) {
@@ -88,7 +88,7 @@
 }
 
 .form-btn {
-    width: 7.66666667%;
+    width: 16.66666667% ;
 
     @include media(phone) {
         width: 22%;
@@ -102,7 +102,7 @@
         height: 38px;
         padding: .375rem .75rem;
         font-size: 1rem;
-        border-radius: .25rem;
+        // border-radius: .25rem;
     }
 }
 

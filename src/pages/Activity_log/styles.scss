@@ -19,7 +19,7 @@
             border: 1px solid #dbdbdb;
             height: 38px;
             width: 16.66666667%;
-            border-radius: 2px;
+            // border-radius: 2px;
             overflow: hidden;
 
             @include media(phone) {
@@ -45,21 +45,37 @@
 
             }
         }
+        .select-menu{
+            select{
+                background: transparent !important;
+
+            }
+            @include media(phone) {
+                width: 100% !important;
+                
+            }
+        }
     }
 
     .entries-row {
+        @include media(phone) {
+            display: flex;
+            
+        }
         .entries-left-col {
             select {
                 padding: 5px 2px 5px 2px;
-                width: 12%;
-                border: 1px solid #dbdbdb;
+                width: 20%;
+                border: none;
+                border: 1px solid #dbdbdb !important;
+                background: transparent;
+                outline: none;
 
 
                 @include media(phone) {
                     width: 50%;
                     padding: 5px;
                     border: 0;
-                    outline: 1px solid;
                     border-right: 4px solid transparent;
                 }
             }
@@ -67,7 +83,17 @@
 
         .entries-right-col {
             @include media(phone) {
-                display: none;
+                display: block !important;
+                padding-left: 5%;
+                
+            }
+            input{
+                width: 100px;
+                border-radius: 0;
+                @include media(phone) {
+                   width: 68%;
+                    
+                }
             }
         }
     }
@@ -87,10 +113,10 @@
 }
 
 .form-btn {
-    width: 7.66666667%;
+    width: 16.66666667% ;
 
     @include media(phone) {
-        width: 22%;
+        width: 100% !important;
     }
 
     .btn {
@@ -101,7 +127,7 @@
         height: 38px;
         padding: .375rem .75rem;
         font-size: 1rem;
-        border-radius: .25rem;
+        // border-radius: .25rem;
     }
 }
 

@@ -1,5 +1,6 @@
 .statement-header{
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    border-bottom-left-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    border-bottom-right-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
     background-color:#2C3E50;
     color: #FFFFFF;
     padding: .5rem 1rem;

@@ -52,6 +52,7 @@ const isMobile = useMediaQuery("(max-width:780px)")
   </div>
   
 </div>
+<div className="search-news">
 <div className="search-bar">
           <input
           className={openSearch?"open-search":"close-search"}
@@ -73,6 +74,8 @@ const isMobile = useMediaQuery("(max-width:780px)")
         </div>
         <div className="news"><Marquee speed={50}>
         {data?.data?.site_message}</Marquee></div>
+        </div>
+
     </div>
     :
     <div className="navbar-container">
