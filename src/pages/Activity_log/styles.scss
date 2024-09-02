@@ -146,6 +146,7 @@
 
 .statement-body {
     .account-table {
+        min-height: calc(100vh - 350px);
         overflow-x: scroll;
         margin-top: 0.5rem;
 

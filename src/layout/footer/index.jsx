@@ -74,6 +74,9 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+        <div className="copywrite">
+        © Copyright 2024. All Rights Reserved. Powered by Herobook.
+        </div>
     </>
   );
 };

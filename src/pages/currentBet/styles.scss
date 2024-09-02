@@ -90,6 +90,11 @@
 
 }
 
+    .mt-2 {
+        min-height: calc(100vh - 350px);
+        overflow-x: scroll;
+margin-top: 0.5rem;
+        table {
 tr {
     th{
 
@@ -102,4 +107,4 @@ tr {
         font-size: 12px;
         text-align: center;
     }
-}
+}}}
