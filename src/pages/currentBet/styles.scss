@@ -61,10 +61,18 @@
         width: 100px;       
         border: 1px solid #ccc;
         padding: 6px 10px 5px 15px;
+        outline: none;
         @include media(phone) {
-            width: 130px;
+            width: 125px;
             border-radius: 0px;
+            font-family: Arial, Helvetica, sans-serif;
         }
+        &::placeholder {
+            color: #999999; /* Change this to your desired color */
+            opacity: 1;
+            font-weight: 400; /* Adjusts the opacity, can be from 0 to 1 */
+          }
+        
     }
 }
     }

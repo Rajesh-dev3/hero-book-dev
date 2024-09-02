@@ -33,7 +33,10 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             id="demo-simple-select"
             displayEmpty
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ width: "100%", height: "38px", outline: "none", borderRadius:"0" }}
+            sx={{ width: "100%", height: "38px", outline: "none", focus:"none", borderRadius:"0" 
+            
+
+            }}
             // onChange={handleChange}
             defaultValue={""}
           >
@@ -77,7 +80,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
         <div className="entries-right-col w-[50%] flex justify-end items-center gap-[0.5rem]">
           Search:
           <input
-            placeholder="search..."
+            placeholder="0 record..."
             className=" border-[1px] border-[#ced4da] h-[38px] p-[5px]"
           />
         </div>

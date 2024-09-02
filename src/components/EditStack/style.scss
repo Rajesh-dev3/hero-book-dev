@@ -13,15 +13,19 @@
     }
 
     .detail-sec {
-        padding: 20px 20px 10px 20px;
+        padding: 10px 10px 10px 10px;
         background: $white;
+        @include media (phone){
+            padding:.25rem;
+
+        }
 
         .button-sec {
             display: flex;
             font-size: 12px;
 
             .btn {
-                width: 43%;
+                width: 28%;
                 padding: 8px 0 !important;
                 font-weight: 600;
                 font-size: 13px;
@@ -41,18 +45,29 @@
     }
 
     .price-sec {
-        padding: 15px 20px 0px 20px;
-
+        padding: 0px 10px 0px 10px;
+        @include media(phone) {
+        padding: 0px 0px 0px 0px;
+        }
         .list-name {
             display: flex;
             gap: 4%;
             justify-content: space-between;
             margin-bottom: 5px;
+            
+
+            
 
             P {
                 width: 49%;
                 color: $black;
-            }
+                font-size: 16px;
+                font-weight: bold;
+                 @include media(phone) {
+text-align: center;
+font-size: 12px;
+font-weight: bold;
+            }}
         }
 
         .edit-inputs {
@@ -63,26 +78,38 @@
             input {
                 width: 48%;
                 background-color: $white;
-                border-radius: 5px;
-                border: 2px solid #dbdbdb;
+                // border-radius: 5px;
+                outline: none;
+                border: 1px solid #dbdbdb;
                 color: $black;
 
                 padding: 5px;
+                // &:hover{
+                //     border-color: #dbdbdb;
+                // }
             }
         }
 
     }
 
     .submit {
-        padding: 0px 20px;
+        padding: 0px 10px;
         margin-bottom: 10px;
+        @include media(phone) {
+        display: flex;
+        justify-content: center;
+        }
 
         .btn {
             padding: 8px 0 !important;
             width: 30%;
             background: $black;
             color: $white;
-            border-radius: 8px;
+            // border-radius: 8px;
+            @include media(phone) {
+                font-weight: 400;
+    line-height: 1.5;
+            }
         }
     }
 }

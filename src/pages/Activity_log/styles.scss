@@ -75,11 +75,16 @@
 
 
                 @include media(phone) {
-                    width: 50%;
+                    width: 50px;
                     padding: 5px;
                     border: 0;
                     border-right: 4px solid transparent;
                 }
+                
+            }
+            #demo-simple-select{
+                @include media(phone) {
+                    width: 50px;}
             }
         }
 
@@ -142,6 +147,7 @@
 .statement-body {
     .account-table {
         overflow-x: scroll;
+        margin-top: 0.5rem;
 
         table {
             tr {

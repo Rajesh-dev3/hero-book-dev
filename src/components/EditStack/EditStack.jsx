@@ -76,8 +76,8 @@ console.log(matchStackArray,"matchStackArray")
             {isLoading ? "Loading..." :
                 <div className="price-sec">
                     <div className="list-name">
-                        <p>Price Label</p>
-                        <p>Price Value</p>
+                        <p>Price Label:</p>
+                        <p>Price Value:</p>
                     </div>
                     {Object.keys(matchStackArray).map((elm, index) => {
                         return (

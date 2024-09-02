@@ -87,7 +87,7 @@ const ChangePassword = () => {
       <form className='changepassword-form'>
         <div className="form-row">
 
-          <label htmlFor="">Old Password</label>
+          <label htmlFor="">Current Password</label>
           <input type={!passwordIconShow?.old ? "text" : "password"} name='oldPassword' value={formData?.oldPassword} onChange={formHandler} />
           {error?.oldPassword && <span style={{ color: "red" }}>Please Enter Old Password</span>}
           <div className="password-icon" onClick={() => setPasswordIconShow((prev) => {

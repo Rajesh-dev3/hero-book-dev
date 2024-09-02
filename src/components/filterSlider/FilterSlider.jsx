@@ -32,6 +32,25 @@ const FilterSlider = ({data,activeValue,setActiveValue}) => {
     return () => ScroolState?.current?.removeEventListener("scroll", onScroll);
   }, [ScroolState?.current]);
 
+  const itemRefs = useRef([]);
+  const scrollToItem = (index) => {
+    const container = ScroolState.current;
+    const item = itemRefs.current[index];
+
+    if (container && item) {
+      const containerRect = container.getBoundingClientRect();
+      const itemRect = item.getBoundingClientRect();
+      const offset = itemRect.left - containerRect.left - (containerRect.width / 2) + (itemRect.width / 2);
+
+      container.scrollTo({
+        left: container.scrollLeft + offset,
+        behavior: 'smooth'
+      });
+    }
+  };
+  const handleItemClick = (index) => {
+    scrollToItem(index);
+  };
   return (
     <div>
       <styled.SliderContainer className="slider-container">
@@ -41,7 +60,7 @@ const FilterSlider = ({data,activeValue,setActiveValue}) => {
           </div>
         
         <div className="middle-slider-data" ref={ScroolState}>
-          <SlideBox data={data} activeValue={activeValue} setActiveValue={setActiveValue}/>
+          <SlideBox  itemRefs={itemRefs} handleItemClick={handleItemClick} data={data} activeValue={activeValue} setActiveValue={setActiveValue}/>
         </div>
      
           <div className="right-slider-btn" onClick={() => scrollFunction("right")}>

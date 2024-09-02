@@ -7,6 +7,8 @@ import { login } from './services/auth/Login'
 import { eventDetails } from './services/sport/eventDetail'
 import { eventSession } from './services/fancy/Fancy'
 import { accountStatement } from './services/accountStatement/accountStatement'
+import { casinoResult } from './services/casinoResult/casinoResult'
+import {activityLog } from './services/activityLog/activityLog'
 import { casino } from './services/casino/casino'
 import { myBet } from './services/myBet/myBet'
 import { changePassword } from './services/changePassword/ChangePassword'
@@ -28,6 +30,8 @@ export const store = configureStore({
     [eventDetails.reducerPath]: eventDetails.reducer,
     [eventSession.reducerPath]: eventSession.reducer,
     [accountStatement.reducerPath]: accountStatement.reducer,
+    [casinoResult.reducerPath]: casinoResult.reducer,
+    [activityLog.reducerPath]: activityLog.reducer,
     [casino.reducerPath]: casino.reducer,
     [myBet.reducerPath]: myBet.reducer,
     [changePassword.reducerPath]: changePassword.reducer,
@@ -50,6 +54,8 @@ export const store = configureStore({
   .concat(eventDetails.middleware)
   .concat(eventSession.middleware)
   .concat(accountStatement.middleware)
+  .concat(casinoResult.middleware)
+  .concat(activityLog.middleware)
   .concat(casino.middleware)
   .concat(myBet.middleware)
   .concat(changePassword.middleware)

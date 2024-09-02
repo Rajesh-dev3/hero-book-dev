@@ -18,8 +18,9 @@ const Table = ({data}) => {
             return(
   
           <tr role="row" key={index}>
-            <td role="cell" className="border-[1px] px-[8px] py-[5px]">{item?.seriesName + " "+ item?.marketName}</td>
-          <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center">{`${item?.marketName} -- ${item?.seriesName}`}</td>
+            <td role="cell" className="border-[1px] px-[8px] py-[5px]">{item?.roundId}</td>
+            
+          <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center">{item?.user_name}</td>
 
           </tr>
             )

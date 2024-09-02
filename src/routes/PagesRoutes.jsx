@@ -18,6 +18,7 @@ import Telegram from "../pages/telegram/Telegram.jsx";
 import AuthSecure from "../pages/authSecure/Auth.jsx";
 import ActivityLog from "../pages/Activity_log/ActivityLog.jsx";
 import CasinoResult from "../pages/casinoResult/CasinoResult.jsx";
+// import Deposit from "../pages/Deposit/Deposit.jsx";
 
 
 export const router = createBrowserRouter([
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
           path: secureAuth,
           element: <AuthSecure/>,
         },
+        // {
+        //   path: DepositPage,
+        //   element: <Deposit/>,
+        // },
         {
           path: casinoResultsPage,
           element: <CasinoResult/>,

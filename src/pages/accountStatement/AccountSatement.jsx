@@ -43,4 +43,4 @@ const AccountSatement = () => {
   )
 }
 
-export default AccountSatement
+export default AccountSatement;

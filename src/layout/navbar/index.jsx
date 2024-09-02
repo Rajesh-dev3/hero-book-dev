@@ -28,6 +28,10 @@ useEffect(() => {
   trigger()
 }, [])
 const isMobile = useMediaQuery("(max-width:780px)")
+const [Exposure, setExposure] = useState({
+  balance:true,
+  exposure:true
+})
   return (
     <>
     {isMobile?<div className="mobile-navbar">
@@ -39,13 +43,18 @@ const isMobile = useMediaQuery("(max-width:780px)")
     </Link>
   </div>
   <div className="balance-nav">
+    {!Exposure?.balance?"":
     <div className="balance-user">Balance<span>{data?.data?.balance}</span></div>
+    }
    <div className="user-info">
+    {!Exposure?.exposure
+    ?"":
     <div className="exp">
       Exp: <span>{data?.data?.liability}</span>
     </div>
+    }
     <div className="user-detail">
-    <NavDropDown/>
+    <NavDropDown setExposure={setExposure} exposure={Exposure}/>
     </div>
 
    </div>
@@ -134,22 +143,29 @@ const isMobile = useMediaQuery("(max-width:780px)")
         <ul className="list">
           <li>
             <span>Rule</span>
-            <span>Download Apk</span>
+            <span>Download Apk <i className="fab fa-android"></i></span>
           </li>
           <li>
-            <span > <span className="bold-b">
+            <span > <span>
               Balance
               </span>
-              :{data?.data?.balance || 0}</span>
-            <span >
-              <span className="bold-b">
+              <span  className="bold-b">
+              :{data?.data?.balance || 0}
 
+              </span>
+              </span>
+            <span >
+              <span>
               Exp
               </span>
-              :{data?.data?.liability||0}</span>
+              <span className="bold-b">
+
+              :{data?.data?.liability||0}
+              </span>
+              </span>
           </li>
           <li>
-        <NavDropDown/>
+        <NavDropDown setExposure={setExposure} exposure={Exposure}/>
           </li>
         </ul>
       </div>

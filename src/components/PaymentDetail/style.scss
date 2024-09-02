@@ -1,0 +1,78 @@
+.PaymentDetail{
+    width: 98%;
+   height: auto;
+margin: auto;
+overflow: hidden;
+border:1px solid #fff;
+padding-bottom: 10px;
+
+border-radius: 8px;
+.heading{
+    color: white;
+    margin: 0 auto;
+    background: #0ead69;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+    // font-weight: bold;
+}
+.detail{
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 10px;
+    row-gap: 5px;
+    // margin-bottom: 5%;
+}
+.detail{
+    .data{
+
+        p{
+        &:first-child{
+            color: #a7a3a3;
+            text-wrap: wrap;
+        }
+        &:last-child{
+            color: white;
+            text-wrap: wrap;
+        }
+        span{
+            // float: right;
+            margin-left: 20px;
+            svg{
+                width: 15px;
+                color: #45BF75;
+            }
+        }
+        }
+    }
+    .barcode{
+        p{
+    
+            color: rgb(255, 208, 133);
+            // text-align: center;
+            text-wrap: wrap;
+            padding-right: 5px;
+            span{
+                float: right;
+                margin-left: 10px;
+                svg{
+
+                    width: 15px;
+                    color: gray;
+                }
+            }
+        }
+    }
+}
+
+}
+.qrcode{
+    width: 100%;
+
+    img{
+        width: 150px;
+        height: 150px;
+        margin: 20px auto;
+    }
+}

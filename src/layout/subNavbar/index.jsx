@@ -18,7 +18,8 @@ const SubNavbar = () => {
     return result;
 
   };
-  const casinoArray = [
+  const isMobile = useMediaQuery("(max-width:780px)")
+  const casinoArray =  [
     {
       name: "Aviator",
       link: "/aviator-lobby",
@@ -54,7 +55,7 @@ const SubNavbar = () => {
     },
     {
       name: "Sport",
-      link: "",
+      link: "/",
     },
     {
       name: "OUR CASINO",
@@ -73,35 +74,63 @@ const SubNavbar = () => {
       link: "/fantasy"
     }
   ]
-  const isMobile = useMediaQuery("(max-width:780px)")
+  const MobileCasino = isMobile? mobileCasino:casinoArray
+  
   const casino = isMobile ? mobileCasino : casinoArray
   const [listActive, setListActive] = useState(0)
 const {pathname} = useLocation()
 const urlList = ["/account-statement","/current-bet","/activity_log","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
-  const checkActiveUrl  = ["/","/sport/4","/sport/2"]
+  const checkActiveUrl  = {Home:"/",Cricket:"/sport/4",Tennis:"/sport/2",Soccer:"/sport/1"}
+
 
   const checkUrl = isMobile && urlList.includes(pathname)
+
+// console.log(pathname.split("/")[2],"pathname")
+  // const newSPortArray = [...data?.data,...casinoArray]
+const [newSPortArray, setNewSPortArray] = useState([])
+
+  useEffect(() => {
+    if(data?.data){
+
+      const getSportName = isMobile ?[]: data?.data?.map((item)=>{return{name:item?.name,link:checkActiveUrl[item?.name]}})
+      const newSPortArray = [ isMobile?null:{name:"Home",link:"/"},...getSportName,...MobileCasino]
+      setNewSPortArray(newSPortArray)
+    }
+  }, [data?.data])
+  
+
+  const isActive = (itemLink, pathname) => {
+    // Special case: Direct comparison for /aviator-lobby
+if(isMobile){
+  return pathname === itemLink
+}
+    else if (pathname == '/aviator-lobby' || pathname == "/") {
+      return pathname == itemLink;
+    }else{
+
+      return pathname.split('/')[2] == itemLink.split('/')[2];
+    }
+  
+    // General case: Split pathname and compare
+  };
   return (
     <>
     {!checkUrl && 
     <div className="subnavbar-container">
       <ul>
-        {!isMobile &&
-          <Link to={"/"} className={pathname == "/"?'tab-list-active':"tab-list"}>
-            <li>Home</li>
-          </Link>
-        }
-        {!isMobile ?
-          data?.data?.map((item) => {
-            return (
-              <Link to={item?.name == "Casino" ? "/casino/ourCasino" : `/sport/${item?.sport_id}`} key={item?.name} className={"tab-list"}>
-                <li >{getTitle(item)}</li>
-              </Link>
-            )
-          }) : ""
-        }
+      
+      
 
-        {casino?.map((item,index) => <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${listActive == index+1 && isMobile ?"subNav-list-active":"tabs-list"}`}><li >{item?.name}</li></Link>)}
+        {newSPortArray?.map((item,index) => {
+          if(item?.name != "Casino" && item != null){
+            
+            return(
+              
+              <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${isActive(item?.link, pathname) ? 'tab-list-active' : 'tabs-list'}`}><li >{item?.name == "Soccer"?"Football":item?.name}</li></Link>
+            )
+          }
+        }
+        )}
 
 
       </ul>

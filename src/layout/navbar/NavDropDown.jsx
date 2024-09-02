@@ -2,13 +2,14 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { StyledMenuItem } from './styled';
+import { StyledCheckbox, StyledMenuItem } from './styled';
 import { Link } from 'react-router-dom';
-import {activityLog, accountStatement, currentBet, changePasswordPage ,secureAuth, casinoResultsPage} from '../../routes/PagesUrl';
-import { Modal } from '@mui/material';
+import { activityLog, accountStatement, currentBet, changePasswordPage, secureAuth, casinoResultsPage } from '../../routes/PagesUrl';
+import { Checkbox, Modal } from '@mui/material';
 import { Box } from '@mui/system';
 import EditStack from '../../components/EditStack/EditStack';
 import ModalComp from '../../components/modal/Modal';
+// import { BpCheckbox } from '@mui/icons-material';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -58,7 +59,7 @@ const style = {
     },
   }
 };
-const NavDropDown = () => {
+const NavDropDown = ({ setExposure, exposure }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [open2, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -77,6 +78,15 @@ const NavDropDown = () => {
   const [modalOpen2, setModalOpen2] = useState(false)
   const closeModa2 = () => {
     setModalOpen2(false)
+  };
+
+  const handleChange = (event, name) => {
+    const value = event.target.checked
+    setExposure((prev) => {
+      return {
+        ...prev, [name]: value
+      }
+    })
   };
 
   return (
@@ -106,7 +116,7 @@ const NavDropDown = () => {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        {localStorage.getItem("user_name")} <KeyboardArrowDownIcon />
+        {localStorage.getItem("user_name")} <KeyboardArrowDownIcon sx={{ fontSize: 25, fontWeight: 'bold' }} />
       </Button>
       <Menu
         id="basic-menu"
@@ -127,7 +137,15 @@ const NavDropDown = () => {
         <Link to={activityLog}>
 
           <StyledMenuItem onClick={handleClose}>Activity Log</StyledMenuItem>
+        </Link>
+        {/* <Link to={DepositPage}>
+
+          <StyledMenuItem onClick={handleClose}>Deposit</StyledMenuItem>
           </Link>
+        <Link to={''}>
+
+          <StyledMenuItem onClick={handleClose}>Withdrawal</StyledMenuItem>
+          </Link> */}
         <Link to={casinoResultsPage}>
 
           <StyledMenuItem onClick={handleClose}>Casino Statement</StyledMenuItem>
@@ -136,6 +154,25 @@ const NavDropDown = () => {
 
           <StyledMenuItem onClick={handleClose}>Live Casino Bet</StyledMenuItem>
         </Link> */}
+
+        <StyledMenuItem className="custom-exposure-hide">Exposure <StyledCheckbox sx={{
+          padding: 0, // Removes padding
+          margin: 0,  // Removes margin
+          '& .MuiSvgIcon-root': {
+            fontSize: 22 // Adjust the icon size if needed
+          }
+        }} className="exposure-Check" checked={exposure?.exposure} onChange={(e) => handleChange(e, "exposure")} inputProps={{ 'aria-label': 'controlled' }} /></StyledMenuItem>
+        <StyledMenuItem className="custom-exposure-hide">Balance <StyledCheckbox sx={{
+          padding: 0, // Removes padding
+          margin: 0,  // Removes margin
+          '& .MuiSvgIcon-root': {
+            fontSize: 22 // Adjust the icon size if needed
+          }
+        }} className="exposure-Check" checked={exposure?.balance} onChange={(e) => handleChange(e, "balance")} inputProps={{ 'aria-label': 'controlled' }} /></StyledMenuItem>
+        <StyledMenuItem onClick={() => {
+          handleClose()
+          setModalOpen2(true)
+        }}>Set Button Value</StyledMenuItem>
         <Link to={secureAuth}>
 
           <StyledMenuItem onClick={handleClose}>Secure Auth</StyledMenuItem>
@@ -143,12 +180,9 @@ const NavDropDown = () => {
         <Link to={changePasswordPage}>
           <StyledMenuItem onClick={handleClose}>Change Password</StyledMenuItem>
         </Link>
-        <StyledMenuItem onClick={() => {
-          handleClose()
-          setModalOpen2(true)
-        }}>Set Button Value</StyledMenuItem>
-        <hr style={{ height: "1px",marginTop:"10px", borderTop: "1px solid rgba(0, 0, 0, .15)" }} />
-        <StyledMenuItem  onClick={SignOut}>SignOut</StyledMenuItem>
+
+        <hr style={{ height: "1px", marginTop: "10px", borderTop: "1px solid rgba(0, 0, 0, .15)" }} />
+        <StyledMenuItem onClick={SignOut}>SignOut</StyledMenuItem>
       </Menu>
     </div>
   )

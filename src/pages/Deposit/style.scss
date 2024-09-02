@@ -1,0 +1,105 @@
+// @import "../../styles/variables/mixins";
+
+// .deposit-sec{
+//     @include media(phone){
+//         width: 98%;
+//         padding-top: 10px;
+//         margin: 0 auto;
+//         // background: #272629;
+     
+    
+//     }
+//     .titelHeadView{
+//         @include media(phone){
+//             width: 100%;
+//             margin: 0 auto;
+//             padding: 10px;
+//             background-color: rgba(53, 53, 53, .57);
+//             border-top-right-radius: 10px;
+//             border-top-left-radius: 10px;
+//             backdrop-filter: contrast(.5);
+//             h1{
+//                 font-size: 22px;
+//                 font-weight: 600;
+//                 color: #ffd085;
+//                 margin-bottom: 0;
+//             }
+//         }
+
+//     }
+//     .payment{
+//         @include media(phone){
+//             width: 100%;
+//             // margin-top: 10px;
+//             background:#272629 ;
+//             margin: 0 auto;
+//             padding-bottom: 20px;
+//         }  
+//     .payment-type{
+//         @include media(phone){
+//             display: flex;
+//             flex-wrap: wrap;
+//             overflow-x: scroll;
+//             overflow: hidden;
+//             padding-top: 10px;
+//             padding-left: 5px;
+//             gap: 5px;
+//             border-bottom: 1px solid #dee2e6;
+//             ;
+
+//     }
+    
+//     }
+//     .payment-detail{
+//         @include media(phone){
+//         margin: 20px 7px 15px 7px;
+//         }
+//     }
+    
+
+//     }
+//     .upload-payment-heading{
+//         @include media(phone){
+//         width: 100%;
+//         justify-content: center;
+//         margin: 0 auto;
+//     background: #3d4fc1;
+//     border-radius: 8px 8px 0 0;
+//     color: #fff;
+//     padding: 7px;
+//     display: flex;
+//         }
+//     p{
+//         @include media(phone){
+//         &:first-child{
+//             font-size: 13px;
+//             font-weight: 600;
+//             text-transform: capitalize;
+//         }
+//         &:last-child{
+//             font-size: 9px;
+//         }
+//     }}
+//     }
+//     .upload-payment-recipt{
+//         @include media(phone){
+//         width: 100%;
+//         height: 200px;
+//         margin: 0 auto;
+//         background:#1B1A1C;
+//         border-radius: 7px;
+//         display: flex;
+//         justify-content: center;
+//         text-align: center;
+//         color: gray;
+        
+//         border: 2px solid #d8cbcb;
+//         }
+//         .upload-imgs{
+//             @include media(phone){
+//             width: 30px;
+//             margin: 3px auto;
+
+//         }
+//     }}
+// }

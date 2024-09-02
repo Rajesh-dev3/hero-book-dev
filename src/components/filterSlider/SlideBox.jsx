@@ -1,16 +1,19 @@
-import  { Fragment } from "react";
 import * as styled from "./FilterSlider.style";
-const SlideBox = ({data,activeValue,setActiveValue}) => {
+const SlideBox = ({itemRefs,handleItemClick,data,activeValue,setActiveValue}) => {
+
 
   return (
-    <Fragment>
+    <>
       {data?.map((res, index) => {
         return (
           <styled.BoxCard
            key={res.casinoType}
+           
+           ref={(el) => itemRefs.current[index] = el}
             isSelected={activeValue === res?.link}
             // className={activeValue === index ? "active" : "boxCard"}
             onClick={() =>{
+              handleItemClick(index)
               setActiveValue(res?.link)
             } 
           }
@@ -19,7 +22,8 @@ const SlideBox = ({data,activeValue,setActiveValue}) => {
           </styled.BoxCard>
         );
       })}
-    </Fragment>
+    </>
+
   );
 };
 

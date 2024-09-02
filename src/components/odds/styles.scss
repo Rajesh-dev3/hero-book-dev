@@ -46,6 +46,8 @@
         }
 
         .icon-di {
+          
+
             svg {
                 @include media(phone) {
 
@@ -63,6 +65,12 @@
                     width: 15px;
                     height: auto;
                 }
+            }
+             .active-match{
+                width: 10px;
+                height: 10px;
+                background: #28a745;
+                border-radius: 50px;
             }
         }
     }

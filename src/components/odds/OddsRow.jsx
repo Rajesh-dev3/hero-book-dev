@@ -8,7 +8,8 @@ import { useMediaQuery } from "../../useMediaQuery";
 import OddsRowHeading from "./OddsRowHeading";
 ////styles
 import "./styles.scss";
-const OddsRow = ({ item }) => {
+const OddsRow = ({ item ,inPlayMarketId}) => {
+
   const isMobile = useMediaQuery("(max-width:780px)")
   return (
     <Link to={`/game-detail/${item?.sport_id}/${item?.match_id}/${item?.market_id}`}>
@@ -29,7 +30,7 @@ const OddsRow = ({ item }) => {
           <div className="icon-di flex
             items-center
             gap-[10px]">
-            <div className="active-match"></div>
+             <div className= {inPlayMarketId?.find((list)=>list?.marketId == item?.market_id) && "active-match"}></div>
             <Tv />
             <img src={facebook} alt="" className=" h-[12px]" />
             <img src={bmIcon} alt="" className=" h-[12px]" />

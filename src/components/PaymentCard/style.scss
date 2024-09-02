@@ -1,0 +1,30 @@
+.PaymentCard{
+   width: 32%;
+    // border:1px solid red;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+
+  
+    .card{
+        width: 99%;
+        height: 99%;
+        background: red;
+        border-radius: 8px;
+        padding: 10px 15px;
+        display: flex;
+        
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+        // border: 1px solid gold;
+      p{
+        color: white;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+}

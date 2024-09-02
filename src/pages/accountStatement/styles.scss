@@ -82,6 +82,11 @@
                     border-right: 4px solid transparent;
                 }
             }
+            #demo-simple-select{
+                @include media(phone) {
+                width: 50px;
+                }
+            }
         }
 
         .entries-right-col {
@@ -96,6 +101,17 @@
                 width: 100px;
                 border-radius: 0px;
                 margin-left: 5px;
+                outline: none;
+                @include media(phone) {
+                    width: 120px;
+
+                }
+                &::placeholder{
+                    color: gray;
+                    font-weight: 400;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -143,6 +159,7 @@
     .account-table {
         min-height: calc(100vh - 350px);
         overflow-x: scroll;
+        margin-top: 0.5rem;
 
         table {
             tr {

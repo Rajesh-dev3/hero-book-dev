@@ -11,7 +11,7 @@ function convertToKOrLakh(number) {
       return number.toString();
   }
 }
-const GameDetailCollapse = ({setCheckFancy, checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
+const GameDetailCollapse = ({min,setCheckFancy, checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
   const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"]
   return (
     <div className="game-market market-4 ">
@@ -23,7 +23,7 @@ const GameDetailCollapse = ({setCheckFancy, checkFancy,profithandler, setSelecti
         <div className="odds-row-container flex items-center" >
           <div className="odds-row-left-col px-[5px]">
             <p>
-              Max:{convertToKOrLakh(odddata?.marketMaxStack)}
+            {min && `Min:${convertToKOrLakh(odddata?.marketMinStack)}`}  Max:{convertToKOrLakh(odddata?.marketMaxStack)} 
             </p>
           </div>
           <div className="odds-row-right-col grid grid-cols-6">

@@ -43,6 +43,12 @@
 
       li {
         margin-left: 1rem;
+        span{
+          .fab {
+            font-weight: 300;
+            font-family: "Font Awesome 5 Brands";
+        }
+        }
 
         @include media(phone) {
           margin-left: 0rem;
@@ -82,7 +88,7 @@
   transition: width 1.4s linear;
   -webkit-transition: width 1.4s linear;
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   align-items: center;
 
   @include media(phone) {
@@ -102,7 +108,7 @@
 
     @include media(phone) {
       box-shadow: none;
-      width: 180px;
+      width: 160px;
       margin-left: 5px;
     }
   }
@@ -144,7 +150,9 @@
       font-size: 30px;
     }
   }
+
 }
+
 
 // .nav-dropdown{
 //   button{
@@ -165,12 +173,14 @@
     z-index: 1;
     color: $white;
     padding: 10px;
+    // display: none;
+    
 
     @include media(phone) {
       padding-top: 6px;
       font-size: 12px;
       padding-bottom: 10px;
-      width: auto;
+      // width: auto;
     }
 
   }

@@ -9,44 +9,48 @@
 // export default ActivityLog
 
 
-import { useEffect, useState } from "react"
-import { useAccountStatementMutation } from "../../services/accountStatement/accountStatement"
+import {  useEffect, useState } from "react"
 import Filter from "./Filter"
 import Table from "./Table"
 import moment from "moment"
 import PagesTitle from "../../components/pagesTitle/PagesTitle"
+import { useActivityLogMutation } from "../../services/activityLog/activityLog"
 
 ///styles
 import "./styles.scss"
 const ActivityLog = () => {
-  const [trigger, { data }] = useAccountStatementMutation()
   const [limit, setLimit] = useState(10)
   const [startDate, setStartDate] = useState(moment().subtract(6, 'days').format('YYYY-MM-DD'))
   const [endDate, setEndDate] = useState(moment().format('YYYY-MM-DD'))
+  const [activityLogs, setActivityLogs] = useState([]);
 
+  // Use RTK Query mutation hook
+  const [fetchActivityLogs, {data, isLoading, error }] = useActivityLogMutation();
 
-  let reqData = {
-    "from_date": moment(startDate).startOf('day').unix(),
-    "to_date": moment(endDate).endOf('day').unix(),
-    "limit": limit,
-    "pageno": 1
-  }
+  const submitHandler = async () => {
+   
+
+      // Fetch data
+    
+  };
   useEffect(() => {
-    trigger(reqData)
+    fetchActivityLogs( {
+     "user_name":"aakash07"
+ 
+  })
   }, [])
-  const submitHandler = () => {
-    trigger(reqData)
-
-  }
-
+  
+console.log(data ,"kaka")
   return (
     <div className='shadow-container'>
       <PagesTitle title={"Activity Log"} />
       <div className="statement-body p-[10px]">
         <Filter fun={submitHandler} setLimit={setLimit} setStartDate={setStartDate} startDate={startDate} endDate={endDate} setEnddate={setEndDate} />
         <div className="account-table">
-
-          <Table data={data} />
+        {isLoading && <p>Loading...</p>}
+        {error && <p>Error fetching data</p>}
+          <Table data={data?.data} />
+        
         </div>
       </div>
     </div>

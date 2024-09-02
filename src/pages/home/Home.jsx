@@ -37,6 +37,7 @@ const Home = () => {
       setGameList(findGame)
     }
   }, [data, activeTab])
+   const extractMatchId = eventData?.map((list)=>{return{marketId:list?.market_id}})
   return (
     <>
 
@@ -57,7 +58,7 @@ const Home = () => {
             return (
               <>
 
-                <OddsRow item={item} key={item?.name} />
+                <OddsRow item={item} key={item?.name} inPlayMarketId={extractMatchId}/>
               </>
             )
           }) : "No Data Found"

@@ -117,7 +117,7 @@ const [radioActive, setRadioActive] = useState(0)
              inputProps={{ 'aria-label': 'Limit' }}
            
              IconComponent={KeyboardArrowDownIcon} 
-             sx={{ height: "38px", outline: "none", borderRadius:"0" }}
+             sx={{ height: "38px",width:"100px", outline: "none", borderRadius:"0" }}
            >
              <MenuItem value={10}>10</MenuItem>
              <MenuItem value={20}>20</MenuItem>
@@ -171,7 +171,7 @@ const [radioActive, setRadioActive] = useState(0)
         <div className="search flex items-center justify-end gap-[10px]">
           Search:
           <input
-            placeholder="search..."
+            placeholder="0 records..."
             className="searchField border-[1px] border-[#ced4da] h-[38px] p-[5px]"
           />
         </div>

@@ -12,6 +12,8 @@
 }
 .upcoming-event{
     overflow-x: scroll;
+    height: 30px;
+    text-align: center;
     &::-webkit-scrollbar{
         display: none;
     }
