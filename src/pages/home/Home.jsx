@@ -5,7 +5,6 @@ import HomeTab from "../../components/hometab/HomeTab.jsx";
 import OddsRow from "../../components/odds/OddsRow.jsx";
 import OddsRowHeading from "../../components/odds/OddsRowHeading.jsx";
 import { useEventGameMutation } from "../../services/sport/matchList.js";
-import Loader from "../../components/loader/Loader.jsx"
 import { useMediaQuery } from "../../useMediaQuery.js";
 import ourCasino from "../../components/casino/ourCasino.json"
 
@@ -13,6 +12,7 @@ import ourCasino from "../../components/casino/ourCasino.json"
 import "./styles.scss"
 import CasinoCard from "../../components/casinoCard/CasinoCard.jsx";
 import { useGetEventListMutation } from "../../services/sport/inPlayEvent.js";
+import BetLoader from "../../components/loader/BetLoader.jsx";
 const Home = () => {
   const [trigger, { data, isLoading }] = useEventGameMutation()
   const [trigge, { data: eventList }] = useGetEventListMutation()
@@ -37,35 +37,38 @@ const Home = () => {
       setGameList(findGame)
     }
   }, [data, activeTab])
-   const extractMatchId = eventData?.map((list)=>{return{marketId:list?.market_id}})
+  const extractMatchId = eventData?.map((list) => { return { marketId: list?.market_id } })
   return (
     <>
 
-      {!isMobile &&
+      {(!isMobile && inplayMatches?.length) ?
         <div className={`w-full upcoming-event flex overflow-x-scroll gap-1`} style={{ gridTemplateColumns: `repeat(${inplayMatches?.length}, 1fr)` }}>
-          {eventData?.map((item) => <Blink key={item?.series_id} data={item} />)}
+          {inplayMatches?.map((item) => <Blink key={item?.series_id} data={item} />)}
 
         </div>
-      }
+        : ""}
       <HomeTab activeTab={activeTab} setActiveTab={setActiveTab} name={name} setName={setName} />
       {!isMobile &&
         <OddsRowHeading />
       }
       <div className="odd-container-m" >
 
-        {isLoading ? <Loader /> : gameList?.length ?
+        {isLoading ? <div style={{ display: "flex", width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }}>
+
+          <BetLoader />
+        </div> : gameList?.length ?
           gameList?.map((item) => {
             return (
               <>
 
-                <OddsRow item={item} key={item?.name} inPlayMarketId={extractMatchId}/>
+                <OddsRow item={item} key={item?.name} inPlayMarketId={extractMatchId} />
               </>
             )
           }) : "No Data Found"
         }
       </div>
       <div >
-        <div className="casino-container">
+        <div className="casino-container-10">
           {ourCasino["ALL_CASINO"]?.map((item, index) => {
             return (
               <CasinoCard item={item} key={index + item?.url} />

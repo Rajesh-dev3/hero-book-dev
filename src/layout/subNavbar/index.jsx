@@ -101,10 +101,14 @@ const [newSPortArray, setNewSPortArray] = useState([])
 
   const isActive = (itemLink, pathname) => {
     // Special case: Direct comparison for /aviator-lobby
+
+
+    const urList = ["/","/account-statement","/current-bet","/activity_log","/casino-results","/secure-auth","/changepassword"]
+    
 if(isMobile){
   return pathname === itemLink
 }
-    else if (pathname == '/aviator-lobby' || pathname == "/") {
+    else if (pathname == '/aviator-lobby' || urList.includes(pathname)) {
       return pathname == itemLink;
     }else{
 
@@ -126,7 +130,7 @@ if(isMobile){
             
             return(
               
-              <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${isActive(item?.link, pathname) ? 'tab-list-active' : 'tabs-list'}`}><li >{item?.name == "Soccer"?"Football":item?.name}</li></Link>
+              <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${isActive(item?.link, pathname) ? 'tab-list-active' : 'tabs-list'}`}><li className={index==0?"p-left":""}>{item?.name == "Soccer"?"Football":item?.name}</li></Link>
             )
           }
         }

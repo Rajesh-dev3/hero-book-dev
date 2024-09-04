@@ -7,6 +7,7 @@ import { useLoginMutation } from '../../services/auth/Login';
 import { useNavigate } from 'react-router-dom';
 ////styles
 import "./styles.scss"
+import { toast } from 'react-toastify';
 const Login = () => {
   const [formData, setFormData] = useState({ user_name: "", password: "" })
   const [trigger, { data }] = useLoginMutation()
@@ -34,6 +35,12 @@ const Login = () => {
     // } else {
     //   toast.error(data?.message)
     // }
+    if(data?.error){
+      toast.error(data?.message)
+    }else{
+      toast.success(data?.message)
+
+    }
     if (data?.data) {
       const checkTelegramId = data?.data?.telegramConnected
 

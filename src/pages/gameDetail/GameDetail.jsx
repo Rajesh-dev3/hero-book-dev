@@ -251,7 +251,9 @@ useEffect(() => {
 
   return (
     <>
-      <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={<MobileBetModule checkFancy={checkFancy} profitLoss={profitLoss}  setProfitLoss={setProfitLoss} isFancy={isFancy} openModal2={openModal2} fun={openModal}  stakeAmount={odddata?.UserSportSettings[0]} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />} />
+      <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={
+       <MobileBetModule checkFancy={checkFancy} profitLoss={profitLoss}  setProfitLoss={setProfitLoss} isFancy={isFancy} openModal2={openModal2} fun={closeModal}  stakeAmount={odddata?.UserSportSettings[0]} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
+        } />
       <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack closeModa2={closeModa2} />} />
 
       {isMobile &&

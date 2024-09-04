@@ -5,7 +5,7 @@
     color: $white;
     width: calc(100% - 0px);
     padding: 5px;
-    height: 90px;
+    height: 98px;
     background-image: url("../../assets/img/filed-grass.png");
     // width: calc(100% - 40px);
     background-repeat: no-repeat;
@@ -35,10 +35,10 @@
         position: absolute;
         z-index: 11;
         bottom: 5%;
-        width: calc(100% - 30px);
-        left: 15px;
+        width: calc(100% - 10px);
+        // left: 15px;
         height: fit-content;
-        align-items: end;
+        align-items: center;
 
         justify-content: space-between;
 
@@ -58,8 +58,12 @@
                 display: flex;
                 gap: 50px;
                 margin-top: 5px;
-                font-size: 13px;
-                font-weight: 600;
+                font-size: 16px;
+                // font-weight: 600;
+                &:nth-child(2){
+                    margin-top: 7px;
+
+                }
 
                 @include media(phone) {
                     font-size: 11px;
@@ -70,7 +74,7 @@
 
         .score-col-right {
             width: 50%;
-            text-align: end;
+            text-align: center;
 
             @include media(phone) {
                 width: 100%;
@@ -126,6 +130,7 @@
         justify-content: space-between;
         width: calc(100% - 0px);
         z-index: 12;
+        margin-left: 0%;
 
         @include media(phone) {
             font-size: 12px;

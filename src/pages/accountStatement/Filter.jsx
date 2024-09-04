@@ -8,7 +8,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
 
   return (
     <div className="statement-form">
-      <div className="date-filter-row flex md:gap-4 gap-[8px]">
+      <div className="date-filter-row flex">
         <div className="date-picker">
           <DatePicker
             selected={startDate}
@@ -33,7 +33,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             id="demo-simple-select"
             displayEmpty
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ width: "100%", height: "38px", outline: "none", focus:"none", borderRadius:"0" 
+            sx={{ width: "100%", height: "38px", outline: "none", focus:"none", borderRadius:"0", paddingLeft:"5px" ,fontFamily:"Roboto Condensed"
             
 
             }}
@@ -67,7 +67,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             defaultValue={10}
 
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ height: "38px", outline: "none", borderRadius:"0" }}
+            sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"64.1px",paddingLeft:"0",paddingRight:"0" }}
           >
             <MenuItem value={10}>10</MenuItem>
             <MenuItem value={20}>20</MenuItem>

@@ -6,9 +6,9 @@ const ModalComp = ({ isOpen, onClose,content }) => {
   return (
     <>
       {isOpen && (
-        <div className="modal-overlay" onClick={onClose}>
-          <div className="modal" onClick={(e)=>e.stopPropagation()}>
-            <span className="close" onClick={onClose}>&times;</span>
+        <div className="modal-overlay2" onClick={onClose}>
+          <div className="modal2" onClick={(e)=>e.stopPropagation()}>
+            <span className="close2" onClick={onClose}>&times;</span>
             <div className="modal-content">
             
               

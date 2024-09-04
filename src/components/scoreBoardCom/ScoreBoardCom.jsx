@@ -33,7 +33,7 @@ const ScoreBoardCom = ({odddata,date,matchId}) => {
         <p><span>{two?.t2 || 0}</span> <span>{two?.score2 || 0}-{two?.wicket2 || ""}({two?.ballsdone2? calculateOvers(two?.ballsdone2):"0.0"})</span></p>
       </div>
       <div className="score-col-right">    
-         <p><span>{zero?.cb || "-"}</span></p>
+         <p><span>{zero?.cb}</span></p>
       <p className="ball">
         {zero?.recentBalls?.[0]?.length ? zero?.recentBalls?.[0]?.map((item,i)=> <span key={item+i}>{item}</span>):"NA"}
        

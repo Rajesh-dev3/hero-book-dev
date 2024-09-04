@@ -40,6 +40,7 @@
         }
 
         .form-btn {
+            width: 155px;
             @include media(phone) {
                 width: 100%;
 

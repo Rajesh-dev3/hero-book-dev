@@ -3,6 +3,8 @@ import { useBetPlaceMutation } from "../../services/betPlace/BetPlace"
 import { toast } from 'react-toastify';
 ///styles
 import "./styles.scss"
+import BetLoader from '../loader/BetLoader';
+import { betHistory } from '../gameDetailBetHistory/GameDetailBetHistory';
 export function formatCompactNumber(number) {
   if (number < 1000) {
     return number;
@@ -18,19 +20,47 @@ export function formatCompactNumber(number) {
 }
 const BetPlaceModule = ({ profitLoss, isFancy, stakeAmount, fun, betPlaceData, openModal2, setBetPlaceData }) => {
   const stakeArray = stakeAmount?.match_stack?.split(",")
-  const [trigger, { data }] = useBetPlaceMutation()
+  const [trigger, { data,isLoading }] = useBetPlaceMutation()
 
   useEffect(() => {
+   
     if (data?.error) {
       toast.error(data?.message)
+      setBetPlaceData((prev) => {
+        return {
+          ...prev, stack: ""
+        }
+      })
+      fun(false)
     } else if (data?.error == false) {
-      openModal2()
+      // openModal2()
+      betHistory()
       toast?.success(data?.message)
+      fun(false)
+      setBetPlaceData((prev) => {
+        return {
+          ...prev, stack: ""
+        }
+      })
     }
 
   }, [data])
+
+
+  const betPlaceFun = (betData)=>{
+    delete betData.matchName;
+    trigger(betData)
+  }
   return (
+    <>
+    
+   
     <div className={`betPlace-module-container `} >
+      {isLoading ?
+    <div className={isLoading?"bet-loader-active":"bet-loader"}>
+      <BetLoader/>
+    </div>
+      :""}
       <div className="bet-place-title">
         <h4>
           Place Bet
@@ -87,9 +117,10 @@ const BetPlaceModule = ({ profitLoss, isFancy, stakeAmount, fun, betPlaceData, o
                 }
               })
             }}>Reset</button>
-            <button className="btn btn-success" disabled="" onClick={() => trigger({ ...betPlaceData, isFancy: isFancy })}>Submit</button></div></div>
+            <button className="btn btn-success" disabled="" onClick={() =>betPlaceFun({ ...betPlaceData, isFancy: isFancy })}>Submit</button></div></div>
       </div>
     </div>
+    </>
   )
 }
 

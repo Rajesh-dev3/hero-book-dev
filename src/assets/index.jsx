@@ -29,7 +29,8 @@ import tabletenis from "./game-icon/tabletenis.png";
 import phonepay from "./img/phonepay.png";
 import gapy from "./img/gpay.png";
 import upload from "./svg/upload.svg";
+import twitter from './img/twitters.png'
+import lock from './svg/lock.svg'
 
 
-
-export {defaultImg,horseRiding,upload,gapy,phonepay,americanfootball,basketball,tabletenis,cricket,greyhound,soccer,football,snooker,handball,vollyball,arts,batminton,hockey,futsal,egame,motor,logo,facebook,bmIcon,casinoImg,baccart,plus18,faceboo,telegram,instagram,whatsApp}
+export {defaultImg,lock,twitter,horseRiding,upload,gapy,phonepay,americanfootball,basketball,tabletenis,cricket,greyhound,soccer,football,snooker,handball,vollyball,arts,batminton,hockey,futsal,egame,motor,logo,facebook,bmIcon,casinoImg,baccart,plus18,faceboo,telegram,instagram,whatsApp}

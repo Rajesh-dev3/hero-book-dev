@@ -42,7 +42,7 @@ const OtherMarket = ({setCheckFancy,profithandler,setSelectionId2, profitLoss, b
         return (
           <div className="odds-row-container flex items-center" key={list?.selectionName} >
             <div className="odds-row-left-col px-[5px]">{list?.selectionName}
-              <span style={{ color: winLossValue > 0 ? "green" : "red" }}>{winLossValue}</span>
+              <span style={{ color: winLossValue > 0 ? "green" : "red" }} className="profit-loss">{winLossValue}</span>
 
             </div>
 

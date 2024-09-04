@@ -3,14 +3,20 @@
 
 .odds-row-container {
     background-color: #f7f7f7;
-    border-bottom: 0.01em solid #c7c8ca;
+    
+    border-top: 0.01em solid #c7c8ca;
+    &:last-child{
 
+        // border-bottom: 0.01em solid #c7c8ca;
+    }
     @include media(phone) {
         flex-direction: column;
         gap: 0 !important;
     }
 
     .odds-row-left-col {
+        padding-left: 0.3rem;
+
         @include media(phone) {
             width: calc(100% - 10px);
             align-items: end;
@@ -58,7 +64,7 @@
            
 
             img {
-                width: 20px;
+                width: 19px;
 
                 @include media(phone) {
 
@@ -138,5 +144,24 @@
 
             display: none;
         }
+    }
+}
+.icon-tv{
+    font-family: "dfont" !important;
+    font-size: 14px;
+    color: black !important;
+    @include media(phone){
+        font-size: 12px;
+    }
+    &:hover{
+        color: black !important;
+    }
+    &:before {
+        color: black !important;
+        content: "\e901";
+        &:hover{
+            color: black !important;
+        }
+
     }
 }

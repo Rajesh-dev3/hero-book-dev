@@ -47,19 +47,20 @@
 .game-detail-container{
     width: 100%;
     display: flex;
-    gap: 10px;
+    gap: 5px;
+    
     @include media(phone){
         width: 100vw;
     }
     .game-detail-left-col{
-        width: 68%;
+        width: calc(100% - 352px);
         @include media(phone){
             width: 100%;
         }
     
     }
     .game-detail-right-col{
-        width: 32%;
+        width: 350px;
         @include media(phone){
             display: none;
         }

@@ -3,13 +3,22 @@ import {useBetListMutation} from "../../services/betList/BetList"
 ////styles
 import "./styles.scss"
 import { useParams } from 'react-router-dom'
+export let betHistory
 const GameDetailBetHistory = () => {
 
   const [trigger,{data}]=useBetListMutation()
+  
 const {matchId}= useParams()
   useEffect(() => {
    trigger({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
   }, [])
+
+  const trigFun = ()=>{
+    trigger({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
+  }
+
+
+  betHistory = trigFun
   
  
   return (

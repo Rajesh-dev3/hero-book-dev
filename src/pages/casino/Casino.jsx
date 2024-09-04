@@ -48,7 +48,8 @@ const Casino = () => {
   const casinoTypeName = [{ name: "OUR CASINO", link: "ourCasino" }, {
     name: "OUR VIRTUAL", link: "our-virtual"
   }];
-  const data = casinoArray.filter((elm) => elm?.casinoName == path2)
+  const data = casinoArray.filter((elm) => elm?.casinoName == "ourCasino")
+  // console.log(data,"casinoArray")
   return (
     <div>
       {pathname == "our-virtual" || !isMobile?"":

@@ -44,7 +44,7 @@ const [Exposure, setExposure] = useState({
   </div>
   <div className="balance-nav">
     {!Exposure?.balance?"":
-    <div className="balance-user">Balance<span>{data?.data?.balance}</span></div>
+    <div className="balance-user">Balance : <span>{data?.data?.balance}</span></div>
     }
    <div className="user-info">
     {!Exposure?.exposure

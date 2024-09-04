@@ -22,10 +22,10 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
           </p> */}
            </div>
         <div className="odds-row-right-col grid grid-cols-2 md:grid-cols-3">
+          <DetailOdds height={28} display={"none"} />
           <DetailOdds height={28} display={"none"}/>
-          <DetailOdds height={28} display={"none"}/>
-          <DetailOdds height={28} value={"No"} item={oddsColor[3]}/>
-          <DetailOdds height={28} value={"Yes"}  item={oddsColor[0]}/>
+          <DetailOdds height={28} value={"No"}  item={oddsColor[3]} visiblePrice={true}/>
+          <DetailOdds height={28} value={"Yes"}  item={oddsColor[0]} visiblePrice={true}/>
           <DetailOdds height={28} display={"none"}/>
           <DetailOdds height={28}display={"none"}/>
          
@@ -46,8 +46,8 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
         <div className="odds-row-right-col grid grid-cols-3">
           <DetailOdds height={28} display={"none"}/>
           <DetailOdds height={28} display={"none"}/>
-          <DetailOdds height={28} value={"No"} item={oddsColor[3]} />
-          <DetailOdds height={28} value={"Yes"}  item={oddsColor[0]}/>
+          <DetailOdds height={28} value={"No"} item={oddsColor[3]} visiblePrice={true}/>
+          <DetailOdds height={28} value={"Yes"}  item={oddsColor[0]} visiblePrice={true}/>
           <DetailOdds height={28} display={"none"}/>
           <DetailOdds height={28}display={"none"}/>
          

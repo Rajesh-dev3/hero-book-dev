@@ -110,11 +110,12 @@ const NavDropDown = ({ setExposure, exposure }) => {
 
       <Button
         id="basic-button"
-        sx={{ color: "white" }}
+        sx={{ color: "white", textTransform:"none", }}
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+
       >
         {localStorage.getItem("user_name")} <KeyboardArrowDownIcon sx={{ fontSize: 25, fontWeight: 'bold' }} />
       </Button>

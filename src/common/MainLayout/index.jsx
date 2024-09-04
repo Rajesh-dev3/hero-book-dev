@@ -86,7 +86,7 @@ const MainLayout = () => {
           </div>
         }
         {
-          pathname.split("/")[1] != "game-detail" &&
+          // pathname.split("/")[1] != "game-detail" &&
         <SubNavbar />
         }
  

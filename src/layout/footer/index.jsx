@@ -1,7 +1,7 @@
 ////styles
 import "./styles.scss";
 import { Link } from "react-router-dom";
-import { plus18 } from "../../assets";
+import { plus18, twitter } from "../../assets";
 const Footer = () => {
   return (
     <>
@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="social-icon">
               <Link to="/" target="_blank">
                 <img
-                  src="https://g1ver.sprintstaticdata.com/v22/static/front/img/social-icons/twitter.png"
+                  src={twitter}
                   alt="Twitter"
                 />
               </Link>
@@ -56,16 +56,16 @@ const Footer = () => {
           <div>
             <img src="https://wver.sprintstaticdata.com/v3/static/front/img/ssl.png" />
           </div>
-          <Link to="/">
-            <img src={plus18} />
-          </Link>
+       
           <div className="ml-2">
             <b>100% SAFE</b>
             <div className="bottom-p">Protected connection and encrypted data.</div>
           </div>
         </div>
-        <div className="d-inline-block">
-
+        <div className="d-flex footer-icon2">
+        <Link to="/" target="_blank">
+            <img src={plus18} />
+          </Link>
           <Link to="/" target="_blank">
             <img src="https://g1ver.sprintstaticdata.com/v22/static/front/img/gamecare.png" />
           </Link>

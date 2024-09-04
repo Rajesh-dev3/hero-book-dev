@@ -4,20 +4,34 @@ import { toast } from 'react-toastify'
 import { formatCompactNumber } from '../betPlaceModule/BetPlaceModule'
 ///styles
 import "./styles.scss"
+import BetLoader from '../loader/BetLoader'
 const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betPlaceData, setBetPlaceData, openModal2 }) => {
   const stakeArray = stakeAmount?.match_stack?.split(",")
-  const [trigger, { data }] = useBetPlaceMutation()
+  const [trigger, { data,isLoading }] = useBetPlaceMutation()
   useEffect(() => {
     if (data?.error) {
       toast.error(data?.message)
+      fun(false)
+      setBetPlaceData((prev) => {
+        return {
+          ...prev, stack: ""
+        }
+      })
     } else if (data?.error == false) {
-      fun()
+    
+      fun(false)
       toast?.success(data?.message)
     }
   }, [data])
   const [oddsValue, setOddsValue] = useState()
   return (
-    <div>  <div className="title-model">
+    <div className='mobile-bet-place-container'> 
+    {isLoading ?
+       <div className={isLoading?"bet-loader-active":"bet-loader"}>
+      <BetLoader/>
+    </div>
+      :""}
+       <div className="title-model">
       <h4>Place Bet</h4>
     </div>
       <div className={`model-detail ${Number(betPlaceData?.is_back == "0") ? "lay" : "back"}`}>

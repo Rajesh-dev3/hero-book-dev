@@ -1,6 +1,6 @@
 import { Padding } from "@mui/icons-material";
 import { Checkbox, MenuItem , styled } from "@mui/material";
-import { color, display, padding } from "@mui/system";
+import { color, display, padding, textTransform } from "@mui/system";
 // import "../../styles/variables/mixins";
 
 export const StyledMenuItem = styled(MenuItem)({
@@ -9,6 +9,7 @@ export const StyledMenuItem = styled(MenuItem)({
     padding: "0.6rem 1.8rem 0rem 0.5rem",
     fontSize:"15px",
     minHeight:"20px",
+    textTransform:"capitalize",
     
     "&.Mui-selected": {
       // backgroundColor: "red"
