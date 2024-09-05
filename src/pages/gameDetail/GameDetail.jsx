@@ -75,10 +75,10 @@ const GameDetail = () => {
   )
     .utcOffset("+05:30")
     .format("DD/MM/YYYY, HH:mm:ss ")
-
+const [checkBookMaker,setBookMaker]=useState(false)
   const [betPlaceData, setBetPlaceData] = useState({
     is_back: "0",
-    match_id: Number(matchId),
+    match_id:String(matchId),
     odds: "",
     selection_id: 0,
     stack: null
@@ -102,10 +102,19 @@ const GameDetail = () => {
     setIsFancy(false)
     setBetPlaceData((prev) => {
       return {
-        ...prev, ...val, market_id: selectionId,
+        ...prev, ...val, market_id:selectionId,
       }
     })
   }
+  useEffect(()=>{
+    setBetPlaceData((prev)=>{
+      return{
+        ...prev,market_id:checkBookMaker? `${selectionId}_B`:selectionId,
+        match_id:checkBookMaker? String(matchId):Number(matchId)
+
+      }
+    })
+  },[checkBookMaker])
   const fancyBetPlaceHandler = (val) => {
     setIsFancy(true)
     setFancyBetPlaceData((prev) => {
@@ -277,7 +286,7 @@ useEffect(() => {
               <GameDetailCollapse  checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} prevOdd={prevState?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {oddsDataSta?.BookerMakerMarket?.runner_json ?
-              <GameDetailCollapse min={true} checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+              <GameDetailCollapse min={true} checkFancy={false} setBookMaker={setBookMaker} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {normalFancy?.length ?
               <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="Normal" odddata={normalFancy} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} />
