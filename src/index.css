@@ -51,20 +51,20 @@ font-size: 12px !important;
 width: 15px !important;
 }
 .Toastify__toast-body{
-  margin-right: 30px !important;
+  /* margin-right: 30px !important; */
 }
 .Toastify__toast-container{
-width: fit-content ;
+width: fit-content !important;
 }
 .Toastify__close-button{
   display: none !important;
 }
 .Toastify__progress-bar--wrp{
-  display: none !important;
+  visibility: hidden !important;
 }
 @media only screen and (max-width:480px) {
   .Toastify__toast-container{
-    width:80% !important;
+    width: fit-content !important;
     }
     .Toastify__toast-container--top-center {
       top: 5px;

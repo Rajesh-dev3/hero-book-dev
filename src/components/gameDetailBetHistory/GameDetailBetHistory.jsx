@@ -1,25 +1,13 @@
-import React, { useEffect } from 'react'
-import {useBetListMutation} from "../../services/betList/BetList"
+
 ////styles
 import "./styles.scss"
-import { useParams } from 'react-router-dom'
-export let betHistory
-const GameDetailBetHistory = () => {
 
-  const [trigger,{data}]=useBetListMutation()
+const GameDetailBetHistory = ({data}) => {
+
   
-const {matchId}= useParams()
-  useEffect(() => {
-   trigger({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
-  }, [])
-
-  const trigFun = ()=>{
-    trigger({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
-  }
-
-
-  betHistory = trigFun
   
+
+ 
  
   return (
     <div className="sidebar-box my-bet-container">
@@ -32,14 +20,14 @@ const {matchId}= useParams()
         <thead><tr className='text-left'><th>Matched Bet</th><th className="text-center">Type</th><th className="text-center">Odds</th><th className="text-center">Stake</th><th className="text-center">P/L</th></tr></thead>
      
           <tbody>
-            {data?.data?.MatchAndBetfair?.map((item)=>{
+            {data?.map((item)=>{
               return(
 
-            <tr key={item?.marketName+item?.market_id}><td className="text-left pl-[5px]">{item?.selectionName}</td>
+            <tr key={item?.marketName+item?.market_id}><td className="text-left pl-[5px]">{item?.selectionName || item?.fancy_name}</td>
             <td className="text-center">{item?.is_back ==1?"Back":"Lay"}</td>
-            <td className="text-center">{item?.odds}</td>
+            <td className="text-center">{item?.odds || item?.run}</td>
             <td className="text-center">{item?.stack}</td>
-            <td className="text-center">{item?.p_l}</td>
+            <td className="text-center">{item?.p_l || item?.profit}</td>
             </tr>
               )
             })}

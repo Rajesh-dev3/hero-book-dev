@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 ///styles
 import "./styles.scss"
 import BetLoader from '../loader/BetLoader';
-import { betHistory } from '../gameDetailBetHistory/GameDetailBetHistory';
+import { betHistoryRef } from '../../pages/gameDetail/GameDetail';
 export function formatCompactNumber(number) {
   if (number < 1000) {
     return number;
@@ -34,7 +34,7 @@ const BetPlaceModule = ({ profitLoss, isFancy, stakeAmount, fun, betPlaceData, o
       fun(false)
     } else if (data?.error == false) {
       // openModal2()
-      betHistory()
+      betHistoryRef()
       toast?.success(data?.message)
       fun(false)
       setBetPlaceData((prev) => {

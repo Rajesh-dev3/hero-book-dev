@@ -26,7 +26,7 @@ const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betP
   const [oddsValue, setOddsValue] = useState()
   return (
     <div className='mobile-bet-place-container'> 
-    {isLoading ?
+    {!isLoading ?
        <div className={isLoading?"bet-loader-active":"bet-loader"}>
       <BetLoader/>
     </div>

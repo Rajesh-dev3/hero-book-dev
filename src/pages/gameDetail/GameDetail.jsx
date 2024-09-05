@@ -17,6 +17,9 @@ import ScoreBoardCom from "../../components/scoreBoardCom/ScoreBoardCom"
 ///styles
 import "./styles.scss";
 import { aviatorLobby } from "../../routes/PagesUrl";
+import { useBetListMutation } from "../../services/betList/BetList";
+
+export let betHistoryRef;
 const GameDetail = () => {
   const [openBetPlaceModule, setOpenBetPlaceModule] = useState(false)
   const [odddata, setOdddata] = useState();
@@ -258,9 +261,18 @@ useEffect(() => {
   }
 }, [fancyBetPlaceData])
 
+const [trig,{data:betHistory}]=useBetListMutation()
+const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...betHistory?.data?.MatchFancy]:[]
 
+  useEffect(() => {
+   trig({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
+  }, [])
 
-
+  const trigFun = ()=>{
+    trig({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
+  }
+  betHistoryRef = trigFun
+  
   return (
     <>
       <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={
@@ -324,7 +336,7 @@ useEffect(() => {
             {openBetPlaceModule &&
               <BetPlaceModule profitLoss={profitLoss} setProfitLoss={setProfitLoss} isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} fun={openBetModuleHandler} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
             }
-            <GameDetailBetHistory />
+            <GameDetailBetHistory data={betHistoryData}/>
 
           </div> :
           <div className="game-detail-right-col" >
@@ -339,7 +351,7 @@ useEffect(() => {
             {openBetPlaceModule &&
               <BetPlaceModule  profitLoss={profitLoss} openModal2={openModal2} isFancy={isFancy} stakeAmount={odddata?.UserSportSettings[0]} fun={isMobile ? openModal : openBetModuleHandler} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
             }
-            <GameDetailBetHistory />
+            <GameDetailBetHistory data={betHistoryData}/>
 
           </div>}
 

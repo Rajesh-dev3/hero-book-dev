@@ -10,7 +10,7 @@ const EditStack = ({ closeModa2 }) => {
     const [trigger, { data, isLoading }] = useGetEventDetailsMutation()
     const [matchStackArray, setMatchStackArray] = useState({})
     const { sportId, matchId } = useParams()
-    const [stakeData, setStakeData] = useState({ one_click_stack: "0", sport_id: sportId })
+    const [stakeData, setStakeData] = useState({ one_click_stack: "0", sport_id: "4" })
     const [trig, { data: stakeUpdateResponse }] = useStakeUpdateMutation()
     const stakeUpdateHandler = () => {
         const convertValueArray = Object.values(matchStackArray)

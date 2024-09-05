@@ -91,7 +91,7 @@ const NavDropDown = ({ setExposure, exposure }) => {
 
   return (
     <div className='nav-dropdown'>
-      <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack />} />
+      <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack closeModa2={closeModa2}/>} />
       {/* <Modal
         open={open2}
         onClose={handleClose}

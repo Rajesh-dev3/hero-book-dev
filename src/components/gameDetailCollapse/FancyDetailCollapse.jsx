@@ -86,7 +86,7 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
               <span>Max:{item?.maxStack}</span>
             </div>
             
-            {item?.inplayStatus === "SUSPENDED"  || item?.inplayStatus === "CLOSE" || item?.inplayStatus === "Ball Running" ?
+            {item?.adminMessage == "BET SUSPENDED"|| item?.inplayStatus === "SUSPENDED"  || item?.inplayStatus === "CLOSE" || item?.inplayStatus === "Ball Running" ?
            <div className="suspend absolute w-full h-full text-[red] font-bold flex items-center justify-center">
             {item?.inplayStatus === "Ball Running"?"Ball Running":"SUSPENDED"}
            </div>:""
