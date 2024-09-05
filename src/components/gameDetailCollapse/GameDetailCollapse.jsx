@@ -11,7 +11,7 @@ function convertToKOrLakh(number) {
       return number.toString();
   }
 }
-const GameDetailCollapse = ({setBookMaker,prevOdd,min,setCheckFancy, checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
+const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFancy, checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
   const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"]
   
   if(collapseName != "To Win the Toss"){
@@ -60,7 +60,7 @@ const GameDetailCollapse = ({setBookMaker,prevOdd,min,setCheckFancy, checkFancy,
     
                 <div className="odds-row-right-col grid grid-cols-6 relative" onClick={() => {
                   if(collapseName == "Bookmaker"){
-                    setBookMaker(true)
+                    setBookMaker(checkBookmaker+1)
                   }
                   if (checkFancy) {
                     setCheckFancy(checkFancy)

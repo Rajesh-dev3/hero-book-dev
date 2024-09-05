@@ -36,3 +36,43 @@ body{
 
 
 /* #883997 */
+
+.Toastify__toast-theme--light{
+  font-size: 14px;
+}
+.Toastify__toast{
+  min-height: 50px !important;
+}
+.Toastify__toast-container--top-center{
+  top: 5px !important;
+}
+.Toastify__zoom-enter svg{
+font-size: 12px !important;
+width: 15px !important;
+}
+.Toastify__toast-body{
+  margin-right: 30px !important;
+}
+.Toastify__toast-container{
+width: fit-content ;
+}
+.Toastify__close-button{
+  display: none !important;
+}
+.Toastify__progress-bar--wrp{
+  display: none !important;
+}
+@media only screen and (max-width:480px) {
+  .Toastify__toast-container{
+    width:80% !important;
+    }
+    .Toastify__toast-container--top-center {
+      top: 5px;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+
+  }
+  .Toastify__toast{
+    border-radius: 5px !important;
+  }
+}
