@@ -13,7 +13,7 @@ function convertToKOrLakh(number) {
 }
 const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFancy, checkFancy,profithandler, setSelectionId, profitLoss, betPlaceData, fun, odddata, collapseName, betPlaceHandler }) => {
   const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"]
-  
+ 
   if(collapseName != "To Win the Toss"){
 
     return (
@@ -41,6 +41,7 @@ const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFan
           </div>
         </div>
         {odddata?.runner_json?.map((list, ind) => {
+        
         const findSelectionId = profitLoss?.find((item) => item?.selectionId == list?.selectionId)?.winLoss
           const findFancySelection = checkFancy ? profitLoss?.map((elm,i) => {
             if (elm?.marketId == odddata?.market_id) {
@@ -87,7 +88,7 @@ const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFan
                       <DetailOdds prevOddRunners={prevOdd?.runner_json[index]?.ex?.availableToLay} profithandler={profithandler} selectionId={list?.selectionId} matchName={list?.selectionName} lay={0} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index + 3]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
                     )
                   })}
-                  {list?.GameStatus === "SUSPENDED" &&
+                  {list?.GameStatus === "SUSPENDED" || odddata?.InplayStatus == "CLOSE" &&
                     <div className="suspend absolute w-full h-full text-[red] font-bold flex items-center justify-center">
                       Suspended
                     </div>

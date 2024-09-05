@@ -6,8 +6,13 @@ const CasinoLobby = () => {
   const [url, setUrl] = useState("")
   const [trigger, { data }] = useAviatorMutation()
   const { id } = useParams()
+  let count = 0
   useEffect(() => {
-    trigger({ "gameId": String(id) })
+    if(count ==0){
+
+      trigger({ "gameId": String(id) })
+      count++
+    }
   }, [])
   useEffect(() => {
     if (data?.data?.url) {
