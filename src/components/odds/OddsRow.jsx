@@ -32,8 +32,12 @@ const OddsRow = ({ item ,inPlayMarketId}) => {
             gap-[10px]">
              <div className= {inPlayMarketId?.find((list)=>list?.marketId == item?.market_id) && "active-match"}></div>
              <i className="fas fa-tv icon-tv fas2"></i>
+           {item?.IsFancyAllow != "N" ?
             <img src={facebook} alt="" className=" h-[12px]" />
+           :""}
+           {item?.bm != 0?
             <img src={bmIcon} alt="" className=" h-[12px]" />
+          :""}
           </div>
         </div>
         {isMobile &&

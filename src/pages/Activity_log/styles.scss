@@ -12,6 +12,7 @@
 
 
     .date-filter-row {
+        gap: 20px !important;
         @include media(phone) {
             flex-direction: column;
         }
@@ -48,6 +49,7 @@
             }
         }
         .select-menu{
+
             select{
                 background: transparent !important;
 
@@ -114,6 +116,8 @@
                 tr,
                 th {
                     padding: none !important;
+                    // padding: 6px 12px;
+
                 }
             }
         }
@@ -157,7 +161,9 @@
                     white-space: nowrap;
                     background-color: #384b5e;
                     color: $white;
-                    text-align: left;
+                    padding: 6px 12px;
+
+                    // text-align: left;
                 }
 
                 td {

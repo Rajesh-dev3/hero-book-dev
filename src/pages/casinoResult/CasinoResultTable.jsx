@@ -5,10 +5,10 @@ const Table = ({data}) => {
         <table role="table" className="table-bordered table-striped bg-[#f7f7f7] text-[#333] w-full">
           <thead className="border-[#c7c8ca] border-[1px] ">
             <tr role="row">
-              <th   className="w-[2%] px-[12px] py-[6px] text-left border-[1px]">
+              <th   className="w-[20%] px-[12px] py-[6px] text-left border-[1px]">
               Round ID
               </th>
-              <th   className="w-[20%] border-[1px] text-start px-[12px] py-[6px]">
+              <th   className=" border-[1px] text-start px-[12px] py-[6px]">
               Winner
               </th>
             

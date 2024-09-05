@@ -23,23 +23,35 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             selected={endDate}
             onChange={(date) => setEnddate(date)}
             showIcon
+            
             calendarIconClassname="calnder"
             icon={<CalendarTodayIcon />}
           />
         </div>
         <div className="select">
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            displayEmpty
-            IconComponent={KeyboardArrowDownIcon} 
-            sx={{ width: "100%", height: "38px", outline: "none", focus:"none", borderRadius:"0", paddingLeft:"5px" ,fontFamily:"Roboto Condensed"
-            
-
-            }}
-            // onChange={handleChange}
-            defaultValue={""}
-          >
+    
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      displayEmpty
+      IconComponent={KeyboardArrowDownIcon}
+      sx={{
+        width: '100%',
+        height: '38px',
+        outline: 'none',
+        borderRadius: '0',
+        fontFamily: 'Roboto Condensed',
+        '& .MuiSelect-select': {
+          paddingLeft: '5px', // Removes padding from the select input
+          
+        },
+        '& .MuiSelect-icon': {
+          padding: '0px', // Removes padding from the dropdown icon
+        },
+      }}
+      defaultValue={""}
+    >
+      
             <MenuItem value="" disabled>All Report </MenuItem>
             <MenuItem value={"Deposite/Withdraw Reports"}>Deposite/Withdraw Reports</MenuItem>
             <MenuItem value={"Game Reports"}>Game Reports</MenuItem>
@@ -67,7 +79,13 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             defaultValue={10}
 
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"64.1px",paddingLeft:"0",paddingRight:"0" }}
+            sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
+              paddingLeft: '4px', // Removes padding from the select input
+              
+            },
+            '& .MuiSelect-icon': {
+              padding: '2px', // Removes padding from the dropdown icon
+            }, }}
           >
             <MenuItem value={10}>10</MenuItem>
             <MenuItem value={20}>20</MenuItem>
@@ -81,7 +99,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
           Search:
           <input
             placeholder="0 record..."
-            className=" border-[1px] border-[#ced4da] h-[38px] p-[5px]"
+            className=" border-[1px] border-[#ced4da] h-[38px] p-[5px] font-Roboto Condensed"
           />
         </div>
       </div>

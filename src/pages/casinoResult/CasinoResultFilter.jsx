@@ -55,11 +55,25 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             id="demo-simple-select"
             displayEmpty
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ width: "100%", height: "38px", outline: "none", borderRadius:"0" }}
-            // onChange={handleChange}
+            sx={{
+              width: '100%',
+              height: '38px',
+              outline: 'none',
+              fontSize:"15px",
+              borderRadius: '0',
+              fontFamily: 'Roboto Condensed',
+              '& .MuiSelect-select': {
+                paddingLeft: '6px',
+                fontWeight:"400" // Removes padding from the select input
+                // padding:"5px",
+              },
+              '& .MuiSelect-icon': {
+                padding: '0', // Removes padding from the dropdown icon
+              },
+            }}             // onChange={handleChange}
             defaultValue={""}
           >
-            <MenuItem value="" disabled>Select Log Type </MenuItem>
+            <MenuItem value="" disabled>Select Casino Type</MenuItem>
             <MenuItem value={10}>Login</MenuItem>
             <MenuItem value={20}>Change Password</MenuItem>
            
@@ -69,7 +83,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
           <button className="btn" onClick={fun}>Submit</button>
         </div>
       </div>
-      <div className="entries-row w-full flex justify-between mt-3">
+      <div className="entries-row w-full flex justify-between">
         <div className="entries-left-col w-[50%] flex items-center gap-2">
           <span>Show</span>
           {/* <select onChange={(e) => setLimit(e.target.value)}>
@@ -90,8 +104,13 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
              inputProps={{ 'aria-label': 'Limit' }}
            defaultValue={"10"}
              IconComponent={KeyboardArrowDownIcon} 
-             sx={{ height: "38px", outline: "none", borderRadius:"0" }}
-           >
+             sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
+              paddingLeft: '4px', // Removes padding from the select input
+              
+            },
+            '& .MuiSelect-icon': {
+              padding: '2px', // Removes padding from the dropdown icon
+            }, }}            >
              <MenuItem value={10}>10</MenuItem>
              <MenuItem value={20}>20</MenuItem>
              <MenuItem value={30}>30</MenuItem>
@@ -103,7 +122,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
         <div className="entries-right-col w-[50%] flex justify-end items-center gap-[0.5rem]">
           Search:
           <input
-            placeholder="search..."
+            placeholder="0 record..."
             className="w-[20%] border-[1px] border-[#ced4da] rounded-[3px] h-[38px] p-[5px]"
           />
         </div>

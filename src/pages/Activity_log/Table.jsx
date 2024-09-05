@@ -6,16 +6,16 @@ const Table = ({ data }) => {
       <table role="table" className="table-bordered table-striped bg-[#f7f7f7] text-[#333] w-full">
         <thead className="border-[#c7c8ca] border-[1px] ">
           <tr role="row">
-            <th className="w-[20%] px-[12px] py-[6px] text-left border-[1px]">
+            <th className="w-[12%] px-[12px] py-[6px] border-[1px]">
               Username
             </th>
-            <th className="border-[1px] text-end w-[10%] px-[12px] py-[6px]">
+            <th className="border-[1px] w-[10%] px-[12px] py-[6px]">
               Date
             </th>
             <th
 
 
-              className="border-[1px] text-end w-[10%] px-[12px] py-[6px]"
+              className="border-[1px] w-[10%] px-[12px] py-[6px]"
             >
               IP Address
             </th>

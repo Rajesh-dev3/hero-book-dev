@@ -13,6 +13,7 @@
 
 .statement-form {
 
+
     .date-filter-row {
         gap: 20px;
         @include media(phone) {
@@ -101,13 +102,17 @@
                 font-size: 12px;
                 font-weight: 400;
                 display: flex;
+                margin-top: 4px;
             } 
            
             input{
                 // width: 19.5%;
                 width: 100px;
                 border-radius: 0px;
-                margin-left: 5px;
+                // margin-left: 5px;
+                // font-size: 1rem;
+                // font-weight: 400;
+                // line-height: 1.7;
                 outline: none;
                 @include media(phone) {
                     width: 120px;
@@ -124,6 +129,7 @@
     }
 
     .mt2 {
+      
         .table-bordered {
             @include media(phone) {
                 width: 100%;
@@ -163,9 +169,15 @@ width: 155px;
 }
 
 .statement-body {
+    ::-webkit-scrollbar {
+        display: none !important;
+      }
     .account-table {
         min-height: calc(100vh - 350px);
         overflow-x: scroll;
+        ::-webkit-scrollbar {
+            display: none !important;
+          }
         margin-top: 0.5rem;
 
         table {
@@ -174,6 +186,7 @@ width: 155px;
                     white-space: nowrap;
                     background-color: #384b5e;
                     color: $white;
+                    font-size: 16px;
                 }
 
                 td {
@@ -182,4 +195,7 @@ width: 155px;
             }
         }
     }
+}
+.react-datepicker__input-container input{
+    padding: 6px 10px 5px 5px !important;
 }

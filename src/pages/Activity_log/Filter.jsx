@@ -10,7 +10,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
 
   return (
     <div className="activity-log-form">
-      <div className="date-filter-row flex gap-4">
+      <div className="date-filter-row flex">
         <div className="date-picker">
           <DatePicker
             selected={startDate}
@@ -29,7 +29,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
             icon={<CalendarTodayIcon />}
           />
         </div>
-        <div className="select-menu w-[18%]">
+        <div className="select-menu w-[15%]">
           {/* <select className="px-[2] py-[5] border-[1px] border-[#dbdbdb] w-full h-[38px] rounded-[5px]"
             onChange={(e) => setFormData((prev) => {
               return {
@@ -56,8 +56,20 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
             id="demo-simple-select"
             displayEmpty
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ width: "100%", height: "38px", outline: "none", borderRadius:"0" }}
-            // onChange={handleChange}
+            sx={{
+              width: '100%',
+              height: '38px',
+              outline: 'none',
+              borderRadius: '0',
+              fontFamily: 'Roboto Condensed',
+              '& .MuiSelect-select': {
+                paddingLeft: '5px', // Removes padding from the select input
+                
+              },
+              '& .MuiSelect-icon': {
+                padding: '0px', // Removes padding from the dropdown icon
+              },
+            }}  // onChange={handleChange}
             defaultValue={""}
           >
             <MenuItem value="" disabled>Select Log Type </MenuItem>
@@ -86,8 +98,13 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
             defaultValue={10}
 
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ height: "38px", outline: "none", borderRadius:"0" }}
-          >
+            sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
+              paddingLeft: '4px', // Removes padding from the select input
+              
+            },
+            '& .MuiSelect-icon': {
+              padding: '2px', // Removes padding from the dropdown icon
+            }, }}          >
             <MenuItem value={10}>10</MenuItem>
             <MenuItem value={20}>20</MenuItem>
             <MenuItem value={30}>30</MenuItem>
@@ -97,9 +114,9 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
           <span>Entries</span>
         </div>
         <div className="entries-right-col w-[50%] flex justify-end items-center gap-[0.5rem]">
-          Search:
+         <span> Search:</span>
           <input
-            placeholder="search..."
+            placeholder="0 record..."
             className="w-[20%] border-[1px] border-[#ced4da] rounded-[3px] h-[38px] p-[5px]"
           />
         </div>

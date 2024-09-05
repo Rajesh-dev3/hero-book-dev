@@ -8,37 +8,37 @@ const Table = ({data}) => {
             <th   className="w-[20%] px-[12px] py-[6px] text-left border-[1px]">
             DESCRIPTION
             </th>
-            <th   className="w-[20%] border-[1px] text-end px-[12px] py-[6px]">
+            <th   className="w-[20%] border-[1px]  px-[12px] py-[6px]">
             MARKET
             </th>
             <th
               
               
-              className="border-[1px] text-end w-[10%] px-[12px] py-[6px]"
+              className="border-[1px] w-[10%] px-[12px] py-[6px]"
             >
               SIDE
             </th>
             <th
               
               
-              className="border-[1px] text-end px-[12px] py-[6px] w-[10%]"
+              className="border-[1px] px-[12px] py-[6px] w-[10%]"
             >
               ODDS
             </th>
             <th
               
               
-              className="border-[1px] text-left px-[12px] py-[6px] w-[10%]"
+              className="border-[1px] text-end px-[12px] py-[6px] w-[10%]"
             >
               STACK
             </th>
-            <th  className="border-[1px] text-left px-[12px] py-[6px]">
+            <th  className="border-[1px] text-end px-[12px] py-[6px]">
             PROFIL/LOSS
             </th>
-            <th  className="border-[1px] text-left px-[12px] py-[6px]">
+            <th  className="border-[1px] text-end px-[12px] py-[6px]">
             STATUS
             </th>
-            <th  className="border-[1px] text-left px-[12px] py-[6px]">
+            <th  className="border-[1px] text-end px-[12px] py-[6px]">
             IP ADDRESS
             </th>
           </tr>

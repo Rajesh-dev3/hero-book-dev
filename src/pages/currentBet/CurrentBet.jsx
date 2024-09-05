@@ -32,7 +32,7 @@ const CurrentBet = () => {
 
   return (
     <div className='shadow-container'>
-      <PagesTitle title="Current Bet" />
+      <PagesTitle title="Current Bets" />
       <div className="statement-body p-[10px]">
         <Filter submitHandler={submitHandler} formData={formData} setFormData={setFormData} startDate={startDate} endDate={endDate} setEndDate={setEndDate} setStartDate={setStartDate} />
         <Table data={data?.data} />

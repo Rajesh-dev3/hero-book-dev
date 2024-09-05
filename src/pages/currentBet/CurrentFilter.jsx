@@ -19,7 +19,7 @@ const [radioActive, setRadioActive] = useState(0)
   return (
    
     <div className="current-bet-form">
-      <div className="select-area w-full flex gap-4">
+      <div className="select-area w-full flex">
 
         {/* <div className="select-menu w-[15%]">
           <div className="date-picker">
@@ -67,7 +67,22 @@ const [radioActive, setRadioActive] = useState(0)
             id="demo-simple-select"
             displayEmpty
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ width: "100%", height: "38px", outline: "none", borderRadius:"0" }}
+            sx={{
+              width: '100%',
+              height: '38px',
+              outline: 'none',
+              borderRadius: '0',
+              fontFamily: 'Roboto Condensed',
+              '& .MuiSelect-select': {
+                paddingLeft: '5px', // Removes padding from the select input
+                
+              },
+              '& .MuiSelect-icon': {
+                fontSize:'25px',
+                padding: '2px',
+                // paddingTop:"1px" // Removes padding from the dropdown icon
+              },
+            }}
             // onChange={handleChange}
             defaultValue={""}
             onChange={(e) =>
@@ -77,7 +92,7 @@ const [radioActive, setRadioActive] = useState(0)
               }))
             }
           >
-            <MenuItem value="" disabled>All Report </MenuItem>
+            <MenuItem value="" disabled>Select Report Type</MenuItem>
             {data?.data?.map((item) => (
           <MenuItem value={item?.sport_id} key={item?.sport_id}>
             {item?.name}
@@ -91,7 +106,7 @@ const [radioActive, setRadioActive] = useState(0)
           <button className="btn" onClick={submitHandler}>Submit</button>
         </div>
       </div>
-      <div className="entries-container flex grid grid-cols-1 md:grid-cols-4 sm:grid-cols-1 mt-3 md:mt-10">
+      <div className="entries-container flex grid grid-cols-1 md:grid-cols-4 sm:grid-cols-1">
         <div className="entries flex items-center  gap-2">
           <span>Show</span>
           {/* <select className="border-[1px] border-[#dbdbdb] w-[18%] h-[38px]"
@@ -117,8 +132,13 @@ const [radioActive, setRadioActive] = useState(0)
              inputProps={{ 'aria-label': 'Limit' }}
            
              IconComponent={KeyboardArrowDownIcon} 
-             sx={{ height: "38px",width:"100px", outline: "none", borderRadius:"0" }}
-           >
+             sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
+              paddingLeft: '4px', // Removes padding from the select input
+              
+            },
+            '& .MuiSelect-icon': {
+              padding: '2px', // Removes padding from the dropdown icon
+            }, }}           >
              <MenuItem value={10}>10</MenuItem>
              <MenuItem value={20}>20</MenuItem>
              <MenuItem value={30}>30</MenuItem>

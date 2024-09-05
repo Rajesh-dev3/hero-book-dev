@@ -42,7 +42,7 @@ const GameDetail = () => {
     return () => clearInterval(timer);
   }, [sportId, matchId])
 
-  const oddsDataSta = prevState || odddata
+  const oddsDataSta = odddata
   useEffect(() => {
     if (data?.message === "Success") {
       if (!odddata) {
@@ -249,6 +249,9 @@ useEffect(() => {
   }
 }, [fancyBetPlaceData])
 
+
+
+
   return (
     <>
       <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={
@@ -271,7 +274,7 @@ useEffect(() => {
           <div className="game-detail-left-col">
          <ScoreBoardCom odddata={odddata} date={date} matchId={matchId}/>
             {oddsDataSta?.MatchDetails?.runner_json ?
-              <GameDetailCollapse  checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+              <GameDetailCollapse  checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} prevOdd={prevState?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {oddsDataSta?.BookerMakerMarket?.runner_json ?
               <GameDetailCollapse min={true} checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
