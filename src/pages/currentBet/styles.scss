@@ -18,6 +18,7 @@
 
         @include media(phone) {
             flex-direction: column;
+            gap: 25px !important;
         }
 
         .select-menu {
@@ -55,6 +56,9 @@
     .entries-container{
         margin-top: 31px;
         gap: 20px;
+        @include media(phone) {
+        margin-top: 7px;
+        }
         .soda-amount{
             margin-top: 10px;
         }

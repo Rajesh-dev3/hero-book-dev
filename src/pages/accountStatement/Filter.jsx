@@ -62,7 +62,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
           <button className="btn" onClick={fun}>Submit</button>
         </div>
       </div>
-      <div className="entries-row w-full flex justify-between mt-[6px] md:mt-3">
+      <div className="entries-row w-full flex justify-between mt-[6px]">
         <div className="entries-left-col w-[50%] flex items-center gap-2">
           <span>Show</span>
           {/* <select onChange={(e) => setLimit(e.target.value)}>

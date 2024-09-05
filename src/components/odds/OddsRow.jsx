@@ -43,7 +43,7 @@ const OddsRow = ({ item ,inPlayMarketId}) => {
         {isMobile &&
           <OddsRowHeading />
         }
-        <div className="odds-row-right-col w-[40%] ">
+        <div className="odds-row-right-col w-[40.4%] ">
           <ul className="w-full grid grid-cols-3 ">
 
 
