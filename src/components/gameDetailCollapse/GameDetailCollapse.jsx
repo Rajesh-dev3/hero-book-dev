@@ -77,15 +77,16 @@ const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFan
                 }
                 >
                   {list?.ex?.availableToBack.map((item, index) => {
+                    // console.log(prevOdd?.runner_json[ind]?.ex?.availableToBack[index],"odds")
                     return (
     
-                      <DetailOdds    prevOddRunners={prevOdd?.runner_json[index]?.ex?.availableToBack} profithandler={profithandler} selectionId={list?.selectionId} marketId={odddata?.market_id} matchName={list?.selectionName} lay={1} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
+                      <DetailOdds    prevOddRunners={prevOdd?.runner_json[ind]?.ex?.availableToBack[index]} profithandler={profithandler} selectionId={list?.selectionId} marketId={odddata?.market_id} matchName={list?.selectionName} lay={1} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
                     )
                   }).reverse()}
                   {list?.ex?.availableToLay.map((item, index) => {
                     return (
     
-                      <DetailOdds prevOddRunners={prevOdd?.runner_json[index]?.ex?.availableToLay} profithandler={profithandler} selectionId={list?.selectionId} matchName={list?.selectionName} lay={0} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index + 3]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
+                      <DetailOdds prevOddRunners={prevOdd?.runner_json[ind]?.ex?.availableToLay[index]} profithandler={profithandler} selectionId={list?.selectionId} matchName={list?.selectionName} lay={0} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index + 3]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
                     )
                   })}
                   {list?.GameStatus === "SUSPENDED" || odddata?.InplayStatus == "CLOSE" &&
