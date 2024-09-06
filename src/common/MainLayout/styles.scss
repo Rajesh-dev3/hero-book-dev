@@ -11,7 +11,6 @@
 
     .main-layout-col {
         display: flex;
-        gap: 5px;
 
         @include media(phone) {
             margin-top: 0px;
@@ -35,7 +34,7 @@
 
         .main-layout-content {
             width: calc(100% - 280px);
-
+padding-left: 5px;
             @include media(tablet) {
                 width: calc(100% - 210px);
             }
