@@ -7,6 +7,7 @@ import { useGetSportListMutation } from "../../services/sport/sportList"
 ///styles
 import "./styles.scss";
 import { MenuItem, Select } from "@mui/material";
+import { CustomSelect } from "./styled";
 const Filter = ({ startDate, endDate, formData, setFormData, setEndDate, setStartDate, submitHandler }) => {
 
   const [trigger, { data }] = useGetSportListMutation()
@@ -66,6 +67,7 @@ const [radioActive, setRadioActive] = useState(0)
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             displayEmpty
+            className="input-s"
             IconComponent={KeyboardArrowDownIcon} 
             sx={{
               width: '100%',
@@ -120,7 +122,7 @@ const [radioActive, setRadioActive] = useState(0)
             <option value="30">30</option>
             <option value="40">40</option>
           </select> */}
-           <Select
+           <CustomSelect
              
              labelId="demo-simple-select-label"
              id="demo-simple-select"
@@ -132,19 +134,13 @@ const [radioActive, setRadioActive] = useState(0)
              inputProps={{ 'aria-label': 'Limit' }}
            
              IconComponent={KeyboardArrowDownIcon} 
-             sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
-              paddingLeft: '4px', // Removes padding from the select input
-              
-            },
-            '& .MuiSelect-icon': {
-              padding: '2px', // Removes padding from the dropdown icon
-            }, }}           >
+             sx={{borderRadius:"0"}}       >
              <MenuItem value={10}>10</MenuItem>
              <MenuItem value={20}>20</MenuItem>
              <MenuItem value={30}>30</MenuItem>
              <MenuItem value={40}>40</MenuItem>
             
-           </Select>
+           </CustomSelect>
           <span>Entries</span>
         </div>
         <div className="all-back-lay mt-[5px] md:mt-[0px] sm:mt-[5px]  flex items-center gap-4 justify-center">

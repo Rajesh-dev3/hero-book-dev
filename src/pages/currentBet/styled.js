@@ -21,7 +21,7 @@ export const CustomSelect = styled(Select)(({ theme }) => ({
         fontSize: '0.9rem',
         
     },
-  //   '@media (max-width: 780px)': { // Custom breakpoint 1
-  //   width: '120px',
-  // },
+    '@media (max-width: 780px)': { // Custom breakpoint 1
+    width: '120px',
+  },
   }));

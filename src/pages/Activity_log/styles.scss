@@ -15,6 +15,7 @@
         gap: 20px !important;
         @include media(phone) {
             flex-direction: column;
+            gap: 6px !important;
         }
 
         .date-picker {
@@ -65,7 +66,7 @@
         @include media(phone) {
             display: flex;
             font-size: 12px;
-            
+            margin-top: 7px !important;
         }
         .entries-left-col {
             select {
@@ -101,7 +102,7 @@
                 width: 100px;
                 border-radius: 0;
                 @include media(phone) {
-                   width: 68%;
+                   width: 80%;
                     
                 }
             }
@@ -162,12 +163,17 @@
                     background-color: #384b5e;
                     color: $white;
                     padding: 6px 12px;
-
+                    @include media(phone){
+                        font-size: 12px !important;
+                    }
                     // text-align: left;
                 }
 
                 td {
                     white-space: nowrap;
+                    @include media(phone){
+                        font-size: 12px !important;
+                    }
                 }
             }
         }

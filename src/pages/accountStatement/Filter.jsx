@@ -16,8 +16,9 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             className="date-picker-a"
             onChange={(date) => setStartDate(date)}
             showIcon
-            calendarIconClassname="calnder"
             className="input-s"
+            calendarIconClassname="calnder"
+            
             icon={<CalendarTodayIcon />}
           />
         </div>
@@ -26,7 +27,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             selected={endDate}
             onChange={(date) => setEnddate(date)}
             showIcon
-            
+            className="input-s"
             calendarIconClassname="calnder"
             icon={<CalendarTodayIcon />}
           />
@@ -80,15 +81,10 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             id="demo-simple-select"
             onChange={(e) => setLimit(e.target.value)}
             defaultValue={10}
+            sx={{borderRadius:"0"}}
 
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
-              paddingLeft: '4px', // Removes padding from the select input
-              
-            },
-            '& .MuiSelect-icon': {
-              padding: '2px', // Removes padding from the dropdown icon
-            }, }}    
+            
           >
             <MenuItem value={10}>10</MenuItem>
             <MenuItem value={20}>20</MenuItem>

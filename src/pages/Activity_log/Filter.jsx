@@ -4,6 +4,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import './styles.scss'
 import { MenuItem, Select } from "@mui/material";
+import { CustomSelect } from "../accountStatement/styled";
 const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) => {
 
 
@@ -16,6 +17,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             showIcon
+            className="input-s"
             calendarIconClassname="calnder"
             icon={<CalendarTodayIcon />}
           />
@@ -25,6 +27,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
             selected={endDate}
             onChange={(date) => setEnddate(date)}
             showIcon
+            className="input-s"
             calendarIconClassname="calnder"
             icon={<CalendarTodayIcon />}
           />
@@ -91,26 +94,20 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit}) 
             <option value="30">30</option>
             <option value="40">40</option>
           </select> */}
-            <Select
+            <CustomSelect
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             onChange={(e) => setLimit(e.target.value)}
             defaultValue={10}
 
             IconComponent={KeyboardArrowDownIcon} 
-            sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
-              paddingLeft: '4px', // Removes padding from the select input
-              
-            },
-            '& .MuiSelect-icon': {
-              padding: '2px', // Removes padding from the dropdown icon
-            }, }}          >
+            sx={{borderRadius:"0"}}        >
             <MenuItem value={10}>10</MenuItem>
             <MenuItem value={20}>20</MenuItem>
             <MenuItem value={30}>30</MenuItem>
             <MenuItem value={40}>40</MenuItem>
            
-          </Select>
+          </CustomSelect>
           <span>Entries</span>
         </div>
         <div className="entries-right-col w-[50%] flex justify-end items-center gap-[0.5rem]">

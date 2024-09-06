@@ -5,6 +5,9 @@
     background-color: #f7f7f7;
     
     border-top: 0.01em solid #c7c8ca;
+   @include media(phone){
+    border-top: none;
+   }
     &:last-child{
 
         // border-bottom: 0.01em solid #c7c8ca;
@@ -18,9 +21,12 @@
         padding-left: 0.3rem;
 
         @include media(phone) {
-            width: calc(100% - 10px);
+            width: calc(100% - 0px);
             align-items: end;
             padding-right: 5px;
+            border-top: 1px solid #c7c8ca;
+margin-top: 5px;
+            
         }
 
         span {
@@ -139,9 +145,13 @@
 }
 
 .odd-row-header {
+   padding-block: 4px;
+   @include media(phone) {
+padding: 0px;
+   }
     .odds-row-left-col {
         @include media(phone) {
-
+padding: 0px;
             display: none;
         }
     }
