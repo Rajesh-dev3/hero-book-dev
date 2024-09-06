@@ -11,14 +11,14 @@ import Blink from '../../components/blink/Blink';
 ////styles
 import "./styles.scss"
 import { login } from '../../routes/PagesUrl';
+import { useSelector } from 'react-redux';
 const MainLayout = () => {
   const isMobile = useMediaQuery("(max-width:780px)")
-  const [trigger, { data }] = useEventGameMutation()
-  const inplayMatches = data?.data?.InplayMatches || [];
+  const posts = useSelector(state => (state?.matchList?.mutations));
+  console.log(posts,"posts")
+  const inplayData = Object.values(posts)
+  const inplayMatches = inplayData[inplayData.length-1]?.data?.data?.InplayMatches || [];
 
-  useEffect(() => {
-    trigger({ limit: 50, pageno: 1, sport_id: String(4), series_id: 0, type: "home" })
-  }, [])
   
   const nav = useNavigate()
   useEffect(() => {
@@ -66,16 +66,15 @@ const MainLayout = () => {
   const {pathname} = useLocation()
 
   const urlList = ["/account-statement","/current-bet","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
-  const checkActiveUrl  = ["/","/sport/4","/sport/2"]
-
-  const checkUrl = isMobile && urlList.includes(pathname)
+ 
   const checkBlink =  urlList.includes(pathname)
+  console.log(inplayMatches,"inplayMatches")
   return (
     <div className='main-layout'>
       <div className="layout-nav-col">
         <Navbar />
         {!checkBlink && isMobile && pathname.split("/")[1] != "game-detail" &&
-          <div className={`w-full grid grid-cols-${inplayMatches?.length} gap-1`} style={{padding: "0 5px 5px"}}>
+          <div className={`w-full flex overflow-scroll gap-1`} style={{padding: "0 5px 5px"}}>
             {inplayMatches?.map((item) => {
               return (
 

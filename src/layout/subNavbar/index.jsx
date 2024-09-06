@@ -76,8 +76,7 @@ const SubNavbar = () => {
   ]
   const MobileCasino = isMobile? mobileCasino:casinoArray
   
-  const casino = isMobile ? mobileCasino : casinoArray
-  const [listActive, setListActive] = useState(0)
+
 const {pathname} = useLocation()
 const urlList = ["/account-statement","/current-bet","/activity_log","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
   const checkActiveUrl  = {Home:"/",Cricket:"/sport/4",Tennis:"/sport/2",Soccer:"/sport/1"}
@@ -130,7 +129,7 @@ if(isMobile){
             
             return(
               
-              <Link to={item?.link} key={item?.name} onClick={()=>setListActive(index+1)} className={`${isActive(item?.link, pathname) ? 'tab-list-active' : 'tabs-list'}`}><li className={index==0?"p-left":""}>{item?.name == "Soccer"?"Football":item?.name}</li></Link>
+              <Link to={item?.link} key={item?.name}  className={`${isActive(item?.link, pathname) ? 'tab-list-active' : 'tabs-list'}`}><li className={index==0?"p-left":""}>{item?.name == "Soccer"?"Football":item?.name}</li></Link>
             )
           }
         }
