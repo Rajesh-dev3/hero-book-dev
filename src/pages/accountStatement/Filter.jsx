@@ -16,6 +16,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             onChange={(date) => setStartDate(date)}
             showIcon
             calendarIconClassname="calnder"
+            className="input-s"
             icon={<CalendarTodayIcon />}
           />
         </div>
