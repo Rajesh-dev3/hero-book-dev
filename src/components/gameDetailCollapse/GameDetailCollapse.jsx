@@ -23,8 +23,8 @@ const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFan
         </div>
         <div className="market-heade">
   
-          <div className="odds-row-container flex items-center" >
-            <div className="odds-row-left-col px-[5px]">
+          <div className="odds-row-container flex items-center detail-row" >
+            <div className=" odds-row-left-col remove-top-border px-[5px] ">
               <p>
               {min && `Min:${convertToKOrLakh(odddata?.marketMinStack)}`}  Max:{convertToKOrLakh(odddata?.marketMaxStack)} 
               </p>
@@ -52,8 +52,8 @@ const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFan
        
   
             return (
-              <div className="odds-row-container flex items-center" key={list?.selectionName} >
-                <div className="odds-row-left-col px-[5px]">{list?.selectionName}
+              <div className="odds-row-container flex items-center detail-row" key={list?.selectionName} >
+                <div className="odds-row-left-col px-[5px] remove-top-border">{list?.selectionName}
                   <span style={{ color: findSelectionId > 0 ? "green" : "red" }} className="profit-loss">{checkFancy ? findFancySelection : findSelectionId && findSelectionId?.toFixed(2)}</span>
     
                 </div>
