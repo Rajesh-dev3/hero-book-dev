@@ -53,7 +53,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
       defaultValue={""}
     >
       
-            <MenuItem value="" disabled>All Report </MenuItem>
+            <MenuItem value="" disabled>All Reports </MenuItem>
             <MenuItem value={"Deposite/Withdraw Reports"}>Deposite/Withdraw Reports</MenuItem>
             <MenuItem value={"Game Reports"}>Game Reports</MenuItem>
            
@@ -80,7 +80,13 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             defaultValue={10}
 
             IconComponent={KeyboardArrowDownIcon} 
-           
+            sx={{ height: "38px", outline: "none", borderRadius:"0" ,width:"60px", fontFamily: 'Roboto Condensed',paddingLeft:"0",paddingRight:"0", '& .MuiSelect-select': {
+              paddingLeft: '4px', // Removes padding from the select input
+              
+            },
+            '& .MuiSelect-icon': {
+              padding: '2px', // Removes padding from the dropdown icon
+            }, }}    
           >
             <MenuItem value={10}>10</MenuItem>
             <MenuItem value={20}>20</MenuItem>
@@ -90,7 +96,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
           </CustomSelect>
           <span>Entries</span>
         </div>
-        <div className="entries-right-col  w-[50%]  flex justify-end items-center gap-[0.5rem]">
+        <div className="entries-right-col   flex justify-end items-center gap-[0.5rem]">
       <span>Search:</span>
       <input
         placeholder="0 record..."

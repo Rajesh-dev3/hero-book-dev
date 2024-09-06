@@ -106,7 +106,7 @@ const [radioActive, setRadioActive] = useState(0)
           <button className="btn" onClick={submitHandler}>Submit</button>
         </div>
       </div>
-      <div className="entries-container flex grid grid-cols-1 md:grid-cols-4 sm:grid-cols-1">
+      <div className="entries-container flex">
         <div className="entries flex items-center  gap-2">
           <span>Show</span>
           {/* <select className="border-[1px] border-[#dbdbdb] w-[18%] h-[38px]"
@@ -147,7 +147,7 @@ const [radioActive, setRadioActive] = useState(0)
            </Select>
           <span>Entries</span>
         </div>
-        <div className="all-back-lay mt-[5px] md:mt-[0px] sm:mt-[5px]  flex items-center gap-4 justify-center md:justify-left">
+        <div className="all-back-lay mt-[5px] md:mt-[0px] sm:mt-[5px]  flex items-center gap-4 justify-center">
           <div className="flex gap-1">
             <input
               type="radio"

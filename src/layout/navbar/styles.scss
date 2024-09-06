@@ -93,7 +93,8 @@
   align-items: center;
 
   @include media(phone) {
-    background-color: $black;
+    // background-color: $black;
+    align-items: normal;
   }
 
   .open-search {
@@ -146,9 +147,9 @@
   }
 
   .search-icon {
-    svg {
-
-      font-size: 30px;
+    .fa-search-plus {
+margin-top: 3px;
+      font-size: 24px;
     }
   }
 
@@ -166,6 +167,10 @@
 
 .mobile-navbar {
   background-color: $black;
+  @include media (phone){
+   padding:  5px 5px 0px 5px;
+
+  }
 
   .news {
     width: 100%;
@@ -193,8 +198,9 @@
     justify-content: space-between;
 
     @include media(phone) {
-      padding-top: 2%;
-      padding-bottom: 0px;
+      // padding-top: 2%;
+      // padding-bottom: 0px;
+      padding: 0px;
     }
 
     .logo-nav {
@@ -210,9 +216,10 @@
         text-align: center;
 
         span {
-          svg {
+          .fas {
             color: $white;
             margin-right: 10px;
+            font-size: 20px;
           }
 
           span {

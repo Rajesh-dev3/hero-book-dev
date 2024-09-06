@@ -55,14 +55,38 @@
     }
     .entries-container{
         margin-top: 31px;
+    
         gap: 20px;
         @include media(phone) {
         margin-top: 7px;
+        flex-direction: column;
+        gap: 2px;
         }
+        .entries{
+            flex: 0 0 auto;
+            width: 16.66666667%;
+    
+        }
+        .all-back-lay{
+            width: 33.33333333%;
+            flex: 0 0 auto;
+            padding: 0px 6px 0px 10px;
+            @include media(phone) {
+           justify-content: center;
+           width: 100%; }
+
+}
         .soda-amount{
             // margin-top: 10px;
+            flex: 0 0 auto;
+            width:25%;
+            @include media(phone) {
+                justify-content: center;
+                width: 100%; }
         }
 .search{
+    width: 25%;
+
     @include media(phone) {
         justify-content: flex-start;
     }
@@ -111,9 +135,18 @@ tr {
         color: $white;
         font-size: 16px;
         padding: 11px 12px;
+        border: 1px solid #c7c8ca;
+        @include media (phone){
+            font-size: 11px;
+        }
+
     }
     td {
-        font-size: 12px;
+        font-size: 16px;
         text-align: center;
+        border: 1px solid #c7c8ca;
+        @include media (phone){
+            font-size: 11px;
+        }
     }
 }}}

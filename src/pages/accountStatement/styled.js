@@ -6,7 +6,7 @@ export const CustomSelect = styled(Select)(({ theme }) => ({
     height: '38px',
     outline: 'none',
     borderRadius: '0',
-    width: '16%',
+    width: '60px',
     fontFamily: 'Roboto Condensed',
     paddingLeft: '0',
     paddingRight: '0',

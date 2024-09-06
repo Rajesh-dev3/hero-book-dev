@@ -111,8 +111,9 @@
            
             input{
                 // width: 19.5%;
-                width: 25%;
+                width: 100px !important;
                 border-radius: 0px;
+                // height: 100% !important;
                 // margin-left: 5px;
                 // font-size: 1rem;
                 // font-weight: 400;
@@ -202,6 +203,15 @@ width: 155px;
 
                 td {
                     white-space: nowrap;
+                    font-size: 16px;
+                    border: 1px solid #c7c8ca;
+                    span{
+                        border:none !important ;
+                    }
+                    @include media (phone){
+                        font-size: 11px;
+
+                    }
                 }
             }
         }

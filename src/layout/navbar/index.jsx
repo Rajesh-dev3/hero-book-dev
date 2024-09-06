@@ -38,7 +38,10 @@ const [Exposure, setExposure] = useState({
 <div className="navbar">
   <div className="logo-nav">
     <Link to={"/"}>
-    <span><HomeRoundedIcon /></span>
+    <span>
+      {/* <HomeRoundedIcon />  */}
+    <i className="fas fa-home me-1"></i>
+    </span>
     <span className="mobile-nav-logo"><img src={logo} alt="" /></span>
     </Link>
   </div>
@@ -102,7 +105,7 @@ const [Exposure, setExposure] = useState({
           }
           <div className="search-icon" onClick={()=>setOpenSearch(!openSearch)}>
 
-          <ZoomInIcon />
+          < i className="fas fa-search-plus"></i>
           </div>
         </div>
   }
@@ -137,7 +140,7 @@ const [Exposure, setExposure] = useState({
           }
           <div className="search-icon" onClick={()=>setOpenSearch(!openSearch)}>
 
-          <ZoomInIcon />
+          <i className="fas fa-search-plus"></i>
           </div>
         </div>
         <ul className="list">
