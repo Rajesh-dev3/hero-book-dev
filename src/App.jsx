@@ -9,6 +9,7 @@ function App() {
   //   bodyClassName: 'custom-toast-body', // Add custom class to body
   //   progressClassName: 'custom-toast-progress', // Add custom class to progress bar
   // });
+
   return (
       <RouterProvider router={router} />
   )
