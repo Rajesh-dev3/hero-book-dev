@@ -1,35 +1,51 @@
 @import "../../styles/variables/mixins";
-.main-layout{
-    .layout-nav-col{
+
+.main-layout {
+    .layout-nav-col {
         width: 100%;
-        @include media(phone){
+
+        @include media(phone) {
             background-color: black;
         }
     }
-    .main-layout-col{
-        display:flex;
+
+    .main-layout-col {
+        display: flex;
         gap: 5px;
-        @include media(phone){
-            margin-top: 0px; 
-            margin-right: 0%;  
+
+        @include media(phone) {
+            margin-top: 0px;
+            margin-right: 0%;
         }
-        .main-layout-sider{
-            width: 210px;
-            @include media(phone){
-                display: none;   
-                     
-              
-                    }
-                
+
+        .main-layout-sider {
+            width: 280px;
+
+            @include media(tablet) {
+                width: 210px;
+            }
+
+            @include media(phone) {
+                display: none;
+
+
+            }
+
         }
-        .main-layout-content{
-            width: calc(100% - 215px);
+
+        .main-layout-content {
+            width: calc(100% - 280px);
+
+            @include media(tablet) {
+                width: calc(100% - 210px);
+            }
+
             // margin-top: 4.1px;
-            @include media(phone){
+            @include media(phone) {
                 width: calc(100% - 0px);
-         
-              
-                    }
+
+
+            }
         }
     }
 }
