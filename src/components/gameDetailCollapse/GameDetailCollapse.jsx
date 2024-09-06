@@ -41,7 +41,6 @@ const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFan
           </div>
         </div>
         {odddata?.runner_json?.map((list, ind) => {
-        
         const findSelectionId = profitLoss?.find((item) => item?.selectionId == list?.selectionId)?.winLoss
           const findFancySelection = checkFancy ? profitLoss?.map((elm,i) => {
             if (elm?.marketId == odddata?.market_id) {
@@ -78,15 +77,27 @@ const GameDetailCollapse = ({checkBookmaker,setBookMaker,prevOdd,min,setCheckFan
                 >
                   {list?.ex?.availableToBack.map((item, index) => {
                     // console.log(prevOdd?.runner_json[ind]?.ex?.availableToBack[index],"odds")
+                    let prevOddRunners = prevOdd?.runner_json[ind]?.ex?.availableToBack[index]
                     return (
     
-                      <DetailOdds    prevOddRunners={prevOdd?.runner_json[ind]?.ex?.availableToBack[index]} profithandler={profithandler} selectionId={list?.selectionId} marketId={odddata?.market_id} matchName={list?.selectionName} lay={1} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
+                      <DetailOdds bg={
+                      (item?.price > prevOddRunners?.price
+                        ? "odds-up-color"
+                        : item?.price < prevOddRunners?.price
+                        ? "odds-down-color"
+                        : "")}    profithandler={profithandler} selectionId={list?.selectionId} marketId={odddata?.market_id} matchName={list?.selectionName} lay={1} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
                     )
                   }).reverse()}
                   {list?.ex?.availableToLay.map((item, index) => {
+                                        let prevOddRunners = prevOdd?.runner_json[ind]?.ex?.availableToLay[index]
                     return (
     
-                      <DetailOdds prevOddRunners={prevOdd?.runner_json[ind]?.ex?.availableToLay[index]} profithandler={profithandler} selectionId={list?.selectionId} matchName={list?.selectionName} lay={0} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index + 3]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
+                      <DetailOdds bg={
+                        (item?.price > prevOddRunners?.price
+                          ? "odds-up-color"
+                          : item?.price < prevOddRunners?.price
+                          ? "odds-down-color"
+                          : "")}  profithandler={profithandler} selectionId={list?.selectionId} matchName={list?.selectionName} lay={0} betPlaceHandler={betPlaceHandler} index={index} item={oddsColor[index + 3]} key={item?.selectionName} value={item?.price} price={item?.size} height={44} border={true} fun={fun} />
                     )
                   })}
                   {list?.GameStatus === "SUSPENDED" || odddata?.InplayStatus == "CLOSE" &&
