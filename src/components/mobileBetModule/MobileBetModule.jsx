@@ -5,6 +5,7 @@ import { formatCompactNumber } from '../betPlaceModule/BetPlaceModule'
 ///styles
 import "./styles.scss"
 import BetLoader from '../loader/BetLoader'
+import { betHistoryRef } from '../../pages/gameDetail/GameDetail'
 const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betPlaceData, setBetPlaceData, openModal2 }) => {
   const stakeArray = stakeAmount?.match_stack?.split(",")
   const [trigger, { data,isLoading }] = useBetPlaceMutation()
@@ -18,7 +19,7 @@ const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betP
         }
       })
     } else if (data?.error == false) {
-    
+      betHistoryRef()
       fun(false)
       toast?.success(data?.message)
     }
@@ -26,7 +27,7 @@ const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betP
   const [oddsValue, setOddsValue] = useState()
   return (
     <div className='mobile-bet-place-container'> 
-    {!isLoading ?
+    {isLoading ?
        <div className={isLoading?"bet-loader-active":"bet-loader"}>
       <BetLoader/>
     </div>
