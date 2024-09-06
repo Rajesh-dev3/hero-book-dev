@@ -111,7 +111,7 @@
     @include media(phone) {
       box-shadow: none;
       width: 160px;
-      margin-left: 5px;
+      // margin-left: 5px;
     }
   }
 
@@ -128,7 +128,7 @@
     @include media(phone) {
       box-shadow: none;
    
-      margin-left: 5px;
+      // margin-left: 5px;
     }
 
   }
@@ -150,6 +150,7 @@
     .fa-search-plus {
 margin-top: 3px;
       font-size: 24px;
+      margin-left: 10px;
     }
   }
 
@@ -183,9 +184,9 @@ margin-top: 3px;
     
 
     @include media(phone) {
-      padding-top: 6px;
+      padding-top: 3px;
       font-size: 12px;
-      padding-bottom: 10px;
+      // padding-bottom: 7px;
       // width: auto;
     }
 

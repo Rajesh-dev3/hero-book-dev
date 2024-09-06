@@ -26,8 +26,8 @@ body{
 }
 .shadow-container{
 
-  box-shadow: 0 0 5px #a4a4a4;
-  border-radius: 5px
+  /* box-shadow: 0 0 5px #a4a4a4;
+  border-radius: 5px */
   
 }
 @tailwind base;

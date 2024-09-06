@@ -8,7 +8,8 @@
     margin-bottom: 0;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
     @include media(phone){
-        padding: .3rem 0.4rem;
+        // padding: .3rem 0.4rem;
+        padding: 8px 16px;
     }
     .header-title{
 
@@ -16,7 +17,8 @@
     font-weight: 400;
     margin-bottom: 0;
     @include media(phone){
-        font-size: 15px;
+        font-size: 16px;
+        
     }
     }
 }

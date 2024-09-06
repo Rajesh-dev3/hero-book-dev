@@ -13,6 +13,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
         <div className="date-picker">
           <DatePicker
             selected={startDate}
+            className="date-picker-a"
             onChange={(date) => setStartDate(date)}
             showIcon
             calendarIconClassname="calnder"
