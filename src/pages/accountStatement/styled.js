@@ -17,7 +17,7 @@ export const CustomSelect = styled(Select)(({ theme }) => ({
       padding: '2px', // Removes padding from the dropdown icon
     },
     '@media (max-width: 800px)': { // Custom breakpoint 2
-        width: '50%',
+        width: '58%',
         fontSize: '0.9rem',
         
     },

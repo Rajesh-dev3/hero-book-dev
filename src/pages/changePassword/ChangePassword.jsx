@@ -88,7 +88,7 @@ const ChangePassword = () => {
         <div className="form-row">
 
           <label htmlFor="">Current Password</label>
-          <input type={!passwordIconShow?.old ? "text" : "password"} name='oldPassword' value={formData?.oldPassword} onChange={formHandler} />
+          <input type={!passwordIconShow?.old ? "text" : "password"} name='oldPassword'placeholder='Enter Current Password' value={formData?.oldPassword} onChange={formHandler} />
           {error?.oldPassword && <span style={{ color: "red" }}>Please Enter Old Password</span>}
           <div className="password-icon" onClick={() => setPasswordIconShow((prev) => {
             return {
@@ -96,15 +96,15 @@ const ChangePassword = () => {
               old: !passwordIconShow?.old
             }
           })}>
-            {!passwordIconShow?.old ?
+            {/* {!passwordIconShow?.old ?
               <VisibilityIcon /> :
               <VisibilityOffIcon />
-            }
+            } */}
           </div>
         </div>
         <div className="form-row">
           <label htmlFor="">New Password</label>
-          <input type={!passwordIconShow?.new ? "text" : "password"} name='newPassword' onChange={formHandler} />
+          <input type={!passwordIconShow?.new ? "text" : "password"} name='newPassword' placeholder='Enter New Password' onChange={formHandler} />
           {error?.newPassword && <span style={{ color: "red" }}>Please Enter New Password</span>}
           <div className="password-icon" onClick={() => setPasswordIconShow((prev) => {
             return {
@@ -112,15 +112,15 @@ const ChangePassword = () => {
               new: !passwordIconShow?.new
             }
           })}>
-            {!passwordIconShow?.new ?
+            {/* {!passwordIconShow?.new ?
               <VisibilityIcon /> :
               <VisibilityOffIcon />
-            }
+            } */}
           </div>
         </div>
         <div className="form-row">
           <label htmlFor="">Confirm New Password</label>
-          <input type={!passwordIconShow?.confirm ? "text" : "password"} name='confirmNewPassword' onChange={formHandler} />
+          <input type={!passwordIconShow?.confirm ? "text" : "password"} name='confirmNewPassword' placeholder='Confirm New Password' onChange={formHandler} />
           {error?.confirmNewPassword && <span style={{ color: "red" }}>Please Enter Confirm Password</span>}
           <div className="password-icon" onClick={() => setPasswordIconShow((prev) => {
             return {
@@ -128,10 +128,10 @@ const ChangePassword = () => {
               confirm: !passwordIconShow?.confirm
             }
           })}>
-            {!passwordIconShow?.confirm ?
+            {/* {!passwordIconShow?.confirm ?
               <VisibilityIcon /> :
               <VisibilityOffIcon />
-            }
+            } */}
           </div>
         </div>
         <div className="form-row">

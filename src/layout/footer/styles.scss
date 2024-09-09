@@ -10,7 +10,9 @@
 
     @include media(phone) {
         background-color: $black;
-    }
+    padding: 10px 0px;
+    margin-top: 5px;
+}
 
     .footer-top {
         display: flex;
@@ -36,7 +38,9 @@
                 text-align: center;
                 font-family: "Roboto Condensed", sans-serif !important;
                 line-height: 1.2;
-
+                @include media(phone) {
+                    font-size: 20px;
+                }
             }
         }
 
@@ -61,11 +65,19 @@
             margin-right: 5px;
 
             @include media(phone) {
-                background-color: $black;
+                background-color: white;
+                border-radius: 25px;
+                height: 30px;
+            width: 30px;
             }
 
             img {
                 height: 30px;
+                
+            @include media(phone) {
+                height: 20px;
+            }
+
             }
         }
     }

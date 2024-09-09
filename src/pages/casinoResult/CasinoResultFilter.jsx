@@ -119,7 +119,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
         <div className="entries-right-col w-[50%] flex justify-end items-center gap-[0.5rem]">
           Search:
           <input
-            placeholder="0 record..."
+            placeholder="0 records..."
             className="w-[20%] border-[1px] border-[#ced4da] rounded-[3px] h-[38px] p-[5px]"
           />
         </div>
