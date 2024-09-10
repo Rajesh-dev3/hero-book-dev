@@ -168,7 +168,7 @@
     .p-left{
             padding-left: 0px !important;
             @include media(phone){
-                padding-left: 8px;
+                padding-left: 8px !important;
             }
         }
  
