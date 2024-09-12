@@ -11,8 +11,9 @@ const baseQuery = async (args, api, extraOptions) => {
   const token = localStorage.getItem("telegramToken");
 
   const result = await fetchBaseQuery({
-    baseUrl: "http://52.66.201.64:8786/api",
+    // baseUrl: "http://52.66.201.64:8786/api",
     // baseUrl: 'https://exchthanos.com/api/',
+    baseUrl: "https://bigbetexchange.com/api/",
     prepareHeaders: (headers) => {
       if (token) {
         headers.set('Authorization', `Bearer ${token}`);

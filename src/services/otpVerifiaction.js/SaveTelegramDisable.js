@@ -3,7 +3,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // Define a custom base query function that includes authorization headers
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'http://52.66.201.64:8786/api/',
+  // baseUrl: 'http://52.66.201.64:8786/api/',
+  baseUrl: "https://bigbetexchange.com/api/",
   prepareHeaders: (headers) => {
     const token = localStorage.getItem("token");
     if (token) {
