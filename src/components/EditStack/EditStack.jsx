@@ -58,7 +58,6 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
             toast.error(stakeUpdateResponse?.message)
         }
     }, [stakeUpdateResponse])
-console.log(matchStackArray,"matchStackArray")
     return (
         <section className='edit-stack'>
             <div className="heading">

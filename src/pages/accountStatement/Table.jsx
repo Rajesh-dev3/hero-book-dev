@@ -51,7 +51,7 @@ const Table = ({ data }) => {
                   .utcOffset("+05:30")
                   .format("DD/MM/YYYY HH:mm:a")}</td>
               <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end">{index + 1}</td>
-              <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end"><span role="cell" className="">{item?.amount}</span></td>
+              <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end"><span role="cell" className={item?.amount>0?"green-color":"red-color"}>{item?.amount}</span></td>
               <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end"><span role="cell" className="">-</span></td>
               <td role="cell" className="border-[1px] px-[8px] py-[5px] text-end"><span role="cell" className="">{item?.available_balance}</span></td>
               <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.description}</td></tr>

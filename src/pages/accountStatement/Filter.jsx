@@ -13,10 +13,9 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
         <div className="date-picker">
           <DatePicker
             selected={startDate}
-            className="date-picker-a"
+            className="date-picker-a input-s"
             onChange={(date) => setStartDate(date)}
             showIcon
-            className="input-s"
             calendarIconClassname="calnder"
             
             icon={<CalendarTodayIcon />}
@@ -32,7 +31,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             icon={<CalendarTodayIcon />}
           />
         </div>
-        <div className="select">
+        {/* <div className="select">
           <Select
     
       labelId="demo-simple-select-label"
@@ -61,7 +60,7 @@ const Filter = ({ setStartDate, startDate, setEnddate, endDate, fun, setLimit })
             <MenuItem value={"Game Reports"}>Game Reports</MenuItem>
            
           </Select>
-        </div>
+        </div> */}
         <div className="form-btn">
           <button className="btn" onClick={fun}>Submit</button>
         </div>

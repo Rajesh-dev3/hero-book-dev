@@ -8,14 +8,14 @@ import { useGetSportListMutation } from "../../services/sport/sportList"
 import "./styles.scss";
 import { MenuItem, Select } from "@mui/material";
 import { CustomSelect } from "./styled";
-const Filter = ({ startDate, endDate, formData, setFormData, setEndDate, setStartDate, submitHandler }) => {
+const Filter = ({allBack, setAllBack,startDate, endDate, formData, setFormData, setEndDate, setStartDate, submitHandler }) => {
 
   const [trigger, { data }] = useGetSportListMutation()
 
   useEffect(() => {
     trigger({ "limit": 50, "pageno": 1 })
   }, [])
-const [radioActive, setRadioActive] = useState(0)
+
   
   return (
    
@@ -149,8 +149,8 @@ const [radioActive, setRadioActive] = useState(0)
               type="radio"
               name="All"
               value="30"
-              checked={radioActive == 0}
-              onChange={()=>setRadioActive(0)}
+              checked={allBack == "All"}
+              onChange={()=>setAllBack("All")}
               className="w-[15px]  radio-input"
             />
 
@@ -161,8 +161,8 @@ const [radioActive, setRadioActive] = useState(0)
               type="radio"
               name="Back"
               value="60"
-              checked={radioActive == 1}
-              onChange={()=>setRadioActive(1)}
+              checked={allBack == "Back"}
+              onChange={()=>setAllBack("Back")}
               className="w-[15px] radio-input"
             />
 
@@ -173,8 +173,8 @@ const [radioActive, setRadioActive] = useState(0)
               type="radio"
               name="Lay"
               value="100"
-              checked={radioActive == 2}
-              onChange={()=>setRadioActive(2)}
+              checked={allBack == "Lay"}
+              onChange={()=>setAllBack("Lay")}
               className="w-[15px] radio-input"
             />
 

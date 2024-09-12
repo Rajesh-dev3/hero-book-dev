@@ -1,0 +1,30 @@
+.title{
+    width: 100%;
+    background-color: #54283d;
+    color: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+    h1{
+        font-size: 1.25rem !important;
+    }
+}
+.run-content{
+    flex: 1 1 auto;
+    padding: 1rem;
+    table{
+        width: 100%;
+        td{
+            padding: .75rem;
+            vertical-align: top;
+            border: 1px solid #dee2e6;
+        }
+    }
+}
+.green-color{
+    color: green;
+}
+.red-color{
+    color: red;
+}

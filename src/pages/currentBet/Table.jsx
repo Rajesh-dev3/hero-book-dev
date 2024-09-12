@@ -52,7 +52,7 @@ const Table = ({data}) => {
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center"><span role="cell" className="">{item?.Type}</span></td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center"><span role="cell" className="">{item?.Odds}</span></td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center"><span role="cell" className="">{item?.Stack}</span></td>
-        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.PotentialProfit}</td>
+        <td role="cell" className={`border-[1px] px-[8px] py-[5px] text-left ${item?.PotentialProfit>0?"green-color":"red-color"}`}>{item?.PotentialProfit}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.PotentialProfit > 0 ? "WON" : "LOSS"}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.ipAddress}</td>
         </tr>

@@ -298,7 +298,7 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
               <GameDetailCollapse  checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="MATCH_ODDS" odddata={oddsDataSta?.MatchDetails} prevOdd={prevState?.MatchDetails} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {oddsDataSta?.BookerMakerMarket?.runner_json ?
-              <GameDetailCollapse checkBookmaker={checkBookMaker} min={true} checkFancy={false} setBookMaker={setBookMaker} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+              <GameDetailCollapse checkBookmaker={checkBookMaker} min={true} checkFancy={false} setBookMaker={setBookMaker} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" prevOdd={prevState?.BookerMakerMarket} odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {normalFancy?.length ?
               <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="Normal" odddata={normalFancy} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} />
@@ -313,7 +313,7 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
             {oddsDataSta?.OtherMarketList?.length ?
               oddsDataSta?.OtherMarketList?.map((item, i) => {
                 return (
-                  <GameDetailCollapse checkFancy={true} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+                  <GameDetailCollapse checkFancy={true} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} prevOdd={item}  fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
                 )
               }):""
             }

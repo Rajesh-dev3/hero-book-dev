@@ -7,6 +7,8 @@ import PagesTitle from "../../components/pagesTitle/PagesTitle";
 
 const CurrentBet = () => {
   const [startDate, setStartDate] = useState(moment().subtract(6, 'days').format('YYYY-MM-DD'))
+  const [allBack, setAllBack] = useState("All")
+ 
   const [endDate, setEndDate] = useState(moment().format('YYYY-MM-DD'))
   const [formData, setFormData] = useState(
     {
@@ -30,12 +32,14 @@ const CurrentBet = () => {
     trigger(formData)
   }
 
+  const findFilterData = data?.data?.filter((item)=>item?.Type == allBack)
+
   return (
     <div className='shadow-container'>
       <PagesTitle title="Current Bets" />
       <div className="statement-body p-[10px]">
-        <Filter submitHandler={submitHandler} formData={formData} setFormData={setFormData} startDate={startDate} endDate={endDate} setEndDate={setEndDate} setStartDate={setStartDate} />
-        <Table data={data?.data} />
+        <Filter submitHandler={submitHandler} allBack={allBack} setAllBack={setAllBack} formData={formData} setFormData={setFormData} startDate={startDate} endDate={endDate} setEndDate={setEndDate} setStartDate={setStartDate} />
+        <Table data={allBack=="All" ? data?.data: findFilterData} />
       </div>
     </div>
   )

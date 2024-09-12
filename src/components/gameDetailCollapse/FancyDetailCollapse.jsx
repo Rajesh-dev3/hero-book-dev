@@ -3,10 +3,24 @@
 import "./styles.scss"
 import DetailOdds from "./DetailOdds";
 import { useMediaQuery } from "../../useMediaQuery";
+import ModalComp from "../modal/Modal";
+import { useState } from "react";
+import RunPosition from "../RunPosition";
+import CustomIcon from "../../assets/svg/Stairs";
 const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCheckFancy,fun,odddata,collapseName,betPlaceHandler}) => {
   const oddsColor = ["back","back1","back2","lay","lay1","lay2"]
+  const [fancyRunPostioin, setFancyRunPostioin] = useState([])
+  const [modalOpen2, setModalOpen2] = useState(false)
   const isMobile = useMediaQuery("(max-width:780px)")
+  const closeModal = () => {
+    setModalOpen2(false)
+  };
+  const openModal = () => {
+    setModalOpen2(true)
+  }
   return (
+    <>
+    <ModalComp isOpen={modalOpen2} onClose={closeModal} content={<RunPosition closeModa2={closeModal} data={fancyRunPostioin}/>} />
     <div className="game-market market-4 ">
       <div className="market-title">
         <span>{collapseName}</span>
@@ -38,10 +52,10 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
         <div className="odds-row-left-col px-[5px]">
           {/* {!isMobile
           &&
-         <p>
-           Max:1
+          <p>
+          Max:1
           </p>
-        } */}
+          } */}
            </div>
         <div className="odds-row-right-col grid grid-cols-3">
           <DetailOdds height={28} display={"none"}/>
@@ -56,18 +70,31 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
       </div>
 
       {odddata?.map((item,index)=>{
-         const findSelectionId =  profitLoss?.map((elm) => {
+        console.log(item?.scorePostion,"item?.scorePostion")
+        let checkScorePostion = item?.scorePostion
+        const findSelectionId =  profitLoss?.map((elm) => {
           if (elm?.marketId == collapseName) {
             if (elm?.selectionId == item?.SelectionId) {
               return elm?.winLoss
-            
+              
             }
           }
         }) 
+        
         return(
 
           <div className="fancy-row-container flex items-center" key={item?.RunnerName}>
-          <div className="odds-row-left-col px-[5px]">{item?.RunnerName}
+          <div className="odds-row-left-col px-[5px]">
+           <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
+            {item?.RunnerName} 
+            <span onClick={()=>{
+              openModal()
+              setFancyRunPostioin(checkScorePostion? item?.scorePostion:[])
+              }} style={{cursor:"pointer"}}>
+
+            {checkScorePostion?.length && <CustomIcon/>}
+            </span>
+            </div> 
           <span style={{ color: findSelectionId[0] > 0 ? "green" : "red",display:"block" }}>{findSelectionId}</span>
           </div>
           <div className="odds-row-right-col relative grid grid-cols-2 md:grid-cols-3" onClick={()=>{
@@ -99,6 +126,8 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
   
      
     </div>
+    </>
+
   )
 };
 
