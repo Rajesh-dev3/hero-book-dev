@@ -5,64 +5,14 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { StyledCheckbox, StyledMenuItem } from './styled';
 import { Link } from 'react-router-dom';
 import { activityLog, accountStatement, currentBet, changePasswordPage, secureAuth, casinoResultsPage } from '../../routes/PagesUrl';
-import { Checkbox, Modal } from '@mui/material';
-import { Box } from '@mui/system';
 import EditStack from '../../components/EditStack/EditStack';
 import ModalComp from '../../components/modal/Modal';
 // import { BpCheckbox } from '@mui/icons-material';
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: "white",
-  border: '2px solid #384b5e',
-  boxShadow: 24,
-  borderRadius: "5px",
-  // pt: 2,
-  // px: 4,
-  pb: 1,
-  h2: {
-    py: 1,
-    px: 1,
-    color: "white",
-    bgcolor: "#384b5e",
 
-  },
-  p: {
-    pl: 1,
-  },
-  div: {
-    width: "calc(100% - 5px)",
-    display: "flex",
-    justifyContent: "end",
-    marginTop: "10px",
-    gap: "10px",
-    paddingRight: "5px",
-    button: {
-      border: "none",
-      paddingTop: "5px",
-      paddingBottom: "7px",
-      paddingInline: "20px",
-      borderRadius: "5px",
-      color: "white",
-      bgcolor: "green",
-
-    },
-    '& > button:first-of-type': {
-      // This targets the first button inside the div
-      // You can add specific styles for the first button here
-      // Example:
-      bgcolor: "red",
-      fontWeight: "bold",
-    },
-  }
-};
 const NavDropDown = ({ setExposure, exposure }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [open2, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -78,8 +28,9 @@ const NavDropDown = ({ setExposure, exposure }) => {
   const [modalOpen2, setModalOpen2] = useState(false)
   const closeModa2 = () => {
     setModalOpen2(false)
+  
   };
-
+ 
   const handleChange = (event, name) => {
     const value = event.target.checked
     setExposure((prev) => {
@@ -91,26 +42,15 @@ const NavDropDown = ({ setExposure, exposure }) => {
 
   return (
     <div className='nav-dropdown'>
-      <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack closeModa2={closeModa2}/>} />
-      {/* <Modal
-        open={open2}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={{ ...style, width: 400 }}>
-          <h2 id="parent-modal-title">Log Out</h2>
-          <p id="parent-modal-description" style={{ paddingBlock: "10px", paddingInline: "10px" }}>
-            Do You Want To Continue..
-          </p>
-          <div><button onClick={handleClose}>Cancel</button> <button onClick={SignOut}>Continue</button></div>
-        </Box>
+      <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack closeModa2={closeModa2} />} />
+ 
+     
 
-      </Modal> */}
+    
 
       <Button
         id="basic-button"
-        sx={{ color: "white", textTransform:"none", }}
+        sx={{ color: "white", textTransform: "none", }}
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}

@@ -20,6 +20,7 @@ import { scoreBoard } from './services/scoreBoard/scoreBoard'
 import { inPlayEvent } from './services/sport/inPlayEvent'
 import { telegramOtpVerification } from './services/otpVerifiaction.js/OtpVerification'
 import { saveTelegramDisableCode } from './services/otpVerifiaction.js/SaveTelegramDisable'
+import { exposure } from './services/exposure/exposure'
 
 export const store = configureStore({
   reducer: {
@@ -43,6 +44,7 @@ export const store = configureStore({
     [inPlayEvent.reducerPath]: inPlayEvent.reducer,
     [telegramOtpVerification.reducerPath]: telegramOtpVerification.reducer,
     [saveTelegramDisableCode.reducerPath]: saveTelegramDisableCode.reducer,
+    [exposure.reducerPath]: exposure.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -67,6 +69,7 @@ export const store = configureStore({
   .concat(inPlayEvent.middleware)
   .concat(telegramOtpVerification.middleware)
   .concat(saveTelegramDisableCode.middleware)
+  .concat(exposure.middleware)
   ,
 })
 
