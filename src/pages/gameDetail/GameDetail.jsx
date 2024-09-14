@@ -106,7 +106,7 @@ const [checkBookMaker,setBookMaker]=useState(0)
     setIsFancy(false)
     setBetPlaceData((prev) => {
       return {
-        ...prev, ...val, market_id:selectionId,
+        ...prev, ...val, market_id:val?.market_id,
       }
     })
   }
@@ -355,7 +355,7 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
          
             {oddsDataSta?.OtherMarketList?.length ?
               oddsDataSta?.OtherMarketList?.map((item, i) => {
-                
+                console.log(item,"item")
                 return (
                   <GameDetailCollapse checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} prevOdd={item}  fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
                 )
@@ -408,41 +408,4 @@ export default GameDetail;
 
 
 
-// is_back
-// : 
-// "1"
-// market_id
-// : 
-// "1.232968769"
-// match_id
-// : 
-// "33583716"
-// odds
-// : 
-// "34"
-// selection_id
-// : 
-// 37302
-// stack
-// : 
-// 100
 
-
-// is_back
-// : 
-// "1"
-// market_id
-// : 
-// "1.232968768"
-// match_id
-// : 
-// 33583716
-// odds
-// : 
-// "34"
-// selection_id
-// : 
-// 37302
-// stack
-// : 
-// 100
