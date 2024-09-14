@@ -165,7 +165,7 @@ const [checkBookMaker,setBookMaker]=useState(0)
 const [selectionId2, setSelectionId] = useState("")
 
 const profithandler = (stack, odds, is_back, eventId) => {
-  
+  console.log(eventId,"eventid")
 
   const stackWin = odds == 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
   const findIndex = ((index) => {
@@ -315,7 +315,7 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
     trig({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
   }
   betHistoryRef = trigFun
-  
+  console.log(betPlaceData,"betPlacedata")
   return (
     <>
       <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={

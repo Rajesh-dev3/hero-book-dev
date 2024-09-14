@@ -127,6 +127,7 @@ const GameDetailCollapse = ({
                       selectionId={list?.selectionId}
                       matchName={list?.selectionName}
                       lay={0}
+                      marketId={odddata?.market_id}
                       betPlaceHandler={betPlaceHandler}
                       index={index}
                       item={oddsColor[index + 3]}

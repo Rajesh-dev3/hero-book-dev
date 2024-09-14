@@ -17,7 +17,6 @@ const DetailOdds = ({bg,prevOddRunners,visiblePrice,visible, selectionId, fancy,
       //     setColorChange(bg)
       // }, [prevOddRunners,oddsValue])
       
-  
   return (
     <div className={`${bg} ${visible && "invisible" }  market-odd-box ${item}`} key={item} style={{ display: display, minHeight: height, borderLeft: border ? "1px solid #c7c8ca" : "", }}
       onClick={() => {
