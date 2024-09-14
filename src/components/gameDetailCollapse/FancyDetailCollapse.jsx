@@ -11,7 +11,6 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
   const oddsColor = ["back","back1","back2","lay","lay1","lay2"]
   const [fancyRunPostioin, setFancyRunPostioin] = useState([])
   const [modalOpen2, setModalOpen2] = useState(false)
-  const isMobile = useMediaQuery("(max-width:780px)")
   const closeModal = () => {
     setModalOpen2(false)
   };
@@ -70,7 +69,6 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
       </div>
 
       {odddata?.map((item,index)=>{
-        console.log(item?.scorePostion,"item?.scorePostion")
         let checkScorePostion = item?.scorePostion
         const findSelectionId =  profitLoss?.map((elm) => {
           if (elm?.marketId == collapseName) {

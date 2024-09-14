@@ -25,7 +25,7 @@ const userName= localStorage.getItem("user_name")
               <th >Trade</th>
             </tr>
             {
-              isLoading? <BetLoader/>:
+              isLoading? <BetLoader/>: data?.data?.data?.length ? 
             data?.data?.data?.map((item) => {
               return (
                 
@@ -36,7 +36,7 @@ const userName= localStorage.getItem("user_name")
                   <td >{item?.trade}</td>
                 </tr>
               )
-            })
+            }):"No data"
           }
 
           </tbody>

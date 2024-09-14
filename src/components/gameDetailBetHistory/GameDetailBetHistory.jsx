@@ -22,7 +22,6 @@ const GameDetailBetHistory = ({data}) => {
           <tbody>
             {data?.map((item)=>{
               return(
-
             <tr key={item?.marketName+item?.market_id}><td className={`text-left pl-[5px] ${item?.is_back ==1?"back":"lay"}`}>{item?.selectionName || item?.fancy_name}</td>
             <td className={`text-center ${item?.is_back ==1?"back":"lay"}`}>{item?.is_back ==1?"Back":"Lay"}</td>
             <td className={`text-center ${item?.is_back ==1?"back":"lay"}`}>{item?.odds || item?.run}</td>

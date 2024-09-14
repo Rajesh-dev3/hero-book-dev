@@ -28,14 +28,13 @@ const GameDetailCollapse = ({
   betPlaceHandler
 }) => {
   const oddsColor = ["back", "back1", "back2", "lay", "lay1", "lay2"];
-
   if (collapseName !== "To Win the Toss") {
     return (
       <div className="game-market market-4">
         <div className="market-title">
           <span>{collapseName}</span>
         </div>
-        <div className="market-header">
+        <div className="market-header2" >
           <div className="odds-row-container flex items-center detail-row">
             <div className="odds-row-left-col remove-top-border px-[5px]">
               <p>
@@ -53,24 +52,22 @@ const GameDetailCollapse = ({
           </div>
         </div>
         {odddata?.runner_json?.map((list, ind) => {
-          const findSelectionId = profitLoss?.find(item => item?.selectionId === list?.selectionId)?.winLoss || 0;
 
-          const findFancySelection = checkFancy
-            ? profitLoss?.find(elm => elm?.marketId === odddata?.market_id && elm.selectionId === list?.selectionId)?.winLoss || 0
+          const findFancySelection = !checkFancy
+            ? profitLoss?.find(elm => elm?.marketId == odddata?.market_id && elm.selectionId === list?.selectionId)?.winLoss || 0
             : 0;
-
-          const displayValue = (findSelectionId + (list?.WinAndLoss || 0)).toFixed(2);
-          const formattedValue = checkFancy ? findFancySelection + displayValue : displayValue;
-
+            const displayValue = (findFancySelection + (list?.WinAndLoss || 0)).toFixed(2);
+         
+          
           return (
             <div className="odds-row-container flex items-center detail-row" key={list?.selectionName}>
               <div className="odds-row-left-col px-[5px] remove-top-border">
                 {list?.selectionName}
                 <span
-                  style={{ color: formattedValue > 0 ? "green" : "red" }}
+                  style={{ color: displayValue > 0 ? "green" : "red" }}
                   className="profit-loss"
                 >
-                  {formattedValue != 0 ? formattedValue :""}
+                  {displayValue != 0 ? displayValue :""}
                 </span>
               </div>
 

@@ -25,6 +25,7 @@ const GameDetail = () => {
   const [odddata, setOdddata] = useState();
   const [fancyData, setFancyData] = useState()
   const [prevState, setPrevState] = useState();
+  const [profitLoss, setProfitLoss] = useState([])
 
   const openBetModuleHandler = (val) => {
     setOpenBetPlaceModule(val)
@@ -113,7 +114,7 @@ const [checkBookMaker,setBookMaker]=useState(0)
     setBetPlaceData((prev)=>{
       return{
         ...prev,market_id:checkBookMaker? `${selectionId}_B`:selectionId,
-        match_id:checkBookMaker? String(matchId):Number(matchId)
+        match_id:checkBookMaker? String(matchId):String(matchId)
 
       }
     })
@@ -157,13 +158,14 @@ const [checkBookMaker,setBookMaker]=useState(0)
     setModalOpen2(true)
   }
   const [checkFancy, setCheckFancy] = useState(false)
-  const [profitLoss, setProfitLoss] = useState([])
+
 
 
 
 const [selectionId2, setSelectionId] = useState("")
 
 const profithandler = (stack, odds, is_back, eventId) => {
+  
 
   const stackWin = odds == 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
   const findIndex = ((index) => {
@@ -174,12 +176,52 @@ const profithandler = (stack, odds, is_back, eventId) => {
       // return eventId?.length ? eventId[index]?.selectionId : null
     }
   })
-
+  // const obj = [
+  //   {
+  //     selectionId: findIndex(0),
+  //     marketName:eventId?.runner_json?.[0]?.selectionName,
+  //     marketId:checkFancy?  eventId?.market_id:eventId?.runner_json?.[0]?.selectionName,
+  //     winLoss: stack
+  //           ? (odds == 0 
+  //                     ? -Number(stack) 
+  //                     : (is_back == 0 
+  //                         ? -Number(stackWin) 
+  //                         : Number(stackWin))
+  //                   )
+  //                 : ""
+  //   },
+  //   {
+  //     selectionId: findIndex(1),
+  //     marketName:eventId?.runner_json?.[1]?.selectionName,
+  //     marketId:  checkFancy?  eventId?.market_id:eventId?.runner_json?.[1]?.selectionName ,
+  //     winLoss: stack
+  //           ? (odds == 0 
+  //               ? -Number(stack) 
+  //               : (is_back == 1 
+  //                   ? -Number(stack) 
+  //                   : Number(stack))
+  //             )
+  //           : ""
+  //   },
+  //   {
+  //     selectionId: findIndex(2),
+  //     marketName:eventId?.runner_json?.[2]?.selectionName,
+  //     marketId:checkFancy?  eventId?.market_id:eventId?.runner_json?.[2]?.selectionName,
+  //     winLoss: stack
+  //                 ? (odds == 0 
+  //                     ? -Number(stack) 
+  //                     : (is_back == 1 
+  //                         ? -Number(stack) 
+  //                         : Number(stack))
+  //                   )
+  //                 : ""
+  //   }
+  // ];
   const obj = [
     {
       selectionId: findIndex(0),
       marketName:eventId?.runner_json?.[0]?.selectionName,
-      marketId:checkFancy?  eventId?.market_id:eventId?.runner_json?.[0]?.selectionName,
+      marketId:!checkFancy?  eventId?.market_id:eventId?.runner_json?.[0]?.selectionName,
       winLoss: stack
             ? (odds == 0 
                       ? -Number(stack) 
@@ -192,7 +234,7 @@ const profithandler = (stack, odds, is_back, eventId) => {
     {
       selectionId: findIndex(1),
       marketName:eventId?.runner_json?.[1]?.selectionName,
-      marketId:  checkFancy?  eventId?.market_id:eventId?.runner_json?.[1]?.selectionName ,
+      marketId:  !checkFancy?  eventId?.market_id:eventId?.runner_json?.[1]?.selectionName ,
       winLoss: stack
             ? (odds == 0 
                 ? -Number(stack) 
@@ -205,7 +247,7 @@ const profithandler = (stack, odds, is_back, eventId) => {
     {
       selectionId: findIndex(2),
       marketName:eventId?.runner_json?.[2]?.selectionName,
-      marketId:checkFancy?  eventId?.market_id:eventId?.runner_json?.[2]?.selectionName,
+      marketId:!checkFancy?  eventId?.market_id:eventId?.runner_json?.[2]?.selectionName,
       winLoss: stack
                   ? (odds == 0 
                       ? -Number(stack) 
@@ -216,11 +258,11 @@ const profithandler = (stack, odds, is_back, eventId) => {
                   : ""
     }
   ];
-  
   setProfitLoss(obj)
   
   
 }
+
 
 const fancyProfitLoss= (stack,odds,is_back,eventId,eventName,minStack,maxStack)=>{
   const obj = [   {
@@ -259,6 +301,7 @@ useEffect(() => {
       fancyProfitLoss(fancyBetPlaceData?.stack, fancyBetPlaceData?.odds, fancyBetPlaceData?.is_back,profitLoss[0]?.selectionId , profitLoss[0]?.marketId,profitLoss[0]?.minStack,profitLoss[0]?.maxStack)
     }
   }
+  
 }, [fancyBetPlaceData])
 
 const [trig,{data:betHistory}]=useBetListMutation()
@@ -312,8 +355,9 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
          
             {oddsDataSta?.OtherMarketList?.length ?
               oddsDataSta?.OtherMarketList?.map((item, i) => {
+                
                 return (
-                  <GameDetailCollapse checkFancy={true} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} prevOdd={item}  fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
+                  <GameDetailCollapse checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} prevOdd={item}  fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
                 )
               }):""
             }
@@ -361,3 +405,44 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
 };
 
 export default GameDetail;
+
+
+
+// is_back
+// : 
+// "1"
+// market_id
+// : 
+// "1.232968769"
+// match_id
+// : 
+// "33583716"
+// odds
+// : 
+// "34"
+// selection_id
+// : 
+// 37302
+// stack
+// : 
+// 100
+
+
+// is_back
+// : 
+// "1"
+// market_id
+// : 
+// "1.232968768"
+// match_id
+// : 
+// 33583716
+// odds
+// : 
+// "34"
+// selection_id
+// : 
+// 37302
+// stack
+// : 
+// 100

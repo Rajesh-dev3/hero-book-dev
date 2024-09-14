@@ -91,7 +91,7 @@ const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betP
           </p> 
           :
           profitLoss?.map((elm)=>{
-            if(elm?.marketId){
+            if(elm?.marketName){
               if(checkFancy == true){
 
                   if(elm?.marketName){
@@ -105,7 +105,7 @@ const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betP
 
                 return(
                   
-                  <p>{elm?.marketId}  <span style={{color:elm?.winLoss>0?"green":"red"}}>{elm?.winLoss && elm?.winLoss?.toFixed(2)}</span></p>
+                  <p>{elm?.marketName}  <span style={{color:elm?.winLoss>0?"green":"red"}}>{elm?.winLoss && elm?.winLoss?.toFixed(2)}</span></p>
                 )
               }
             }
