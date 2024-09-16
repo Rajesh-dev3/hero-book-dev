@@ -34,16 +34,22 @@
                 font-weight: 600;
                 font-size: 13px;
                 text-transform: uppercase;
-                background-color: rgba(0, 136, 204, .647);
+              
                 color: $white;
+                background: $black;
+border: none;
 
+outline: none;
                 @include media(phone) {
                     width: 30%;
                 }
-
-                &:last-child {
-                    background: $black;
-                }
+&:focus{
+box-shadow: none;
+}
+             
+            }
+            .active{
+                background-color: rgba(0, 136, 204, .647);
             }
         }
     }

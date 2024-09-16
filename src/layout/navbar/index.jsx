@@ -22,11 +22,7 @@ const Navbar = () => {
     setSearchValue("");
   };
 
-  const [trigger, { data }] = useWalletBalanceMutation()
-  useEffect(() => {
-    trigger()
-  }, [])
-  exposureRef = trigger
+
   const isMobile = useMediaQuery("(max-width:780px)")
   const [Exposure, setExposure] = useState({
     balance: true,
@@ -37,11 +33,42 @@ const Navbar = () => {
     setModalOpen(false)
   };
   const handleOpen = () => setModalOpen(true);
+  
+  const [trigger, { data }] = useWalletBalanceMutation()
+  const [exposureData, setExposureData] = useState(null)
+  
+  useEffect(() => {
+    trigger()
+    const timer = setInterval(() => {
+      trigger()
+    }, 8000);
+    return () => clearInterval(timer);
+   
+  }, [])
+useEffect(() => {
+  if (data?.message === "Success.") {
+    setExposureData(prevData => {
+      // Update only if the data is different
+      if (
+        !prevData ||
+        prevData.data?.balance != data.data?.balance ||
+        prevData.data?.liability != data.data?.liability
+      ) {
+        return data;
+      }
+      return prevData;
+    });
+  }
+  
+}, [data])
+exposureRef = trigger
+
+
   return (
     <>
          <ModalComp
-isOpen={modalOpen}
-onClose={closeModa2}
+          isOpen={modalOpen}
+          onClose={closeModa2}
        content={<ExposureTable closeModa2={closeModa2}/>}
       />
       {isMobile ? <div className="mobile-navbar">
@@ -57,13 +84,13 @@ onClose={closeModa2}
           </div>
           <div className="balance-nav">
             {!Exposure?.balance ? "" :
-              <div className="balance-user">Balance : <span>{data?.data?.balance}</span></div>
+              <div className="balance-user">Balance : <span>{exposureData?.data?.balance}</span></div>
             }
             <div className="user-info">
               {!Exposure?.exposure
                 ? "" :
                 <div className="exp" onClick={handleOpen}>
-                  Exp: <span>{data?.data?.liability}</span>
+                  Exp: <span>{exposureData?.data?.liability }</span>
                 </div>
               }
               <div className="user-detail">
@@ -163,7 +190,7 @@ onClose={closeModa2}
                   Balance
                 </span>
                   <span className="bold-b">
-                    :{data?.data?.balance || 0}
+                    :{exposureData?.data?.balance}
 
                   </span>
                 </span>
@@ -173,7 +200,7 @@ onClose={closeModa2}
                   </span>
                   <span className="bold-b">
 
-                    :{data?.data?.liability || 0}
+                    :{exposureData?.data?.liability || 0}
                   </span>
                 </span>
               </li>

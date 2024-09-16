@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 
-const DetailOdds = ({bg,prevOddRunners,visiblePrice,visible, selectionId, fancy, fancyId, fancyStatus, marketId, matchName, lay, item, value, price, height, border, fun, index, display, betPlaceHandler }) => {
+const DetailOdds = ({bg,visiblePrice,visible, selectionId, fancy, fancyId, fancyStatus, marketId, matchName, lay, item, value, price, height, border, fun, index, display, betPlaceHandler }) => {
   let oddsValue = value != 0 && value != null ? value : "--"
   let oddsPrice = price != 0  && price != null  ?  price : "--"
 

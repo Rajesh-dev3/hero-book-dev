@@ -7,7 +7,7 @@ import ModalComp from "../modal/Modal";
 import { useState } from "react";
 import RunPosition from "../RunPosition";
 import CustomIcon from "../../assets/svg/Stairs";
-const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCheckFancy,fun,odddata,collapseName,betPlaceHandler}) => {
+const FancyDetailCollapse = ({prevFancy,profitLoss,fancyBetPlaceData,fancyProfitLoss,setCheckFancy,fun,odddata,collapseName,betPlaceHandler}) => {
   const oddsColor = ["back","back1","back2","lay","lay1","lay2"]
   const [fancyRunPostioin, setFancyRunPostioin] = useState([])
   const [modalOpen2, setModalOpen2] = useState(false)
@@ -102,8 +102,21 @@ const FancyDetailCollapse = ({profitLoss,fancyBetPlaceData,fancyProfitLoss,setCh
            
                 <DetailOdds display={"none"}/>
                 <DetailOdds display={"none"}/>
-                <DetailOdds fancy={true} fancyId={item?.SelectionId}  index={index} matchName={item?.RunnerName} lay={0} marketId={odddata?.market_id} betPlaceHandler={betPlaceHandler} item={oddsColor[3]} key={item?.selectionName} price={item?.LaySize1} value={item?.LayPrice1} height={44} border={true} fun={fun} fancyStatus={item?.fancyStatus}/>
-                <DetailOdds fancy={true} fancyId={item?.SelectionId} index={index} matchName={item?.RunnerName} lay={1} marketId={odddata?.market_id} betPlaceHandler={betPlaceHandler} item={oddsColor[0]} key={item?.selectionName} price={item?.BackSize1} value={item?.BackPrice1} height={44} border={true} fun={fun} fancyStatus={item?.fancyStatus}/>
+                <DetailOdds bg={
+                        item?.LaySize1 > prevFancy[index]?.LaySize1
+                          ? "odds-up-color"
+                          : item?.LaySize1 < prevFancy[index]?.LaySize1
+                          ? "odds-down-color"
+                          : ""
+                      } fancy={true} fancyId={item?.SelectionId}  index={index} matchName={item?.RunnerName} lay={0} marketId={odddata?.market_id} betPlaceHandler={betPlaceHandler} item={oddsColor[3]} key={item?.selectionName} price={item?.LaySize1} value={item?.LayPrice1} height={44} border={true} fun={fun} fancyStatus={item?.fancyStatus}/>
+                <DetailOdds fancy={true}
+                 bg={
+                  item?.BackSize1 > prevFancy[index]?.BackSize1
+                    ? "odds-up-color"
+                    : item?.BackSize1 < prevFancy[index]?.BackSize1
+                    ? "odds-down-color"
+                    : ""
+                } fancyId={item?.SelectionId} index={index} matchName={item?.RunnerName} lay={1} marketId={odddata?.market_id} betPlaceHandler={betPlaceHandler} item={oddsColor[0]} key={item?.selectionName} price={item?.BackSize1} value={item?.BackPrice1} height={44} border={true} fun={fun} fancyStatus={item?.fancyStatus}/>
                 <DetailOdds display={"none"}/>
                 <DetailOdds display={"none"}/>
             <div className="fancy-min-max">

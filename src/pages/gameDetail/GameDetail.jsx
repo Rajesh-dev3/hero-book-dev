@@ -24,6 +24,7 @@ const GameDetail = () => {
   const [openBetPlaceModule, setOpenBetPlaceModule] = useState(false)
   const [odddata, setOdddata] = useState();
   const [fancyData, setFancyData] = useState()
+  const [prevFancy, setPrevFancy] = useState()
   const [prevState, setPrevState] = useState();
   const [profitLoss, setProfitLoss] = useState([])
 
@@ -58,18 +59,23 @@ const GameDetail = () => {
     }
     if (fancy?.message === "Success") {
       if (!fancyData) {
-        setFancyData(fancy?.data);
+        setPrevFancy(fancy?.data);
       } else {
-        setFancyData(fancyData);
+        setPrevFancy(fancyData);
       }
       setFancyData(fancy?.data);
     }
 
   }, [data, fancy])
 
-  const normalFancy = fancyData?.filter((item) => item?.fancy_category === "normal" ? item : [])
+  const normalFancy = fancyData?.filter((item) => item?.fancy_category === "normal")
   const overbyover = fancyData?.filter((item) => item?.fancy_category === "overbyover")
   const ballbyball = fancyData?.filter((item) => item?.fancy_category === "ballbyball")
+
+  ///prev fancy
+  const prevNormalFancy = prevFancy?.filter((item) => item?.fancy_category === "normal")
+  const prevOverbyover = prevFancy?.filter((item) => item?.fancy_category === "overbyover")
+  const prevBallbyball = prevFancy?.filter((item) => item?.fancy_category === "ballbyball")
 
 
   const date = moment(
@@ -165,7 +171,7 @@ const [checkBookMaker,setBookMaker]=useState(0)
 const [selectionId2, setSelectionId] = useState("")
 
 const profithandler = (stack, odds, is_back, eventId) => {
-  console.log(eventId,"eventid")
+
 
   const stackWin = odds == 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
   const findIndex = ((index) => {
@@ -315,7 +321,7 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
     trig({"limit":10,"match_id":matchId,"market_id":"0","fancy_id":0,"pageno":1})
   }
   betHistoryRef = trigFun
-  console.log(betPlaceData,"betPlacedata")
+
   return (
     <>
       <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={
@@ -344,18 +350,17 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
               <GameDetailCollapse checkBookmaker={checkBookMaker} min={true} checkFancy={false} setBookMaker={setBookMaker} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy} profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} collapseName="Bookmaker" prevOdd={prevState?.BookerMakerMarket} odddata={oddsDataSta?.BookerMakerMarket} fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
               : ""}
             {normalFancy?.length ?
-              <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="Normal" odddata={normalFancy} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} />
+              <FancyDetailCollapse checkFancy="fancy" prevFancy={prevNormalFancy} profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="Normal" odddata={normalFancy} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} />
               : ""}
             {overbyover?.length ?
-              <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="overbyover" odddata={overbyover} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
+              <FancyDetailCollapse checkFancy="fancy" prevFancy={prevOverbyover} profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="overbyover" odddata={overbyover} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
             }
             {ballbyball?.length ?
-              <FancyDetailCollapse checkFancy="fancy" profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="ballbyball" odddata={ballbyball} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
+              <FancyDetailCollapse checkFancy="fancy" prevFancy={prevBallbyball} profitLoss={profitLoss} fancyBetPlaceData={fancyBetPlaceData} fancyProfitLoss={fancyProfitLoss} setCheckFancy={setCheckFancy} collapseName="ballbyball" odddata={ballbyball} betPlaceHandler={fancyBetPlaceHandler} fun={isMobile ? openModal : openBetModuleHandler} /> : ""
             }
          
             {oddsDataSta?.OtherMarketList?.length ?
               oddsDataSta?.OtherMarketList?.map((item, i) => {
-                console.log(item,"item")
                 return (
                   <GameDetailCollapse checkFancy={false} profithandler={profithandler} setSelectionId={setSelectionId} selectionId={selectionId2} setCheckFancy={setCheckFancy}  profitLoss={profitLoss} betPlaceData={betPlaceData} setProfitLoss={setProfitLoss} key={item?.marketName + i} collapseName={item?.marketName} odddata={item} prevOdd={item}  fun={isMobile ? openModal : openBetModuleHandler} betPlaceHandler={betPlaceHandler} />
                 )

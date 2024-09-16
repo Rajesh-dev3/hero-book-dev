@@ -6,6 +6,7 @@ import { useGetEventDetailsMutation } from '../../services/sport/eventDetail'
 import { toast } from 'react-toastify'
 // style css
 import "./style.scss"
+import BetLoader from '../loader/BetLoader'
 const EditStack = ({ closeModa2 }) => {
     const [trigger, { data, isLoading }] = useGetEventDetailsMutation()
     const [matchStackArray, setMatchStackArray] = useState({})
@@ -57,7 +58,8 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
         } else if (stakeUpdateResponse?.error == true) {
             toast.error(stakeUpdateResponse?.message)
         }
-    }, [stakeUpdateResponse])
+    }, [stakeUpdateResponse]) 
+    const [tabOpenValue, setTabOpenValue] = useState(0)
     return (
         <section className='edit-stack'>
             <div className="heading">
@@ -68,29 +70,31 @@ const requestData = matchId?{ "match_id": matchId, "sport_id": sportId }:{"match
             </div>
             <div className="detail-sec">
                 <div className="button-sec">
-                    <button className='btn'>Game Button</button>
-                    <button className='btn'>Casino Button</button>
+                    <button className={`btn ${tabOpenValue == 0?"active":""}`} onClick={()=>setTabOpenValue(0)}>Game Button</button>
+                    <button className={`btn ${tabOpenValue == 1?"active":""}`} onClick={()=>setTabOpenValue(1)}>Casino Button</button>
                 </div>
             </div>
-            {isLoading ? "Loading..." :
-                <div className="price-sec">
-                    <div className="list-name">
-                        <p>Price Label:</p>
-                        <p>Price Value:</p>
-                    </div>
-                    {Object.keys(matchStackArray).map((elm, index) => {
-                        return (
+            {
+             tabOpenValue == 0 ?  isLoading ? <BetLoader/> :
+             <div className="price-sec">
+                 <div className="list-name">
+                     <p>Price Label:</p>
+                     <p>Price Value:</p>
+                 </div>
+                 {Object.keys(matchStackArray).map((elm, index) => {
+                     return (
 
-                            <div className="edit-inputs" key={matchStackArray[elm] + index}>
-                                <input type="text" value={formatCompactNumber(matchStackArray[elm])} />
-                                <input type="text" autoFocus name={elm} value={matchStackArray[elm]} onChange={updateMatchStack} />
-                            </div>
-                        )
-                    })}
+                         <div className="edit-inputs" key={matchStackArray[elm] + index}>
+                             <input type="text" value={formatCompactNumber(matchStackArray[elm])} />
+                             <input type="text" autoFocus name={elm} value={matchStackArray[elm]} onChange={updateMatchStack} />
+                         </div>
+                     )
+                 })}
 
 
-                </div>
+             </div>: <div className="price-sec">No Data</div>
             }
+         
 
             <div className="submit">
                 <button onClick={stakeUpdateHandler} className='btn'>Update</button>

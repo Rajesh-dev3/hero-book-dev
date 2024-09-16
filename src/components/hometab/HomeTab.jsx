@@ -1,20 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useGetSportListMutation } from "../../services/sport/sportList.js"
-import Bat from "../../assets/svg/bat.jsx"
-import Tennis from "../../assets/svg/tennis.jsx"
+
 // import greyhound from '../../assets/game-icon/greyhound.png'
 import CasinoSvg from "../../assets/svg/casino.jsx"
-import HorseRacing from "../../assets/svg/horseRacing.jsx"
-import TabbleTennisSvg from "../../assets/svg/tableTennis.jsx"
-import Kabaddisvg from "../../assets/svg/Kabaadi.jsx"
-import BasketballSvg from "../../assets/svg/Basketball.jsx";
-import AmericanFooterballSvg from "../../assets/svg/AmericanFooteball.jsx";
-import ValleyBallSvg from "../../assets/svg/ValleyBall.jsx";
+
 import { useNavigate } from "react-router-dom";
 //styles
 import "./styles.scss";
 import { americanfootball, basketball, batminton, cricket, football, greyhound, horseRiding, snooker, tabletenis, vollyball } from "../../assets/index.jsx";
-import Footer from "../../layout/footer/index.jsx";
 const HomeTab = ({ setActiveTab, setName, name }) => {
 
   const nav = useNavigate()
@@ -48,12 +41,12 @@ const HomeTab = ({ setActiveTab, setName, name }) => {
     207: horseRiding,
   }
 
-  const getTitle = (tabKey) => {
-    let result = "";
-    result = tabKey && tabKey.sport_id && tabKey.sport_id === 1 ? "Football" : tabKey.name;
-    return result;
+  // const getTitle = (tabKey) => {
+  //   let result = "";
+  //   result = tabKey && tabKey.sport_id && tabKey.sport_id === 1 ? "Football" : tabKey.name;
+  //   return result;
  
-  };
+  // };
 
   const sportListArray = [
     {
@@ -105,7 +98,7 @@ const HomeTab = ({ setActiveTab, setName, name }) => {
 
   const containerRef = useRef(null);
   const itemRefs = useRef([]);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollToItem = (index) => {
     const container = containerRef.current;
