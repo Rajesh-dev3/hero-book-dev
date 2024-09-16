@@ -41,7 +41,7 @@ const Navbar = () => {
     trigger()
     const timer = setInterval(() => {
       trigger()
-    }, 8000);
+    }, 5000);
     return () => clearInterval(timer);
    
   }, [])
