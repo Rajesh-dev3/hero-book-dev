@@ -149,7 +149,7 @@ exposureRef = trigger
 
           <div className="news">
             <Marquee speed={50}>
-              {data?.data?.site_message}</Marquee></div>
+              {exposureData?.data?.site_message}</Marquee></div>
         </div>
 
       </div>
@@ -210,7 +210,7 @@ exposureRef = trigger
             </ul>
           </div>
           <div className="news"><Marquee speed={50}>
-            {data?.data?.site_message}</Marquee></div>
+            {exposureData?.data?.site_message}</Marquee></div>
         </div>
       }
 
