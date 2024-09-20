@@ -5,12 +5,14 @@ import { useParams } from 'react-router-dom'
 const CasinoLobby = () => {
   const [url, setUrl] = useState("")
   const [trigger, { data }] = useAviatorMutation()
-  const { id } = useParams()
+  const { id ,name} = useParams()
   let count = 0
   useEffect(() => {
     if(count ==0){
 
-      trigger({ "gameId": String(id) })
+      trigger({ "gameId": String(id),
+        // "providerName":name, 
+       })
       count++
     }
   }, [])
