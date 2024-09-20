@@ -14,6 +14,7 @@ const liveCasinoPage = "/livecasino"
 const slotCasinoPage = "/slot"
 const fantasyCasinoPage = "/fantasy"
 const casinoResultsPage = "/casino-results"
+const unSetteledBet = "/un-setteled-bet"
 // const DepositPage = "/deposit"
 // const liveCasinoBet = "/live-casino-bet"
-export {casinoResultsPage,activityLog,fantasyCasinoPage,secureAuth,slotCasinoPage,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}
+export {unSetteledBet,casinoResultsPage,activityLog,fantasyCasinoPage,secureAuth,slotCasinoPage,liveCasinoPage,accountStatement,gameDetail,casino,home,currentBet,login,aviatorLobby,casinoLobby,allSport,changePasswordPage}

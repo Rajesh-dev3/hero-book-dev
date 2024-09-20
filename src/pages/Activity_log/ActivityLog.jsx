@@ -40,7 +40,7 @@ const ActivityLog = () => {
   })
   }, [])
   
-console.log(data ,"kaka")
+
   return (
     <div className='shadow-container'>
       <PagesTitle title={"Activity Log"} />

@@ -5,6 +5,7 @@ import { Link, useLocation, useParams } from 'react-router-dom'
 import { useMediaQuery } from '../../useMediaQuery'
 // styles 
 import "./styles.scss"
+import { accountStatement, activityLog, changePasswordPage, currentBet, home, unSetteledBet } from '../../routes/PagesUrl'
 
 const SubNavbar = () => {
   const [trigger, { data }] = useGetSportListMutation()
@@ -102,7 +103,7 @@ const [newSPortArray, setNewSPortArray] = useState([])
     // Special case: Direct comparison for /aviator-lobby
 
 
-    const urList = ["/","/account-statement","/current-bet","/activity_log","/casino-results","/secure-auth","/changepassword"]
+    const urList = [unSetteledBet,home,accountStatement,currentBet,activityLog,"/casino-results","/secure-auth",changePasswordPage]
     
 if(isMobile){
   return pathname === itemLink

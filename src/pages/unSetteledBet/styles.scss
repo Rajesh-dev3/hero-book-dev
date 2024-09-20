@@ -1,0 +1,159 @@
+@import "../../styles/variables/mixins";
+@import "../../styles/variables/colors";
+
+.radio-input {
+    &:checked {
+        background-color: $black;
+    }
+}
+
+.current-bet-form {
+    margin-bottom: 15px;
+    @include media(phone) {
+    font-size: 12px;
+    }
+    .select-area {
+        width: 100%;
+        gap: 20px !important;
+
+        @include media(phone) {
+            flex-direction: column;
+            gap: 25px !important;
+        }
+
+        .select-menu {
+            @include media(phone) {
+                width: 100%;
+
+            }
+
+            .react-datepicker-wrapper {
+                @include media(phone) {
+                    width: 100%;
+
+                }
+
+            }
+
+        
+        
+        }
+
+        .form-btn {
+            width: 155px;
+            @include media(phone) {
+                width: 100%;
+
+
+            }
+            .btn {
+                width: 100%;
+            }
+
+        }
+
+    }
+    .entries-container{
+        margin-top: 31px;
+    
+        gap: 20px;
+        @include media(phone) {
+        margin-top: 7px;
+        flex-direction: column;
+        gap: 2px;
+        }
+        .entries{
+            flex: 0 0 auto;
+            width: 16.66666667%;
+            @include media(phone) {
+                // justify-content: center;
+                width: 100%;
+             }
+     
+     }
+        
+        .all-back-lay{
+            width: 33.33333333%;
+            flex: 0 0 auto;
+            padding: 0px 6px 0px 10px;
+            @include media(phone) {
+           justify-content: center;
+           width: 100%; 
+        margin-bottom: 5px;}
+
+}
+        .soda-amount{
+            // margin-top: 10px;
+            flex: 0 0 auto;
+            width:25%;
+            @include media(phone) {
+                justify-content: center;
+                gap: 20px;
+                width: 100%; }
+        }
+.search{
+    width: 25%;
+
+    @include media(phone) {
+        justify-content: flex-start;
+    }
+    .searchField {
+        width: 100px;       
+        border: 1px solid #ccc;
+        padding: 6px 10px 5px 15px;
+        outline: none;
+        @include media(phone) {
+            width: 150px;
+            border-radius: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        &::placeholder {
+            color: #999999; /* Change this to your desired color */
+            opacity: 1;
+            font-weight: 400; /* Adjusts the opacity, can be from 0 to 1 */
+          }
+        
+    }
+}
+    }
+
+}
+
+.mt-2 {
+    @include media(phone) {
+        overflow: hidden;
+        overflow-x: scroll;
+
+
+    }
+
+
+}
+
+    .mt-2 {
+        min-height: calc(100vh - 350px);
+        overflow-x: scroll;
+                table {
+tr {
+    th{
+
+        white-space: nowrap;
+        background-color: #384b5e;
+        color: $white;
+        font-size: 16px;
+        padding: 11px 12px;
+        border: 1px solid #c7c8ca;
+        @include media (phone){
+            font-size: 11px;
+        }
+
+    }
+    td {
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid #c7c8ca;
+        @include media (phone){
+            font-size: 11px;
+        }
+    }
+}}}

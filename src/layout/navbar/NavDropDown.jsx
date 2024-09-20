@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { StyledCheckbox, StyledMenuItem } from './styled';
 import { Link } from 'react-router-dom';
-import { activityLog, accountStatement, currentBet, changePasswordPage, secureAuth, casinoResultsPage } from '../../routes/PagesUrl';
+import { activityLog, accountStatement, currentBet, changePasswordPage, secureAuth, casinoResultsPage, unSetteledBet } from '../../routes/PagesUrl';
 import EditStack from '../../components/EditStack/EditStack';
 import ModalComp from '../../components/modal/Modal';
 // import { BpCheckbox } from '@mui/icons-material';
@@ -78,6 +78,10 @@ const NavDropDown = ({ setExposure, exposure }) => {
         <Link to={activityLog}>
 
           <StyledMenuItem onClick={handleClose}>Activity Log</StyledMenuItem>
+        </Link>
+        <Link to={unSetteledBet}>
+
+          <StyledMenuItem onClick={handleClose}>Un Setteled Bet</StyledMenuItem>
         </Link>
         {/* <Link to={DepositPage}>
 
