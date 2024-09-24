@@ -6,7 +6,7 @@ import { dynamicBaseQuery } from '../badRequestHandler/BadRequestHandler'
 const baseQuery = async (args, api, extraOptions) => {
   const token = localStorage.getItem("token");
 const result = await fetchBaseQuery({
-  baseUrl: 'https://exchthanos.com/api/',
+  baseUrl: 'https://bigbetexchange.com/api/',
   prepareHeaders: (headers) => {
     if (token) {
       headers.set('Authorization', `Bearer ${token}`);
