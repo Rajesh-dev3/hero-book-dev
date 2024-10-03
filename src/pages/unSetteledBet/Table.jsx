@@ -1,3 +1,4 @@
+import moment from "moment";
 
 const Table = ({data}) => {
   return (
@@ -50,6 +51,13 @@ const Table = ({data}) => {
           </tr>
         </thead>
         {data?.map((item,index)=>{
+           const date = moment(
+            parseInt(
+              item?.place_date && item?.place_date ? item?.place_date : null,
+            ) * 1000,
+          )
+            .utcOffset("+05:30")
+            .format("DD/MM/YYYY HH:mm:ss ")
           return(
         <tr role="row" key={index}>
           <td role="cell" className="border-[1px] px-[8px] py-[5px]">{index+1}</td>
@@ -60,7 +68,7 @@ const Table = ({data}) => {
         <td role="cell" className={`border-[1px] px-[8px] py-[5px] text-left `}>{item?.side}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.rate}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.amount}</td>
-        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.place_date}</td>
+        <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{date}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-left">{item?.match_date}</td>
         </tr>
           )
