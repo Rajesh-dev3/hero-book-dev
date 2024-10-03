@@ -18,7 +18,7 @@ const UnSetteledBet = () => {
       <Filter  allBack={allBack} setAllBack={setAllBack}/>
       <div className="account-table">
      
-        <Table data={data?.data?.data} />
+        <Table data={allBack=="Lay"?[]: data?.data?.data} />
       
       </div>
     </div>

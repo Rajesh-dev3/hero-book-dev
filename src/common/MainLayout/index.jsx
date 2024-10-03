@@ -68,7 +68,6 @@ const MainLayout = () => {
   const urlList = ["/account-statement","/current-bet","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
  
   const checkBlink =  urlList.includes(pathname)
-  console.log(inplayMatches,"inplayMatches")
   return (
     <div className='main-layout'>
       <div className="layout-nav-col">

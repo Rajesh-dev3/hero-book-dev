@@ -122,21 +122,14 @@ if(isMobile){
     {!checkUrl && 
     <div className="subnavbar-container">
       <ul>
-      
-      
-
         {newSPortArray?.map((item,index) => {
           if(item?.name != "Casino" && item != null){
-            
             return(
-              
               <Link to={item?.link} key={item?.name}  className={`${isActive(item?.link, pathname) ? 'tab-list-active' : 'tabs-list'}`}><li className={index==0?"p-left":""}>{item?.name == "Soccer"?"Football":item?.name}</li></Link>
             )
           }
         }
         )}
-
-
       </ul>
     </div>
     }
