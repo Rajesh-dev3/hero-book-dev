@@ -72,10 +72,10 @@ const GameDetail = () => {
   const overbyover = fancyData?.filter((item) => item?.fancy_category === "overbyover")
   const ballbyball = fancyData?.filter((item) => item?.fancy_category === "ballbyball")
 
-  ///prev fancy
-  const prevNormalFancy = prevFancy?.filter((item) => item?.fancy_category === "normal")
-  const prevOverbyover = prevFancy?.filter((item) => item?.fancy_category === "overbyover")
-  const prevBallbyball = prevFancy?.filter((item) => item?.fancy_category === "ballbyball")
+    ///prev fancy
+    const prevNormalFancy = prevFancy?.filter((item) => item?.fancy_category === "normal")
+    const prevOverbyover = prevFancy?.filter((item) => item?.fancy_category === "overbyover")
+    const prevBallbyball = prevFancy?.filter((item) => item?.fancy_category === "ballbyball")
 
 
   const date = moment(

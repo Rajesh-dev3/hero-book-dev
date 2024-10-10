@@ -20,6 +20,12 @@ const ScoreBoardCom = ({odddata,date,matchId}) => {
   }
   const two = data?.data?.length && data?.data[2]
   const zero = data?.data?.length && data?.data[0]
+
+  const scoreColor = {
+    6:"purple",
+    4:"green",
+    w:"red",
+  }
   return (
     <div className="score-board">
 
@@ -34,11 +40,12 @@ const ScoreBoardCom = ({odddata,date,matchId}) => {
       </div>
       <div className="score-col-right">    
          <p><span>{zero?.cb}</span></p>
-      <p className="ball">
-        {zero?.recentBalls?.[0]?.length ? zero?.recentBalls?.[0]?.map((item,i)=> <span key={item+i}>{item}</span>):"NA"}
+      <p className="ball" >
+        {zero?.recentBalls?.[0]?.length ? zero?.recentBalls?.[0]?.map((item,i)=> <span key={item+i} style={{background:scoreColor[item]}}>{item}</span>):"NA"}
        
       
-      </p></div>
+      </p>
+      </div>
  
     </div>
     </div>
