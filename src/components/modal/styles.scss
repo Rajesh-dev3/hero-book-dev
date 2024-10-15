@@ -22,7 +22,7 @@
   background-color: #fefefe;
   // padding: 20px;
   width: calc(100% - 10px);
-  margin-top: 5px;
+  margin-top: 0px;
   max-width: 600px;
   position: absolute;
   z-index: 1;
@@ -30,7 +30,7 @@
   width: 40%;
 
   @include media(phone) {
-    width: 98%;
+    width: 100%;
   }
 }
 
@@ -42,8 +42,11 @@
   font-size: 35px;
   font-weight: 100;
   cursor: pointer;
-  color: #aaa;
+  color: white;
   z-index: 222;
+  @include media(phone) {
+    top: -5px;
+  }
 }
 
 .close2:hover,

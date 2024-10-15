@@ -79,13 +79,14 @@ const SubNavbar = () => {
   
 
 const {pathname} = useLocation()
-const urlList = ["/account-statement","/current-bet","/activity_log","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
+const urlList = ["/","/account-statement","/current-bet","/activity_log","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
   const checkActiveUrl  = {Home:"/",Cricket:"/sport/4",Tennis:"/sport/2",Soccer:"/sport/1"}
 
-const urlCheck = isMobile && pathname?.split("/")[1]
-console.log(urlCheck,"/game-detail")
+const urlCheck = pathname?.split("/")[1]
+const urlList2 = ["/"]
   const checkUrl = isMobile && urlList.includes(pathname)
-
+  const checkUrl2 =  urlList2.includes(pathname)
+console.log(checkUrl2,"url1")
 // console.log(pathname.split("/")[2],"pathname")
   // const newSPortArray = [...data?.data,...casinoArray]
 const [newSPortArray, setNewSPortArray] = useState([])
@@ -118,9 +119,10 @@ if(isMobile){
   
     // General case: Split pathname and compare
   };
+  const checkUrlAndMobile = isMobile==false && urlCheck == "game-detail" 
   return (
     <>
-    {!checkUrl || urlCheck == "/game-detail" && 
+    {checkUrl ==false  && checkUrlAndMobile  &&
     <div className="subnavbar-container">
       <ul>
         {newSPortArray?.map((item,index) => {
@@ -135,6 +137,18 @@ if(isMobile){
     </div>
     }
 
+{checkUrl2 &&    <div className="subnavbar-container">
+      <ul>
+        {newSPortArray?.map((item,index) => {
+          if(item?.name != "Casino" && item != null){
+            return(
+              <Link to={item?.link} key={item?.name}  className={`${isActive(item?.link, pathname) ? 'tab-list-active' : 'tabs-list'}`}><li className={index==0?"p-left":""}>{item?.name == "Soccer"?"Football":item?.name}</li></Link>
+            )
+          }
+        }
+        )}
+      </ul>
+    </div>}
     </>
   )
 }

@@ -15,7 +15,7 @@ export const CustomAccordion = styled(Accordion)(({ theme }) => {
       ".MuiAccordionSummary-root": {
         height: "30px",
         minHeight: "30px !important",
-        backgroundColor: "black",
+        backgroundColor: "#0088CC",
         color: "white",
         margin: "0px 0 !important",
         padding:"0 9px !important",

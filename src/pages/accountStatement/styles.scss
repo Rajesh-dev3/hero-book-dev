@@ -155,9 +155,9 @@ width: 155px;
 
     .btn {
         width: 100%;
-        background-color: $black;
+        background-color: #0088CC;
         color: #FFFFFF;
-        border-color: $black;
+        border-color: #0088CC;
         height: 38px;
         padding: .375rem .75rem;
         font-size: 1rem;
@@ -190,11 +190,13 @@ width: 155px;
             tr {
                 th {
                     white-space: nowrap;
-                    background-color: #384b5e;
-                    color: $white;
+                    background-color: #f7f7f7  ;
+                    color: black;
                     font-size: 16px;
                     @include media (phone){
                         font-size: 11px;
+                        background-color: #384b5e;
+                        color: $white;
                         padding: 5px 7px !important;
 
                     }

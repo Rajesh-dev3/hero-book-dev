@@ -4,7 +4,7 @@
 .login-container {
     width: 100%;
     height:calc(100vh - 74px);
-    background-image: linear-gradient($black, #384b5e);
+    background-image: linear-gradient(#0088CC, #2C3E50);
 
     min-height: calc(100vh - 74px);
     @include media(phone) {
@@ -97,8 +97,8 @@ padding-top: 5px;
                     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
                     box-shadow: inset 0 1px 0 #ffffff26, 0 1px 1px rgba(0, 0, 0, .075);
                     width: 100%;
-                    background-color: $black;
-                    border-color: $black;
+                    background-color: #0088CC;
+                    border-color: #0088CC;
                     color: $white;
                     position: relative;
 
@@ -129,7 +129,7 @@ padding-top: 5px;
     }
 
     .login-footer {
-        background-color: $black;
+        background-color: #0088CC;
         bottom: 0;
         color: $white;
         left: 0;
@@ -137,6 +137,7 @@ padding-top: 5px;
         position: fixed;
         text-align: center;
         width: 100%;
+       
 
         ul {
             display: flex;

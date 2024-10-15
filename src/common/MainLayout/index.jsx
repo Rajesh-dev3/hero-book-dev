@@ -73,7 +73,7 @@ const MainLayout = () => {
       <div className="layout-nav-col">
         <Navbar />
         {!checkBlink && isMobile && pathname.split("/")[1] != "game-detail" &&
-          <div className={`w-full flex overflow-scroll gap-1`} style={{padding: "0 5px 5px"}}>
+          <div className={`w-full flex overflow-scroll gap-1  latest-new`} style={{padding: "0 5px 5px"}}>
             {inplayMatches?.map((item) => {
               return (
 

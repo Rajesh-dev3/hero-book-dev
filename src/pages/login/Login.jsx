@@ -106,6 +106,10 @@ const Login = () => {
         </form>
       </div>
       <div className="login-footer">
+        <div className="policy">
+          <span>Term & Condition</span>
+          <span>Resposible Gaming</span>
+        </div>
         <ul>
           {/* <li>+91 7299444466 / +91 7299444488</li>
           */}

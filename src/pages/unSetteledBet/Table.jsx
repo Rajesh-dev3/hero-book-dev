@@ -59,7 +59,7 @@ const Table = ({data}) => {
             .utcOffset("+05:30")
             .format("DD/MM/YYYY HH:mm:ss ")
           return(
-        <tr role="row" key={index}>
+        <tr role="row" key={index} style={{background:item?.side == "BACK" ? "#72bbef":"#faa9ba"}}>
           <td role="cell" className="border-[1px] px-[8px] py-[5px]">{index+1}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center">{item?.event_name}</td>
         <td role="cell" className="border-[1px] px-[8px] py-[5px] text-center"><span role="cell" className="">{item?.nation}</span></td>
