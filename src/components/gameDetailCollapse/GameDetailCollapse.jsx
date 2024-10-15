@@ -31,9 +31,11 @@ const GameDetailCollapse = ({
   if (collapseName !== "To Win the Toss") {
     return (
       <div className="game-market market-4">
+        
         <div className="market-title">
           <span>{collapseName}</span>
         </div>
+        
         <div className="market-header2" >
           <div className="odds-row-container flex items-center detail-row">
             <div className="odds-row-left-col remove-top-border px-[5px]">

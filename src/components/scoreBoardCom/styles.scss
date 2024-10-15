@@ -14,7 +14,7 @@
 
     @include media(phone) {
         flex-direction: column;
-        height: 140px;
+        height: 80px;
     }
 
     &::before {

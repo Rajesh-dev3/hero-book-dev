@@ -4,6 +4,7 @@ import {useScoreBoardQuery} from "../../services/scoreBoard/scoreBoard"
 import "./styles.scss"
 import moment from "moment"
 import { useEffect, useState } from "react"
+import { useMediaQuery } from "../../useMediaQuery"
 const ScoreBoardCom = ({odddata,date,matchId}) => {
 
   const {data} = useScoreBoardQuery(matchId,{
@@ -26,13 +27,16 @@ const ScoreBoardCom = ({odddata,date,matchId}) => {
     4:"green",
     w:"red",
   }
+  const isMobile = useMediaQuery("(max-width:780px")
   return (
     <div className="score-board">
-
+{isMobile?""
+:
     <div className="game-header">
       <span>{odddata?.MatchDetails?.name}</span>
       <span className="float-right">{date}</span>
     </div>
+}
     <div className="score-col">
       <div className="score-col-left">
         <p><span>{two?.t1 || 0}</span> <span>{two?.score || 0}-{two?.wicket || ""}({two?.ballsdone? calculateOvers(two?.ballsdone):0})</span></p>

@@ -82,7 +82,8 @@ const {pathname} = useLocation()
 const urlList = ["/account-statement","/current-bet","/activity_log","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
   const checkActiveUrl  = {Home:"/",Cricket:"/sport/4",Tennis:"/sport/2",Soccer:"/sport/1"}
 
-
+const urlCheck = isMobile && pathname?.split("/")[1]
+console.log(urlCheck,"/game-detail")
   const checkUrl = isMobile && urlList.includes(pathname)
 
 // console.log(pathname.split("/")[2],"pathname")
@@ -119,7 +120,7 @@ if(isMobile){
   };
   return (
     <>
-    {!checkUrl && 
+    {!checkUrl || urlCheck == "/game-detail" && 
     <div className="subnavbar-container">
       <ul>
         {newSPortArray?.map((item,index) => {

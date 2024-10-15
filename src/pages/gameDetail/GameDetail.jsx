@@ -264,6 +264,7 @@ const profithandler = (stack, odds, is_back, eventId) => {
                   : ""
     }
   ];
+  console.log(obj,"object")
   setProfitLoss(obj)
   
   
@@ -296,7 +297,6 @@ useEffect(() => {
     if (betPlaceData?.stack != null ) {
       profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, selectionId2)
     }
-
   }
 
 }, [betPlaceData, selectionId2])
@@ -330,6 +330,19 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
       <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack closeModa2={closeModa2} />} />
 
       {isMobile &&
+      <>
+        <Link
+              className="bet-nation-game-name errIcon blink-message flex items-center p-[5px]"
+              to={aviatorLobby}
+            >
+
+              <ErrorIcon />
+              <div>Aviator</div>
+            </Link>
+        <div className="game-header">
+        <span>{odddata?.MatchDetails?.name}</span>
+        <span className="float-right">{date}</span>
+      </div>
         <div className="mobile-odds-tab">
           <ul>
             <li onClick={() => setTabOpen(0)}>Odds</li>
@@ -337,6 +350,7 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
             <li onClick={() => setTabOpen(2)}>{<TvIcon />}</li>
           </ul>
         </div>
+      </>
       }
       <div className="game-detail-container">
         {tabOpen == 0
