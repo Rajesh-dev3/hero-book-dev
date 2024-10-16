@@ -19,6 +19,8 @@ import AuthSecure from "../pages/authSecure/Auth.jsx";
 import ActivityLog from "../pages/Activity_log/ActivityLog.jsx";
 import CasinoResult from "../pages/casinoResult/CasinoResult.jsx";
 import UnSetteledBet from "../pages/unSetteledBet/index.jsx";
+import Termcondition from "../pages/T&C/Termcondition.jsx";
+import Responsiblegaming from "../pages/ResposibleGaming/Responsiblegaming.jsx";
 // import Deposit from "../pages/Deposit/Deposit.jsx";
 
 
@@ -109,6 +111,14 @@ export const router = createBrowserRouter([
     {
       path:"/login",
       element:<Login/>
+    },
+    {
+      path:"/Term&Condition",
+      element:<Termcondition />
+    },
+    {
+      path:"/ResponsibleGaming",
+      element:<Responsiblegaming />
     },
     {
       path:"/otp",

@@ -4,7 +4,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import KeyIcon from '@mui/icons-material/Key';
 import LoginIcon from '@mui/icons-material/Login';
 import { useLoginMutation } from '../../services/auth/Login';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 ////styles
 import "./styles.scss"
 import { toast } from 'react-toastify';
@@ -106,13 +106,14 @@ const Login = () => {
         </form>
       </div>
       <div className="login-footer">
-        <div className="policy">
-          <span>Term & Condition</span>
-          <span>Resposible Gaming</span>
-        </div>
+        {/* <div className="policy">
+        
+        </div> */}
         <ul>
-          {/* <li>+91 7299444466 / +91 7299444488</li>
-          */}
+          {/* <li>+91 7299444466 / +91 7299444488</li> */}
+          <li className='policy'>  <span> <Link to={"/Term&Condition"}> Term & Condition</Link></span>
+          <span> <Link  to={"/Responsiblegaming"}> Resposible Gaming</Link></span></li>
+         
           <li>24X7 Support</li> 
           <li>
             <img src={faceboo} alt="" />

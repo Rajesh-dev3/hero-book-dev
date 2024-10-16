@@ -137,6 +137,8 @@ padding-top: 5px;
         position: fixed;
         text-align: center;
         width: 100%;
+        display: flex;
+        justify-content: space-between;
        
 
         ul {
@@ -148,6 +150,17 @@ padding-top: 5px;
             @include media(phone) {
                 flex-direction: column;
             }
+            .policy{
+              span{
+
+                  font-size: 1rem;
+                  margin-right: 20px;
+                  text-decoration: underline;
+                  a{
+                    color: white;
+                  }
+              }
+            }
 
             li {
                 display: flex;
@@ -156,6 +169,7 @@ padding-top: 5px;
                 padding: .25rem !important;
                 font-size: 1rem;
                 justify-content: center;
+
                 font-weight: 600;
                 margin: 7px;
 
@@ -164,13 +178,24 @@ padding-top: 5px;
                 }
 
                 &:nth-child(1) {
+                justify-content: start;
+                    
                     font-size: 1.5rem;
+                    align-items: start;
                     @include media(phone) {
                         margin: 0rem !important;
                         padding: 0rem !important;
                         margin-top: 10px !important;
                        font-size:calc(1rem + .3vw);
                     }
+                }
+                &:nth-child(2) {
+                justify-content: center;
+
+                }
+                &:nth-child(3) {
+                justify-content: end;
+
                 }
 
                 img {

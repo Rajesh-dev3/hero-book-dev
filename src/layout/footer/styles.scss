@@ -26,6 +26,15 @@
 
         .footer-links {
             flex: 1;
+            list-style: none;
+            span{
+           
+                margin-left: 20px;
+                a{
+                    color: white;
+                    text-decoration: underline;
+                }
+            }
         }
 
         .support-detail {
