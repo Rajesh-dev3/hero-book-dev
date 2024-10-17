@@ -7,11 +7,12 @@ const Footer = () => {
     <>
       <div className="footer">
         <div className="footer-top">
-          <div className="footer-links"><li className='policy'>  <span> <Link to={"/Term&Condition"}> Term & Condition</Link></span>
-          <span> <Link  to={"/Responsiblegaming"}> Resposible Gaming</Link></span></li></div>
+          <div className="footer-links">
+            <li className='policy'>  <span> <Link to={"/Term&Condition"}> Terms and Condition</Link></span>
+          <span> <Link  to={"/Responsiblegaming"}> Responsible Gaming</Link></span></li></div>
           <div className="support-detail">
             <h2>24X7 Support</h2>
-            <p></p>
+            {/* <p></p> */}
           </div>
           <div className="social-icons-box">
             <div className="social-icon">

@@ -111,10 +111,10 @@ const Login = () => {
         </div> */}
         <ul>
           {/* <li>+91 7299444466 / +91 7299444488</li> */}
-          <li className='policy'>  <span> <Link to={"/Term&Condition"}> Term & Condition</Link></span>
-          <span> <Link  to={"/Responsiblegaming"}> Resposible Gaming</Link></span></li>
+          <li className='policy'>  <span> <Link to={"/Term&Condition"}> Terms and Condition</Link></span>
+          <span> <Link  to={"/Responsiblegaming"}> Responsible Gaming</Link></span></li>
          
-          <li>24X7 Support</li> 
+          <li className='support'>24X7 Support</li> 
           <li>
             <img src={faceboo} alt="" />
             <img src={instagram} alt="" />

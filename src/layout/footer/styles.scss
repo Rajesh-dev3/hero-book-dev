@@ -27,28 +27,46 @@
         .footer-links {
             flex: 1;
             list-style: none;
-            span{
-           
-                margin-left: 20px;
-                a{
-                    color: white;
-                    text-decoration: underline;
+            .policy{
+display: flex;
+gap: 10px;
+margin-left: 15px;
+font-weight: 600;
+                span{
+               
+                    a{
+                        color: white;
+                        @include media(phone) {
+                            text-decoration: underline;
+    font-size: 13px;
+                            font-weight: 500;
+                        }
+                    }
+                    @include media(phone) {
+                        width: 50%;
+                    }
                 }
             }
+
         }
 
         .support-detail {
             flex: 1;
+            @include media(phone) {
+margin-top: 10px !important;        
+            }
 
             h2 {
                 font-size: 24px;
                 font-weight: 700;
                 margin-bottom: 0;
+             
                 text-align: center;
                 font-family: "Roboto Condensed", sans-serif !important;
                 line-height: 1.2;
                 @include media(phone) {
                     font-size: 20px;
+            
                 }
             }
         }
