@@ -169,10 +169,11 @@ const [checkBookMaker,setBookMaker]=useState(0)
 
 
 const [selectionId2, setSelectionId] = useState("")
+const [items, setItems] = useState({})
 
-const profithandler = (stack, odds, is_back, eventId) => {
+const profithandler = (stack, odds, is_back, eventId,item) => {
 
-
+  setItems(item)
   const stackWin = odds == 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
   const findIndex = ((index) => {
     if (checkFancy == true) {
@@ -182,6 +183,31 @@ const profithandler = (stack, odds, is_back, eventId) => {
       // return eventId?.length ? eventId[index]?.selectionId : null
     }
   })
+
+  const checkSelectionId = (i) => {
+    if (eventId?.runner_json[i].selectionId == item?.selectionId) {
+      if (is_back == 1) {
+        return Number(stackWin)
+      }
+      else if (is_back == 0) {
+        return -Number(stackWin)
+      }
+      else {
+        return -Number(stack)
+      }
+    }
+    else if (eventId?.runner_json[i].selectionId != item?.selectionId) {
+      if (is_back == 1) {
+        return -Number(stack)
+      }
+      if (is_back == 0) {
+        return Number(stack)
+      }
+    
+    }
+
+  }
+
   // const obj = [
   //   {
   //     selectionId: findIndex(0),
@@ -228,43 +254,21 @@ const profithandler = (stack, odds, is_back, eventId) => {
       selectionId: findIndex(0),
       marketName:eventId?.runner_json?.[0]?.selectionName,
       marketId:!checkFancy?  eventId?.market_id:eventId?.runner_json?.[0]?.selectionName,
-      winLoss: stack
-            ? (odds == 0 
-                      ? -Number(stack) 
-                      : (is_back == 0 
-                          ? -Number(stackWin) 
-                          : Number(stackWin))
-                    )
-                  : ""
+      winLoss: checkSelectionId(0)
     },
     {
       selectionId: findIndex(1),
       marketName:eventId?.runner_json?.[1]?.selectionName,
       marketId:  !checkFancy?  eventId?.market_id:eventId?.runner_json?.[1]?.selectionName ,
-      winLoss: stack
-            ? (odds == 0 
-                ? -Number(stack) 
-                : (is_back == 1 
-                    ? -Number(stack) 
-                    : Number(stack))
-              )
-            : ""
+      winLoss:checkSelectionId(1)
     },
     {
       selectionId: findIndex(2),
       marketName:eventId?.runner_json?.[2]?.selectionName,
       marketId:!checkFancy?  eventId?.market_id:eventId?.runner_json?.[2]?.selectionName,
-      winLoss: stack
-                  ? (odds == 0 
-                      ? -Number(stack) 
-                      : (is_back == 1 
-                          ? -Number(stack) 
-                          : Number(stack))
-                    )
-                  : ""
+      winLoss: checkSelectionId(2)
     }
   ];
-  console.log(obj,"object")
   setProfitLoss(obj)
   
   
@@ -291,7 +295,7 @@ const fancyProfitLoss= (stack,odds,is_back,eventId,eventName,minStack,maxStack)=
 useEffect(() => {
   if (checkFancy == false ) {
     if (betPlaceData?.stack != null) {
-      profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, selectionId2)
+      profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, selectionId2,items)
     }
   } else if (checkFancy == true) {
     if (betPlaceData?.stack != null ) {
@@ -299,7 +303,7 @@ useEffect(() => {
     }
   }
 
-}, [betPlaceData, selectionId2])
+}, [betPlaceData, selectionId2,items])
 
 useEffect(() => {
    if(checkFancy == "fancy"){

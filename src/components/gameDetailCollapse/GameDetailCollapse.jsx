@@ -81,7 +81,7 @@ const GameDetailCollapse = ({
                   }
                   setCheckFancy(checkFancy);
                   setSelectionId(odddata);
-                  profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, odddata);
+                  profithandler(betPlaceData?.stack, betPlaceData?.odds, betPlaceData?.is_back, odddata,list);
                 }}
               >
                 {list?.ex?.availableToBack.map((item, index) => {
