@@ -172,7 +172,6 @@ const [selectionId2, setSelectionId] = useState("")
 const [items, setItems] = useState({})
 
 const profithandler = (stack, odds, is_back, eventId,item) => {
-
   setItems(item)
   const stackWin = odds == 0 ? -Number(stack) : (Number(odds) - 1) * Number(stack);
   const findIndex = ((index) => {
@@ -249,6 +248,7 @@ const profithandler = (stack, odds, is_back, eventId,item) => {
   //                 : ""
   //   }
   // ];
+  const checkEventLength = eventId?.runner_json?.length
   const obj = [
     {
       selectionId: findIndex(0),
@@ -264,9 +264,9 @@ const profithandler = (stack, odds, is_back, eventId,item) => {
     },
     {
       selectionId: findIndex(2),
-      marketName:eventId?.runner_json?.[2]?.selectionName,
+      marketName:checkEventLength ==3 ?eventId?.runner_json?.[2]?.selectionName:"",
       marketId:!checkFancy?  eventId?.market_id:eventId?.runner_json?.[2]?.selectionName,
-      winLoss: checkSelectionId(2)
+      winLoss:checkEventLength ==3 ? checkSelectionId(1):0
     }
   ];
   setProfitLoss(obj)
@@ -329,7 +329,11 @@ const betHistoryData =betHistory ? [...betHistory?.data?.MatchAndBetfair , ...be
   return (
     <>
       <ModalComp setBetPlaceData={setBetPlaceData} isOpen={modalOpen} onClose={closeModal} content={
-       <MobileBetModule checkFancy={checkFancy} profitLoss={profitLoss}  setProfitLoss={setProfitLoss} isFancy={isFancy} openModal2={openModal2} fun={closeModal}  stakeAmount={odddata?.UserSportSettings[0]} betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
+       <MobileBetModule checkFancy={checkFancy} profitLoss={profitLoss} 
+        setProfitLoss={setProfitLoss} isFancy={isFancy} openModal2={openModal2} 
+        fun={closeModal}  stakeAmount={odddata?.UserSportSettings[0]} 
+        betPlaceData={isFancy ? fancyBetPlaceData : betPlaceData} 
+        setBetPlaceData={isFancy ? setFancyBetPlaceData : setBetPlaceData} />
         } />
       <ModalComp isOpen={modalOpen2} onClose={closeModa2} content={<EditStack closeModa2={closeModa2} />} />
 
