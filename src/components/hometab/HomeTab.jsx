@@ -177,8 +177,13 @@ const HomeTab = ({ setActiveTab, setName, name }) => {
             }
                }
           >
-              <div className="sport-icon"><img src={iconObj[list?.sport_id]} alt="icon" /> </div>
-           {list?.name}
+              <div className="sport-icon">
+                {list?.name == "Tennis"? <i className="icon icon-2"></i>:
+                
+                <img src={iconObj[list?.sport_id]} alt="icon" /> 
+                }
+                </div>
+           {list?.name == "Soccer" ?"Football":list?.name}
           </div>
             )
           }

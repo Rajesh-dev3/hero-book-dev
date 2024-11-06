@@ -7,6 +7,8 @@ import "./styles.scss"
 import BetLoader from '../loader/BetLoader'
 import { betHistoryRef } from '../../pages/gameDetail/GameDetail'
 import { exposureRef } from '../../layout/navbar'
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betPlaceData, setBetPlaceData, openModal2 }) => {
   const stakeArray = stakeAmount?.match_stack?.split(",")
   const [trigger, { data,isLoading }] = useBetPlaceMutation()
@@ -43,13 +45,13 @@ const MobileBetModule = ({checkFancy, isFancy,profitLoss, stakeAmount, fun, betP
             <p>{betPlaceData?.matchName}</p>
           </div>
           <div className="md1-right">
-            <p >-</p>
-            <input type="text" placeholder='0'  value={isFancy ? betPlaceData?.run : betPlaceData?.odds}/>
-            <p>+</p>
+            <div className='icon-div'><RemoveIcon/></div>
+            <input type="number" placeholder='0'  pattern="\d*"  value={isFancy ? betPlaceData?.run : betPlaceData?.odds}/>
+            <div className='icon-div'><AddIcon/></div>
           </div>
         </div>
         <div className="md3">
-          <input type="text" value={oddsValue} onChange={(e)=>{
+          <input type="number"  pattern="\d*" value={oddsValue} onChange={(e)=>{
               setBetPlaceData((prev) => {
                 return {
                   ...prev, stack: e.target.value

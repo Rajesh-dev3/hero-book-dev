@@ -52,6 +52,9 @@
         @include media(phone) {
           display: block;
         }
+        .icon-2{
+       font-size: 34px;
+        }
         img{
           width: 35px;
           height: 25px;
@@ -88,11 +91,12 @@
   position: relative;
   // color: white;
   width: 100%;
+  height: 45px;
   text-transform: capitalize;
   font-weight: 500;
+  background-color: #2C3E50;
       font-size: 14px;
       // text-align: center;
-  background: transparent;
   @include media(phone){
   overflow-x: auto;
   white-space: nowrap;
@@ -109,7 +113,8 @@
 
 .menu-item {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 5px 16px;
+  height: 100%;
   background: transparent;
   line-height: 1;
   border-right: 1px solid black;
@@ -140,7 +145,16 @@ font-size: 12px;
   display: none;
 
   @include media(phone) {
-    display: block;
+    display: flex;
+        height: 24px;
+        text-align: center;
+        justify-content: center;
+  }
+  .icon-2{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   img{
     width: 35px;

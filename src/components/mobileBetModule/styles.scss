@@ -29,14 +29,21 @@
 
     .md1-right {
       display: flex;
-
+// align-items: center;
       // color: red;
-      p {
+      .icon-div{
         // padding: 20px;
         width: 30px;
+        display: flex;
+        justify-content: center;
         text-align: center;
         background: $black;
         color: #fefefe;
+        align-items: center;
+        svg{
+          font-size: 12px;
+          color: white;
+        }
       }
 
       input {

@@ -12,6 +12,7 @@ import Blink from '../../components/blink/Blink';
 import "./styles.scss"
 import { login } from '../../routes/PagesUrl';
 import { useSelector } from 'react-redux';
+import { useGetEventListMutation } from '../../services/sport/inPlayEvent';
 const MainLayout = () => {
   const isMobile = useMediaQuery("(max-width:780px)")
   const posts = useSelector(state => (state?.matchList?.mutations));
@@ -64,17 +65,21 @@ const MainLayout = () => {
     };
   }, [inactiveTime]);
   const {pathname} = useLocation()
+  const [trigge, { data: eventList }] = useGetEventListMutation()
 
   const urlList = ["/account-statement","/current-bet","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
  
   const checkBlink =  urlList.includes(pathname)
+  useEffect(() => {
+    trigge({ "limit": 10, "pageno": 1, "sport_id": 0 })
+  }, [])
   return (
     <div className='main-layout'>
       <div className="layout-nav-col">
         <Navbar />
         {!checkBlink && isMobile && pathname.split("/")[1] != "game-detail" &&
           <div className={`w-full flex overflow-scroll gap-1  latest-new`} style={{padding: "0 5px 5px"}}>
-            {inplayMatches?.map((item) => {
+            {eventList?.data?.map((item) => {
               return (
 
                 <Blink key={item?.series_id} data={item} />

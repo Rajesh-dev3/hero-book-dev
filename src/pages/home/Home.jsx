@@ -41,9 +41,9 @@ const Home = () => {
   return (
     <>
 
-      {(!isMobile && inplayMatches?.length) ?
+      {(!isMobile && eventList?.data?.length) ?
         <div className={`w-full upcoming-event flex overflow-x-scroll gap-1`} style={{ gridTemplateColumns: `repeat(${inplayMatches?.length}, 1fr)` }}>
-          {inplayMatches?.map((item) => <Blink key={item?.series_id} data={item} />)}
+          {eventList?.data?.map((item) => <Blink key={item?.series_id} data={item} />)}
 
         </div>
         : ""}
