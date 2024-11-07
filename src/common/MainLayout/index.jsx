@@ -12,7 +12,7 @@ import Blink from '../../components/blink/Blink';
 import "./styles.scss"
 import { login } from '../../routes/PagesUrl';
 import { useSelector } from 'react-redux';
-// import { useGetEventListMutation } from '../../services/sport/inPlayEvent';
+import { useGetEventListMutation } from '../../services/sport/inPlayEvent';
 const MainLayout = () => {
   const isMobile = useMediaQuery("(max-width:780px)")
   const posts = useSelector(state => (state?.matchList?.mutations));
@@ -65,10 +65,8 @@ const MainLayout = () => {
     };
   }, [inactiveTime]);
   const {pathname} = useLocation()
-  // const [trigge, { data: eventList }] = useGetEventListMutation()
-const eventList = {
-  data:[]
-}
+  const [trigge, { data: eventList }] = useGetEventListMutation()
+
   const urlList = ["/account-statement","/current-bet","/changepassword","/casino-results","live-casino-bet","/secure-auth"]
  
   const checkBlink =  urlList.includes(pathname)

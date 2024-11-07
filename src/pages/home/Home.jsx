@@ -11,14 +11,12 @@ import ourCasino from "../../components/casino/ourCasino.json"
 ///styles
 import "./styles.scss"
 import CasinoCard from "../../components/casinoCard/CasinoCard.jsx";
-// import { useGetEventListMutation } from "../../services/sport/inPlayEvent.js";
+import { useGetEventListMutation } from "../../services/sport/inPlayEvent.js";
 import BetLoader from "../../components/loader/BetLoader.jsx";
 const Home = () => {
   const [trigger, { data, isLoading }] = useEventGameMutation()
-  // const [trigge, { data: eventList }] = useGetEventListMutation()
-  const eventList = {
-    data:[]
-  }
+  const [trigge, { data: eventList }] = useGetEventListMutation()
+
   const [activeTab, setActiveTab] = useState(4);
   const [name, setName] = useState("Cricket");
   const [gameList, setGameList] = useState([])
