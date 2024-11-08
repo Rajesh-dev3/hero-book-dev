@@ -91,14 +91,14 @@
   position: relative;
   // color: white;
   width: 100%;
-  height: 45px;
+ 
   text-transform: capitalize;
   font-weight: 500;
-  background-color: #2C3E50;
       font-size: 14px;
       // text-align: center;
   @include media(phone){
   overflow-x: auto;
+  height: 45px;
   white-space: nowrap;
   position: relative;
   color: white;
@@ -113,12 +113,13 @@
 
 .menu-item {
   display: inline-block;
-  padding: 5px 16px;
+  padding: 10px 16px;
   height: 100%;
   background: transparent;
   line-height: 1;
   border-right: 1px solid black;
   font-size: 16px;
+  // color: white;
   &:last-child{
     border-right: none;
 
