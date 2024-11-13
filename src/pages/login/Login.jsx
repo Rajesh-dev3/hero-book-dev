@@ -22,7 +22,7 @@ const Login = () => {
   }
   const submitForm = (key, e) => {
     e.preventDefault()
-    const requestResponse = key == 0 ? formData : { user_name: "demo007", password: "123456" }
+    const requestResponse = key == 0 ? formData : { user_name: "hdemo", password: "Dubai369" }
     trigger(requestResponse)
   }
   const token = data?.data?.token
