@@ -31,39 +31,7 @@ const MainLayout = () => {
 
 
 
-  const [inactiveTime, setInactiveTime] = useState(120000); // 5 seconds of inactivity
-  let timer; // variable to hold the timeout function
-
-  useEffect(() => {
-    const resetTimer = () => {
-      clearTimeout(timer);
-      timer = setTimeout(callInactiveFunction, inactiveTime);
-    };
-
-    const callInactiveFunction = () => {
-      // This function will be called after 'inactiveTime' milliseconds of user inactivity
-      console.log("User is inactive");
-      localStorage.clear()
-      window.location.replace(login)
-      // Call your function here that you want to execute when the user is inactive
-    };
-
-    const setupListeners = () => {
-      // Add event listeners to detect user activity
-      document.addEventListener('mousemove', resetTimer);
-      document.addEventListener('keydown', resetTimer);
-      document.addEventListener('visibilitychange', resetTimer); // For handling tab visibility changes
-    };
-
-    setupListeners(); // Initialize the listeners
-
-    return () => {
-      // Clean up the event listeners when the component unmounts
-      document.removeEventListener('mousemove', resetTimer);
-      document.removeEventListener('keydown', resetTimer);
-      document.removeEventListener('visibilitychange', resetTimer);
-    };
-  }, [inactiveTime]);
+  
   const {pathname} = useLocation()
   const [trigge, { data: eventList }] = useGetEventListMutation()
 

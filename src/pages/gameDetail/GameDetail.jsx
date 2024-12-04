@@ -43,7 +43,7 @@ const GameDetail = () => {
     const timer = setInterval(() => {
       trigger({ "match_id": matchId, "sport_id": sportId })
       trigg({ match_id: matchId })
-    }, 3000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [sportId, matchId])
 
